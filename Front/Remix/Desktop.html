@@ -1,0 +1,202 @@
+﻿<html>
+    
+    <head>
+        <title>RPG - Remix</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="Bootstrap/bootstrap-scripts/jquery.min.js"></script>
+        <script type="text/javascript" src="Bootstrap/bootstrap-scripts/bootstrap.min.js"></script>
+        <link href="Bootstrap/bootstrap-css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <style>
+            #menu {
+                width: 17%;
+            }
+    
+            @media screen and (max-width: 980px) {
+                #menu {
+                    width: auto;
+                }
+    
+                .cx {
+                    display: none;
+                }
+    
+                .container-fluid {
+                    margin-bottom: 62px;
+                }
+            }
+            
+            #subir {
+                height: 20px;
+                /*background-color: rgba(123, 123, 123, 0.3);*/
+                display: none;
+            }
+        </style>
+        <script type="text/javascript" language="javascript">
+            var id_old;
+    
+            function menuClick(id_clicked) {
+    
+                if (id_clicked == id_old) {
+                    $('#frame').attr('src', $('#' + id_clicked).attr('page'));
+                    return;
+                }
+    
+                $('#frame').css('display', 'block');
+                $('#' + id_clicked).css('font-weight', 'bold'); /**/ //console.log("id_clicked " + id_clicked);
+                $('#' + id_old).css('font-weight', 'normal'); /**/ //console.log("id_old " + id_old);
+                id_old = id_clicked;
+    
+                $('#frame').attr('src', $('#' + id_clicked).attr('page'));
+                $('body').animate({ scrollTop: 105 }, '0', 'swing', null);
+            }
+            
+            $(this).scroll(function(){
+                if($(this).scrollTop() > 0){
+                    $('#subir').css('display', 'block');
+                }
+            });
+        </script>
+    </head>
+    
+    <body class="parallax div-silver" id="ovelha" data-spy="scroll">
+        <div id="background">
+            <!-- INÍCIO DO CABEÇALHO MÓVEL -->
+            <div class="navbar-fixed-top">
+                <div class="nav div-padding-silver navbar-inverse" id="cabecalho">
+                    <div class="col-md-12 div-padding-whitesmoke">
+                        <div class="container col-md-12">
+                            <div class="row">
+                                <div class="col-md-11 hidden-sm hidden-xs" style="margin-left: -15px; margin-right: -20px">
+                                    <div class="img-logo-top-left navbar navbar-default navbar-static-top">
+                                        <div class="col-md-1">
+                                            <div class="col-xs-9 col-sm-4 hidden-md hidden-lg">
+                                                <a href="#" class="img-logo-top-left">
+                                                    <img src="images/brasao-d&a.png" class="img-responsive" width="30">
+                                                </a>
+                                            </div>
+                                            <div class="hidden-xs hidden-sm">
+                                                <a href="Desktop.html" class="">
+                                                    <img src="images/brasao-d&a.png" class="img-responsive" width="50">
+                                                </a>
+                                            </div>
+                                            <div class="img-logo-top-left col-sm-8 hidden-xs hidden-md hidden-lg">
+                                                <h4 style="color: whitesmoke">@{Nome do Usuário da Sessão no Sistema}</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 img-logo-top-left"><span style="color: whitesmoke">@{Nome do Usuário da Sessão no Sistema}</span></div>
+                                        <div class="col-md-6">
+                                            <form class="form-horizontal" role="form">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <div class="input-group col-md-12">
+                                                            <input type="search" class="form-control" id="busca" placeholder="Faça sua busca!">
+                                                            <span class="input-group-btn">
+                                                                <input class="btn btn-default" type="submit" value="Buscar">
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-1 hidden-sm hidden-xs img-logo-top-left">
+                                    <div class="input-group text-right col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <button class="btn btn-danger btn-sm">Sair</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- INÍCIO DO MENU VERTICAL -->
+                <div class="col-lg-2 col-md-2 col-sm-4 hidden-xs section div-padding-silver menu-vertical">
+                    <div class="panel-group">
+                        <!---->
+                        <div class="panel panel-default border-none">
+                            <div class="btn btn-block btn-default panel-heading">
+                                <div class="btn-flat">
+                                    <i class="fa fa-th-large fa-lg pull-left text-muted"></i>
+                                    <h4 class="panel-title">MESAS</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="panel panel-default border-none">
+                            <div class="btn btn-block btn-default panel-heading">
+                                <div class="btn-flat">
+                                    <i class="fa fa-lg fa-gamepad pull-left text-muted"></i>
+                                    <h4 class="panel-title">JOGADORES</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="panel panel-default border-none">
+                            <div class="btn btn-block btn-default panel-heading">
+                                <div class="btn-flat">
+                                    <i class="fa fa-lg fa-file-text pull-left text-muted"></i>
+                                    <h4 class="panel-title">FICHAS</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="panel panel-default border-none">
+                            <div class="btn btn-block btn-default panel-heading">
+                                <div class="btn-flat">
+                                    <i class="fa fa-lg fa-users pull-left text-muted"></i>
+                                    <h4 class="panel-title">CONTATOS</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="panel panel-default border-none">
+                            <div class="btn btn-block btn-default panel-heading">
+                                <div class="btn-flat">
+                                    <i class="fa fa-lg fa-gears pull-left text-muted"></i>
+                                    <h4 class="panel-title">AJUSTES</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+                <div class="col-lg-offset-2 col-md-offset-2 col-lg-10 col-md-0 col-sm-8 hidden-xs" id="subir"></div>
+                <!-- FIM DO MENU VERTICAL -->
+            </div>
+            <!-- FIM DO CABEÇALHO MÓVEL -->
+            <!-- INÍCIO DO CABEÇALLHO IMÓVEL -->
+            <div class="nav div-padding-silver" id="cabecalho-imovel">
+                <div class="col-md-12 div-padding-whitesmoke">
+                    <div class="col-md-2 center-block">
+                        <a href="#" class="img-logo-top-left">
+                    <img src="" class="img-responsive" width="28">
+                </a>
+                    </div>
+                    <div class="container col-md-10">
+                        <div class="row">
+                            <div class="col-md-11 hidden-sm hidden-xs"></div>
+                            <div class="col-md-1 hidden-sm hidden-xs img-logo-top-left"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM DO CABEÇALHO IMÓVEL -->
+            <div class="container-fluid parallax">
+                <!-- INÍCIO DO FRAME PRINCIPAL -->
+                <iframe class="col-lg-10 col-md-10 col-sm-8 div-padding-silver col-lg-offset-2 col-md-offset-2 col-sm-offset-4" width="100%"
+                height="140%" name="iframe-section" style="border: none;" id="frame"></iframe>
+                <!-- FIM DO FRAME PRINCIPAL -->
+            </div>
+        </div>
+	
+    	<script>
+        	$('#subir').hover(function(){
+            		$('body').animate({ scrollTop: 0 }, '0', 'swing', null);
+            		$('#subir').css('display', 'none');
+        	});
+    	</script>
+
+    </body>
+</html>
