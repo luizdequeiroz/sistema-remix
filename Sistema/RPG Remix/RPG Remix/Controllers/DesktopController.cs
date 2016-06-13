@@ -26,5 +26,25 @@ namespace RPG_Remix.Controllers
         {
             return View();
         }
+
+        public ActionResult Jogadores()
+        {
+            return View();
+        }
+
+        public ActionResult Fichas()
+        {
+            return View();
+        }
+
+        public ActionResult Contatos()
+        {
+            return View();
+        }
+
+        public ActionResult Ajustes()
+        {
+            return View();
+        }
     }
 }
