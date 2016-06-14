@@ -9,17 +9,12 @@ namespace RPG_Remix.Controllers
     public partial class DesktopController : Controller
     {
         //
-        // GET: /Desktop/
+        // GET: /Fichas/
 
-        public ActionResult Desktop()
+        public ActionResult Fichas()
         {
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Desktop(string pagina)
-        {
-            return PartialView(pagina);
-        }
     }
 }

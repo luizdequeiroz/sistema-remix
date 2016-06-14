@@ -1,12 +1,15 @@
-﻿function loaderOn() {
-    $('.loading').css('display', 'normal');
+﻿/* Funções para carregamento com o GIF */
+function loaderOn() {
+    setTimeout(function () {
+        $('.loading').css('display', 'normal');
+    }, 5000);
 }
 function loaderOff() {
     $('.loading').css('display', 'none');
 }
 
+/* Função para o Click no Menu */
 var id_old;
-
 function menuClick(id_clicked) {
 
     $('#' + id_old).css('border', '');

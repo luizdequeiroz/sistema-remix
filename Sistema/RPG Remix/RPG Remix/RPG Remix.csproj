@@ -126,18 +126,30 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AjustesController.cs" />
+    <Compile Include="Controllers\ContatosController.cs" />
     <Compile Include="Controllers\DesktopController.cs" />
+    <Compile Include="Controllers\FichasController.cs" />
+    <Compile Include="Controllers\JogadoresController.cs" />
+    <Compile Include="Controllers\MesaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Bootstrap\bootstrap-css\rpg-awesome.css" />
+    <Content Include="Content\Bootstrap\bootstrap-css\rpg-awesome.min.css" />
+    <Content Include="Content\Bootstrap\fonts\rpgawesome-webfont.svg" />
     <Content Include="Content\images\ajax-loader.gif" />
     <Content Include="Content\images\loader.gif" />
     <Content Include="Content\images\loading.gif" />
     <Content Include="Content\script.js" />
     <Content Include="Global.asax" />
+    <Content Include="Content\Bootstrap\bootstrap-css\rpg-awesome.css.map" />
+    <Content Include="Content\Bootstrap\fonts\rpgawesome-webfont.eot" />
+    <Content Include="Content\Bootstrap\fonts\rpgawesome-webfont.ttf" />
+    <Content Include="Content\Bootstrap\fonts\rpgawesome-webfont.woff" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />

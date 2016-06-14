@@ -1,4 +1,6 @@
-﻿@using (Ajax.BeginForm("Desktop", "Desktop", new AjaxOptions
+﻿<div id="background">
+    <!-- INÍCIO DO CABEÇALHO MÓVEL -->
+    @using (Ajax.BeginForm("Desktop", "Desktop", new AjaxOptions
                 {
                     HttpMethod = "POST",
                     InsertionMode = InsertionMode.Replace,
@@ -7,10 +9,8 @@
                     OnBegin = "loaderOn",
                     OnSuccess = "loaderOff"
                 }, new { id = "menu-form" }))
-{
-    <input type="hidden" name="pagina" id="pagina" />
-    <div id="background">
-        <!-- INÍCIO DO CABEÇALHO MÓVEL -->
+    {
+        <input type="hidden" name="pagina" id="pagina" />
         <div class="navbar-fixed-top">
             <div class="nav div-padding-silver navbar-inverse" id="cabecalho">
                 <div class="col-md-12 div-padding-whitesmoke">
@@ -35,18 +35,16 @@
                                     </div>
                                     <div class="col-md-4 img-logo-top-left"><span style="color: whitesmoke">@@{Nome do Usuário da Sessão no Sistema}</span></div>
                                     <div class="col-md-6">
-                                        <form class="form-horizontal" role="form">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <div class="input-group col-md-12">
-                                                        <input type="search" class="form-control" id="busca" placeholder="Faça sua busca!">
-                                                        <span class="input-group-btn">
-                                                            <input class="btn btn-default" type="submit" value="Buscar">
-                                                        </span>
-                                                    </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="input-group col-md-12">
+                                                    <input type="search" class="form-control" id="busca" name="busca" placeholder="Faça sua busca!">
+                                                    <span class="input-group-btn">
+                                                        <input class="btn btn-default" type="submit" value="Buscar">
+                                                    </span>
                                                 </div>
                                             </div>
-                                        </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -66,7 +64,7 @@
                     <div class="panel panel-default border-none">
                         <div class="btn btn-block btn-default panel-heading" id="Mesas" onclick="menuClick(this.id)">
                             <div class="btn-flat">
-                                <i class="fa fa-th-large fa-lg pull-left text-muted"></i>
+                                <i class="ra ra-dice-three ra-lg pull-left text-muted"></i>
                                 <h4 class="panel-title">MESAS</h4>
                             </div>
                         </div>
@@ -75,7 +73,7 @@
                     <div class="panel panel-default border-none">
                         <div class="btn btn-block btn-default panel-heading" id="Jogadores" onclick="menuClick(this.id)">
                             <div class="btn-flat">
-                                <i class="fa fa-lg fa-gamepad pull-left text-muted"></i>
+                                <i class="ra ra-lg ra ra-double-team pull-left text-muted"></i>
                                 <h4 class="panel-title">JOGADORES</h4>
                             </div>
                         </div>
@@ -84,7 +82,7 @@
                     <div class="panel panel-default border-none">
                         <div class="btn btn-block btn-default panel-heading" id="Fichas" onclick="menuClick(this.id)">
                             <div class="btn-flat">
-                                <i class="fa fa-lg fa-file-text pull-left text-muted"></i>
+                                <i class="ra ra-lg ra-book pull-left text-muted"></i>
                                 <h4 class="panel-title">FICHAS</h4>
                             </div>
                         </div>
@@ -112,6 +110,7 @@
             </div>
             <!-- FIM DO MENU VERTICAL -->
         </div>
+    }
         <!-- FIM DO CABEÇALHO MÓVEL -->
         <!-- INÍCIO DO CABEÇALLHO IMÓVEL -->
         <div class="nav div-padding-silver" id="cabecalho-imovel">
@@ -139,7 +138,6 @@
             <!-- FIM DO FRAME PRINCIPAL -->
         </div>
     </div>
-}
-@section Scripts{
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    @section Scripts{
+        @Scripts.Render("~/bundles/jqueryval")
+    }
