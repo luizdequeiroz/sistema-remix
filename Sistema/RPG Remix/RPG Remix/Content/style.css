@@ -6856,3 +6856,9 @@ a.parallax {
     margin-top: 17.5%;
     margin-bottom: 17.5%;   
 }
+
+.loading {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    /*display: none;*/
+}

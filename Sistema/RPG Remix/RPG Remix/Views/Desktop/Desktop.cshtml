@@ -1,20 +1,4 @@
-﻿<script type="text/javascript" language="javascript">
-    function loaderOn() {
-        $("#load").css("display", "normal");
-        $("#faca").css("display", "none");
-    }
-    function loaderOff() {
-        $("#load").css("display", "none");
-        $("#faca").css("display", "normal");
-    }
-
-    function menuClick(id_clicked) {
-        $('#pagina').val(id_clicked);
-        $('#menu-form').submit();
-    }
-</script>
-
-@using (Ajax.BeginForm("Desktop", "Desktop", new AjaxOptions
+﻿@using (Ajax.BeginForm("Desktop", "Desktop", new AjaxOptions
                 {
                     HttpMethod = "POST",
                     InsertionMode = InsertionMode.Replace,
@@ -148,6 +132,9 @@
         <!-- FIM DO CABEÇALHO IMÓVEL -->
         <div class="container-fluid parallax">
             <!-- INÍCIO DO FRAME PRINCIPAL -->
+            <div class="col-lg-10 col-md-10 col-sm-8 div-padding-silver col-lg-offset-2 col-md-offset-2 col-sm-offset-4 text-center loading">
+                <img src="~/Content/images/ajax-loader.gif" width="50" /> Carregando...
+            </div>
             <div class="col-lg-10 col-md-10 col-sm-8 div-padding-silver col-lg-offset-2 col-md-offset-2 col-sm-offset-4" id="frame"></div>
             <!-- FIM DO FRAME PRINCIPAL -->
         </div>
