@@ -1,48 +1,87 @@
 ﻿<fieldset>
-    @for (int i = 0; i < 5; i++)
+    @for (int i = 1; i <= 5; i++)
     {
         <div class="col-lg-3 col-md-3 listagem-block">
             <div class="panel panel-image">
                 <div class="panel panel-default border-none">
-                    <a class="btn btn-block btn-lg btn-default panel-heading" href="#modal" data-toggle="modal">
+                    <a class="btn btn-block btn-lg btn-default panel-heading" href="#chamar" data-toggle="modal" data-id="@i" data-name="@i">
                         <div class="btn-flat btn-flat-no-radius">
-                            <h4>@@{ Nome da Mesa }</h4>
+                            <h4>@@{ Mesa @i }</h4>
                         </div>
                     </a>
                 </div>
                 <div>
-                    <a class="btn btn-begin btn-xs btn-flat-no-radius col-lg-3 col-md-3" href="#modal" data-toggle="modal"><h6>Entrar</h6></a>
-                    <a class="btn btn-success btn-xs btn-flat-no-radius col-lg-3 col-md-3" href="#modal" data-toggle="modal"><h6>Ver</h6></a>
-                    <a class="btn btn-default btn-xs btn-flat-no-radius col-lg-3 col-md-3" href="#modal" data-toggle="modal"><h6>Chamar</h6></a>
-                    <a class="btn btn-danger btn-xs btn-flat-no-radius col-lg-3 col-md-3" href="#modal" data-toggle="modal"><h6>Excluir</h6></a>
+                    <a class="btn btn-begin btn-xs btn-flat-no-radius col-lg-3 col-md-3"><h6>Entrar</h6></a>
+                    <a class="btn btn-success btn-xs btn-flat-no-radius col-lg-3 col-md-3"><h6>Ver</h6></a>
+                    <a class="btn btn-default btn-xs btn-flat-no-radius col-lg-3 col-md-3 mdl" href="#chamar" data-toggle="modal" data-id="@i" data-name="@i"><h6>Chamar</h6></a>
+                    <a class="btn btn-danger btn-xs btn-flat-no-radius col-lg-3 col-md-3 mdl" href="#excluir" data-toggle="modal" data-id="@i" data-name="@i"><h6>Excluir</h6></a>
                 </div>
             </div>
         </div>
     }
     <div class="col-lg-3 col-md-3 listagem-block">
         <div class="panel panel-default border-none">
-            <a class="btn btn-block btn-lg btn-default panel-heading" href="#modal" data-toggle="modal">
+            <a class="btn btn-block btn-lg btn-default panel-heading" href="#nova" data-toggle="modal">
                 <div class="btn-flat btn-flat-no-radius">
                     <h4>NOVA MESA</h4>
                 </div>
             </a>
         </div>
     </div>
-    <div id="modal" class="modal fade">
+    <div id="chamar" class="modal fade mothal">
         <div class="modal-dialog">
             <div id="frame" class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h5 class="modal-title">Criar Mesa</h5>
+                    <h5 class="modal-title">Chamar jogadores da mesa <a class="name"></a>?!</h5>
                 </div>
                 <div class="modal-body">
                     @@{ Formulário }
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Criar</button>
+                    <button name="id" type="submit" class="btn btn-primary id" value="">CHAMAR</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="excluir" class="modal fade mothal">
+        <div class="modal-dialog">
+            <div id="frame" class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h5 class="modal-title">Confirmar exclusão da mesa <a class="name"></a>?</h5>
+                </div>
+                <div class="modal-footer">
+                    <button name="id" type="submit" class="btn btn-danger id" value="">Sim</button>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Não</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="nova" class="modal fade">
+        <div class="modal-dialog">
+            <div id="frame" class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h5 class="modal-title">CRIAR NOVA MESA</h5>
+                </div>
+                <div class="modal-body">
+                    @@{ Formulário para criação de nova mesa }
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">CRIAR</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>
     </div>
 </fieldset>
+<script>
+    $('.mothal').on('show.bs.modal', function (e) {
+        var id = $(e.relatedTarget).attr('data-id');
+        var name = $(e.relatedTarget).attr('data-name');
+        $(this).find('.id').val(id);
+        $(this).find('.name').text(name);
+    });
+</script>
