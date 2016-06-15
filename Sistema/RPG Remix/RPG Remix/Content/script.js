@@ -8,7 +8,7 @@ function loaderOff() {
     $('.loading').css('display', 'none');
 }
 
-/* Função para o Click no Menu */
+/* Função para o Click */
 var id_old;
 function menuClick(id_clicked) {
 

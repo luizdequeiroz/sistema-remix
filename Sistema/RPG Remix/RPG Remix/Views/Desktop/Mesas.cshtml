@@ -1,24 +1,36 @@
 ﻿<fieldset>
-    @for (int i = 0; i < 10; i++)
+    @for (int i = 0; i < 5; i++)
     {
         <div class="col-lg-3 col-md-3 listagem-block">
-            <a class="btn btn-table btn-flat-section col-lg-11 col-md-11">
-                <h4>@@{ Nome da Mesa }</h4>
-            </a>
-            <div class="col-lg-1 col-md-1 div-no-padding">
-                <a class="btn btn-begin btn-flat-micro" role="button" href="#criarmesa" data-toggle="modal"><h6>Entrar</h6></a>
-                <a class="btn btn-success btn-flat-micro" role="button" href="#criarmesa" data-toggle="modal"><h6>Ver</h6></a>
-                <a class="btn btn-default btn-flat-micro" role="button" href="#criarmesa" data-toggle="modal"><h6>Chamar</h6></a>
-                <a class="btn btn-danger btn-flat-micro" role="button" href="#criarmesa" data-toggle="modal"><h6>Excluir</h6></a>
+            <div class="panel panel-image">
+                <div class="panel panel-default border-none">
+                    <a class="btn btn-block btn-lg btn-default panel-heading" href="#modal" data-toggle="modal">
+                        <div class="btn-flat btn-flat-no-radius">
+                            <h4>@@{ Nome da Mesa }</h4>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a class="btn btn-begin btn-xs btn-flat-no-radius col-lg-3 col-md-3" href="#modal" data-toggle="modal"><h6>Entrar</h6></a>
+                    <a class="btn btn-success btn-xs btn-flat-no-radius col-lg-3 col-md-3" href="#modal" data-toggle="modal"><h6>Ver</h6></a>
+                    <a class="btn btn-default btn-xs btn-flat-no-radius col-lg-3 col-md-3" href="#modal" data-toggle="modal"><h6>Chamar</h6></a>
+                    <a class="btn btn-danger btn-xs btn-flat-no-radius col-lg-3 col-md-3" href="#modal" data-toggle="modal"><h6>Excluir</h6></a>
+                </div>
             </div>
         </div>
     }
     <div class="col-lg-3 col-md-3 listagem-block">
-        <a class="btn btn-table btn-flat-section col-lg-12 col-md-12">NOVA MESA</a>
+        <div class="panel panel-default border-none">
+            <a class="btn btn-block btn-lg btn-default panel-heading" href="#modal" data-toggle="modal">
+                <div class="btn-flat btn-flat-no-radius">
+                    <h4>NOVA MESA</h4>
+                </div>
+            </a>
+        </div>
     </div>
-    <div id="criarmesa" class="modal fade">
+    <div id="modal" class="modal fade">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div id="frame" class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h5 class="modal-title">Criar Mesa</h5>

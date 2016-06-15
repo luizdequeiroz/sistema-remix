@@ -11,12 +11,10 @@
     <link href="~/Content/Bootstrap/bootstrap-css/rpg-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="~/Content/style.css" rel="stylesheet" type="text/css">
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body class="parallax" id="ovelha" data-spy="scroll">
     @RenderBody()
 
-    @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
 </body>
 </html>
