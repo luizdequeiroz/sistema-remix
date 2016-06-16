@@ -4,34 +4,40 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0573ee2d64514b6ab2c46404792e273f" Name="Diagram1" ZoomLevel="74" ShowGrid="false" DisplayType="true" >
-        <EntityTypeShape EntityType="RemixRPG.Mesa" Width="2" PointX="1.25" PointY="4.125" />
-        <EntityTypeShape EntityType="RemixRPG.Usuario" Width="1.875" PointX="0.5" PointY="0.5" />
-        <EntityTypeShape EntityType="RemixRPG.Ficha" Width="1.625" PointX="4.875" PointY="1.875" />
-        <EntityTypeShape EntityType="RemixRPG.Experiencia" Width="1.5" PointX="8.5" PointY="6.375" />
-        <EntityTypeShape EntityType="RemixRPG.Peculiaridade" Width="1.5" PointX="6.875" PointY="0.5" />
-        <EntityTypeShape EntityType="RemixRPG.Propriedade" Width="1.5" PointX="6.875" PointY="2.625" />
-        <EntityTypeShape EntityType="RemixRPG.Riqueza" Width="1.5" PointX="8.5" PointY="3.5" />
-        <EntityTypeShape EntityType="RemixRPG.ItemArma" Width="1.5" PointX="6.875" PointY="6.75" />
-        <EntityTypeShape EntityType="RemixRPG.Vestimenta" Width="1.625" PointX="10.125" PointY="1.375" />
+      <Diagram DiagramId="0573ee2d64514b6ab2c46404792e273f" Name="Diagram1" ZoomLevel="75" ShowGrid="false" DisplayType="true" >
+        <EntityTypeShape EntityType="RemixRPG.Mesa" Width="2" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="RemixRPG.Usuario" Width="1.875" PointX="1.25" PointY="4" />
+        <EntityTypeShape EntityType="RemixRPG.Ficha" Width="1.625" PointX="5" PointY="2.375" />
+        <EntityTypeShape EntityType="RemixRPG.Experiencia" Width="1.5" PointX="8.75" PointY="7.25" />
+        <EntityTypeShape EntityType="RemixRPG.Peculiaridade" Width="1.5" PointX="7.125" PointY="3.875" />
+        <EntityTypeShape EntityType="RemixRPG.Propriedade" Width="1.5" PointX="7.25" PointY="1" />
+        <EntityTypeShape EntityType="RemixRPG.Riqueza" Width="1.5" PointX="8.75" PointY="4.25" />
+        <EntityTypeShape EntityType="RemixRPG.ItemArma" Width="1.5" PointX="7.125" PointY="7.75" />
+        <EntityTypeShape EntityType="RemixRPG.Vestimenta" Width="1.625" PointX="10.375" PointY="2.5" />
         <AssociationConnector Association="RemixRPG.FichaPropriedade" />
         <AssociationConnector Association="RemixRPG.FichaPeculiaridade" />
         <AssociationConnector Association="RemixRPG.FichaRiqueza" />
         <AssociationConnector Association="RemixRPG.FichaItemArma" />
-        <EntityTypeShape EntityType="RemixRPG.PontosAcumulados" Width="1.75" PointX="4.875" PointY="8.75" />
+        <EntityTypeShape EntityType="RemixRPG.PontosAcumulados" Width="1.75" PointX="5" PointY="8.875" />
         <AssociationConnector Association="RemixRPG.FichaPontosAcumulados" />
         <AssociationConnector Association="RemixRPG.FichaExperiencia" />
         <AssociationConnector Association="RemixRPG.FichaVestimenta" />
         <AssociationConnector Association="RemixRPG.ItemArmaVestimenta" />
-        <EntityTypeShape EntityType="RemixRPG.Jogador" Width="1.5" PointX="0.5" PointY="7.5" />
+        <EntityTypeShape EntityType="RemixRPG.Jogador" Width="1.5" PointX="0.5" PointY="8" />
         <AssociationConnector Association="RemixRPG.MesaJogador" ManuallyRouted="false" >
         </AssociationConnector>
         <AssociationConnector Association="RemixRPG.UsuarioJogador" />
-        <EntityTypeShape EntityType="RemixRPG.Mestre" PointX="2.875" PointY="0.5" Width="1.5" />
+        <EntityTypeShape EntityType="RemixRPG.Mestre" PointX="3" PointY="1" Width="1.5" />
         <AssociationConnector Association="RemixRPG.JogadorFicha" />
         <AssociationConnector Association="RemixRPG.UsuarioMestre" />
         <AssociationConnector Association="RemixRPG.MestreMesa" />
         <AssociationConnector Association="RemixRPG.MestreFicha" />
+        <EntityTypeShape EntityType="RemixRPG.Mapa" Width="1.5" PointX="14.375" PointY="0.5" />
+        <EntityTypeShape EntityType="RemixRPG.Região" Width="1.5" PointX="12.25" PointY="1.625" />
+        <AssociationConnector Association="RemixRPG.RegiãoPropriedade" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="RemixRPG.MapaRegião" />
+        <AssociationConnector Association="RemixRPG.MesaMapa" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

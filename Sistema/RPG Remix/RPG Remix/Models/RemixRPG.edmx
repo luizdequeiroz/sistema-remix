@@ -81,6 +81,20 @@
             <End Role="Mestre" EntitySet="MestreSet" />
             <End Role="Ficha" EntitySet="FichaSet" />
           </AssociationSet>
+          <EntitySet Name="MapaSet" EntityType="RemixRPG.Mapa" />
+          <EntitySet Name="RegiãoSet" EntityType="RemixRPG.Região" />
+          <AssociationSet Name="RegiãoPropriedade" Association="RemixRPG.RegiãoPropriedade">
+            <End Role="Região" EntitySet="RegiãoSet" />
+            <End Role="Propriedade" EntitySet="PropriedadeSet" />
+          </AssociationSet>
+          <AssociationSet Name="MapaRegião" Association="RemixRPG.MapaRegião">
+            <End Role="Mapa" EntitySet="MapaSet" />
+            <End Role="Região" EntitySet="RegiãoSet" />
+          </AssociationSet>
+          <AssociationSet Name="MesaMapa" Association="RemixRPG.MesaMapa">
+            <End Role="Mesa" EntitySet="MesaSet" />
+            <End Role="Mapa" EntitySet="MapaSet" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Mesa">
           <Key>
@@ -94,6 +108,7 @@
           <Property Name="Senha" Type="String" Nullable="true" />
           <NavigationProperty Name="Jogadores" Relationship="RemixRPG.MesaJogador" FromRole="Mesa" ToRole="Jogador" />
           <NavigationProperty Name="Mestre" Relationship="RemixRPG.MestreMesa" FromRole="Mesa" ToRole="Mestre" />
+          <NavigationProperty Name="Mapas" Relationship="RemixRPG.MesaMapa" FromRole="Mesa" ToRole="Mapa" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -166,13 +181,13 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" Nullable="false" />
-          <Property Name="Local" Type="String" Nullable="false" />
           <Property Name="Descricao" Type="String" Nullable="false" />
           <Property Name="CoordX" Type="Int32" Nullable="true" />
           <Property Name="CoordY" Type="Int32" Nullable="true" />
           <Property Name="CoordGX" Type="Int32" Nullable="true" />
           <Property Name="CoordGY" Type="Int32" Nullable="true" />
           <NavigationProperty Name="Ficha" Relationship="RemixRPG.FichaPropriedade" FromRole="Propriedade" ToRole="Ficha" />
+          <NavigationProperty Name="Região" Relationship="RemixRPG.RegiãoPropriedade" FromRole="Propriedade" ToRole="Região" />
         </EntityType>
         <EntityType Name="Riqueza">
           <Key>
@@ -252,10 +267,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Testes" Type="String" Nullable="false" />
-          <Property Name="Capacidades" Type="String" Nullable="false" />
-          <Property Name="Pericias" Type="String" Nullable="false" />
-          <Property Name="Desvantagens" Type="String" Nullable="false" />
+          <Property Name="Testes" Type="Int32" Nullable="false" />
+          <Property Name="Pericias" Type="Int32" Nullable="false" />
+          <Property Name="Desvantagens" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Ficha" Relationship="RemixRPG.FichaPontosAcumulados" FromRole="PontosAcumulados" ToRole="Ficha" />
         </EntityType>
         <Association Name="FichaPontosAcumulados">
@@ -268,11 +282,11 @@
         </Association>
         <Association Name="FichaVestimenta">
           <End Type="RemixRPG.Ficha" Role="Ficha" Multiplicity="1" />
-          <End Type="RemixRPG.Vestimenta" Role="Vestimenta" Multiplicity="1" />
+          <End Type="RemixRPG.Vestimenta" Role="Vestimenta" Multiplicity="0..1" />
         </Association>
         <Association Name="ItemArmaVestimenta">
           <End Type="RemixRPG.ItemArma" Role="ItemArma" Multiplicity="1" />
-          <End Type="RemixRPG.Vestimenta" Role="Vestimenta" Multiplicity="1" />
+          <End Type="RemixRPG.Vestimenta" Role="Vestimenta" Multiplicity="0..1" />
         </Association>
         <EntityType Name="Jogador">
           <Key>
@@ -299,9 +313,10 @@
           <NavigationProperty Name="Usuario" Relationship="RemixRPG.UsuarioMestre" FromRole="Mestre" ToRole="Usuario" />
           <NavigationProperty Name="Mesa" Relationship="RemixRPG.MestreMesa" FromRole="Mestre" ToRole="Mesa" />
           <NavigationProperty Name="Fichas" Relationship="RemixRPG.MestreFicha" FromRole="Mestre" ToRole="Ficha" />
+          <Property Name="Nome" Type="String" Nullable="false" />
         </EntityType>
         <Association Name="JogadorFicha">
-          <End Type="RemixRPG.Jogador" Role="Jogador" Multiplicity="1" />
+          <End Type="RemixRPG.Jogador" Role="Jogador" Multiplicity="0..1" />
           <End Type="RemixRPG.Ficha" Role="Ficha" Multiplicity="1" />
         </Association>
         <Association Name="UsuarioMestre">
@@ -310,11 +325,43 @@
         </Association>
         <Association Name="MestreMesa">
           <End Type="RemixRPG.Mestre" Role="Mestre" Multiplicity="1" />
-          <End Type="RemixRPG.Mesa" Role="Mesa" Multiplicity="1" />
+          <End Type="RemixRPG.Mesa" Role="Mesa" Multiplicity="0..1" />
         </Association>
         <Association Name="MestreFicha">
-          <End Type="RemixRPG.Mestre" Role="Mestre" Multiplicity="1" />
+          <End Type="RemixRPG.Mestre" Role="Mestre" Multiplicity="0..1" />
           <End Type="RemixRPG.Ficha" Role="Ficha" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Mapa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Caminho" Type="String" Nullable="false" />
+          <NavigationProperty Name="Regiões" Relationship="RemixRPG.MapaRegião" FromRole="Mapa" ToRole="Região" />
+          <NavigationProperty Name="Mesas" Relationship="RemixRPG.MesaMapa" FromRole="Mapa" ToRole="Mesa" />
+          <Property Name="Geral" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Região">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <NavigationProperty Name="Propriedades" Relationship="RemixRPG.RegiãoPropriedade" FromRole="Região" ToRole="Propriedade" />
+          <NavigationProperty Name="Mapa" Relationship="RemixRPG.MapaRegião" FromRole="Região" ToRole="Mapa" />
+        </EntityType>
+        <Association Name="RegiãoPropriedade">
+          <End Type="RemixRPG.Região" Role="Região" Multiplicity="1" />
+          <End Type="RemixRPG.Propriedade" Role="Propriedade" Multiplicity="*" />
+        </Association>
+        <Association Name="MapaRegião">
+          <End Type="RemixRPG.Mapa" Role="Mapa" Multiplicity="1" />
+          <End Type="RemixRPG.Região" Role="Região" Multiplicity="*" />
+        </Association>
+        <Association Name="MesaMapa">
+          <End Type="RemixRPG.Mesa" Role="Mesa" Multiplicity="*" />
+          <End Type="RemixRPG.Mapa" Role="Mapa" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
