@@ -44,6 +44,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -136,6 +138,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\RemixRPG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RemixRPG.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +159,13 @@
     <Content Include="Content\Bootstrap\fonts\rpgawesome-webfont.eot" />
     <Content Include="Content\Bootstrap\fonts\rpgawesome-webfont.ttf" />
     <Content Include="Content\Bootstrap\fonts\rpgawesome-webfont.woff" />
+    <EntityDeploy Include="Models\RemixRPG.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RemixRPG.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\RemixRPG.edmx.diagram">
+      <DependentUpon>RemixRPG.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -206,7 +220,6 @@
     <Folder Include="Controllers\Telas\Contato\" />
     <Folder Include="Controllers\Telas\Ficha\" />
     <Folder Include="Controllers\Telas\Jogador\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
