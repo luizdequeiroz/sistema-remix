@@ -131,7 +131,8 @@
     <Compile Include="Controllers\DesktopController.cs" />
     <Compile Include="Controllers\Menu\FichasController.cs" />
     <Compile Include="Controllers\Menu\JogadoresController.cs" />
-    <Compile Include="Controllers\Menu\MesaController.cs" />
+    <Compile Include="Controllers\Menu\MesasController.cs" />
+    <Compile Include="Controllers\Telas\Mesa\MesaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -197,9 +198,14 @@
     <Content Include="Views\Desktop\Fichas.cshtml" />
     <Content Include="Views\Desktop\Contatos.cshtml" />
     <Content Include="Views\Desktop\Ajustes.cshtml" />
+    <Content Include="Views\Desktop\Entrar.cshtml" />
+    <Content Include="Views\Desktop\Ver.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\Telas\Contato\" />
+    <Folder Include="Controllers\Telas\Ficha\" />
+    <Folder Include="Controllers\Telas\Jogador\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
