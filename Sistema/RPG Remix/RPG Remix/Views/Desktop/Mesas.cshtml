@@ -3,19 +3,41 @@
     {
         <div class="col-lg-3 col-md-3 listagem-block">
             <div class="panel panel-image">
-                <div class="panel panel-default border-none">
-                    <a class="btn btn-block btn-lg btn-default panel-heading" href="#chamar" data-toggle="modal" data-id="@i" data-name="@i">
-                        <div class="btn-flat btn-flat-no-radius">
-                            <h4>@@{ Mesa @i }</h4>
-                        </div>
-                    </a>
-                </div>
-                <div>
-                    <a class="btn btn-begin btn-xs btn-flat-no-radius col-lg-3 col-md-3"><h6>Entrar</h6></a>
-                    <a class="btn btn-success btn-xs btn-flat-no-radius col-lg-3 col-md-3"><h6>Ver</h6></a>
-                    <a class="btn btn-default btn-xs btn-flat-no-radius col-lg-3 col-md-3 mdl" href="#chamar" data-toggle="modal" data-id="@i" data-name="@i"><h6>Chamar</h6></a>
-                    <a class="btn btn-danger btn-xs btn-flat-no-radius col-lg-3 col-md-3 mdl" href="#excluir" data-toggle="modal" data-id="@i" data-name="@i"><h6>Excluir</h6></a>
-                </div>
+                @using (Ajax.BeginForm("Entrar", "Desktop", new AjaxOptions
+                {
+                    HttpMethod = "POST",
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "frame",
+                    LoadingElementId = "load",
+                    OnBegin = "loaderOn",
+                    OnSuccess = "loaderOff"
+                }, new { name = "entrar-" + @i }))
+                {
+                    <input type="hidden" name="id" value="@i" />
+                    <div class="panel panel-default border-none">
+                        <a class="btn btn-block btn-lg btn-default panel-heading" onclick="$('[name=entrar-@i]').submit()">
+                            <div class="btn-flat btn-flat-no-radius">
+                                <h4>@@{ Mesa @i }</h4>
+                            </div>
+                        </a>
+                    </div>
+                    <a class="btn btn-begin btn-xs btn-flat-no-radius col-lg-3 col-md-3" onclick="$('[name=entrar-@i]').submit()"><h6>Entrar</h6></a>
+                }
+                @using (Ajax.BeginForm("Ver", "Desktop", new AjaxOptions
+                {
+                    HttpMethod = "POST",
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "frame",
+                    LoadingElementId = "load",
+                    OnBegin = "loaderOn",
+                    OnSuccess = "loaderOff"
+                }, new { name = "ver-" + @i }))
+                {
+                    <input type="hidden" name="id" value="@i" />
+                    <a class="btn btn-success btn-xs btn-flat-no-radius col-lg-3 col-md-3" onclick="$('[name=ver-@i]').submit()"><h6>Ver</h6></a>
+                }
+                <a class="btn btn-default btn-xs btn-flat-no-radius col-lg-3 col-md-3 mdl" href="#chamar" data-toggle="modal" data-id="@i" data-name="@i"><h6>Chamar</h6></a>
+                <a class="btn btn-danger btn-xs btn-flat-no-radius col-lg-3 col-md-3 mdl" href="#excluir" data-toggle="modal" data-id="@i" data-name="@i"><h6>Excluir</h6></a>
             </div>
         </div>
     }
