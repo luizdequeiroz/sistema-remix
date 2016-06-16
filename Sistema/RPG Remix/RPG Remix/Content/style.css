@@ -8271,9 +8271,12 @@ a.parallax {
     border-radius: 0 0 5px 0;
 }
 
-.div-padding-whitesmoke {
+.div-padding-darkgrey {
     background: rgb(68, 68, 68);
-    padding: 3px 3px 3px 3px;
+    padding: 3px;
+    color: whitesmoke;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 5px 0;
 }
 
 .text-whitesmoke {
@@ -8424,4 +8427,8 @@ fieldset {
 
 .panel-image {
     background: url(../Content/images/back-ocean.png) repeat;
+}
+
+.mothal {
+    color: initial;
 }
