@@ -208,6 +208,7 @@
     <Content Include="Content\Bootstrap\fonts\rpgawesome-webfont.svg" />
     <Content Include="Content\images\ajax-loader.gif" />
     <Content Include="Content\images\back-ocean.png" />
+    <Content Include="Content\images\large-ocean.png" />
     <Content Include="Content\images\loader.gif" />
     <Content Include="Content\images\loading.gif" />
     <Content Include="Content\script.js" />

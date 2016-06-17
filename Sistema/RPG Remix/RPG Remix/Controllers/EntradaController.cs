@@ -1,4 +1,5 @@
-﻿using RPG_Remix.Models.DAO;
+﻿using RPG_Remix.Models;
+using RPG_Remix.Models.DAO;
 using RPG_Remix.Models.Fachada;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,16 @@ namespace RPG_Remix.Controllers
         {
             try
             {
+                if (string.IsNullOrEmpty(usuario.Email))
+                {
+                    ModelState.AddModelError("", "Informe o e-mail do seu cadastro!");
+                    return View();
+                }
+                if (string.IsNullOrEmpty(usuario.Senha))
+                {
+                    ModelState.AddModelError("", "Informe a senha!");
+                    return View();
+                }
                 var u = new UsuarioDao().SelecionarPorEmail(usuario.Email);
                 if (u == null)
                 {
@@ -43,6 +54,15 @@ namespace RPG_Remix.Controllers
                 ModelState.AddModelError("", "Erro no sistema, a culpa não é sua. Erro: " + ex.Message);
                 return View();
             }
+        }
+
+        public ActionResult Cadastrar(UsuarioFacade usuario)
+        {
+            /*if (ModelState.IsValid())
+            {
+                new UsuarioDao().Inserir(usuario.Usuario);
+            }*/
+            return View();
         }
     }
 }

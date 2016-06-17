@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,24 +8,18 @@ namespace RPG_Remix.Models.Fachada
 {
     public class UsuarioFacade
     {
-        Usuario Usuario;
+        public Usuario Usuario { get; set; }
+        public Usuario UsuarioEntrada { get; set; }
+        public Usuario UsuarioCadastro { get; set; }
 
         public UsuarioFacade()
         {
             Usuario = new Usuario();
+            UsuarioEntrada = new Usuario();
+            UsuarioCadastro = new Usuario();
         }
-
-        public int Id
-        {
-            get
-            {
-                return Usuario.Id;
-            }
-            set
-            {
-                Usuario.Id = value;
-            }
-        }
+        
+        [Required(ErrorMessage="O nome é obrigatório!")]
         public string Nome
         {
             get
@@ -36,6 +31,7 @@ namespace RPG_Remix.Models.Fachada
                 Usuario.Nome = value;
             }
         }
+
         public string Descricao
         {
             get
