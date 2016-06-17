@@ -8432,3 +8432,44 @@ fieldset {
 .mothal {
     color: initial;
 }
+
+/*
+A classe 'estrutura' serve somente como estrutura para o conteúdo que será centralizado.
+Utilizamos width em 100% para aproveitar a largura total do navegador.
+*/
+.estrutura {
+    width: 100%;
+    margin: 0;
+    margin-top: 100px;
+    padding: 0;
+    /*background-color: #CCC;*/
+    float: left;
+}
+
+/*
+A classe 'conteudo' é responsável por centralizar
+o conteúdo HTML.
+*/
+.conteudo {
+    /* largura do o layout */
+    width: 350px;
+    /* posição relativa */
+    position: relative;
+    /* posicionada a 50% de distância da margem esquerda */
+    /* para alinhar a div exatamente no centro. */
+    left: 50%;
+    /* 'margin: 0 0 0 -500px;' alinha -500px para a esquerda, orientando a div pelo centro absoluto. O valor deverá ser negativo e igual a metade do valor informado anteriormente em 'width'. */
+    margin: 0 0 0 -175px;
+    padding: 5px;
+    /* para garantir o funcionamento no IE */
+    display: inline;
+    background-color: #FFF;
+    float: left;
+}
+
+.borda {
+    width: 360px;
+    background: rgb(68, 68, 68);
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}

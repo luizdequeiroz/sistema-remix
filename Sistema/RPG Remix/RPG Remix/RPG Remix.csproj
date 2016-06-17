@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\EntradaController.cs" />
     <Compile Include="Controllers\Menu\AjustesController.cs" />
     <Compile Include="Controllers\Menu\ContatosController.cs" />
     <Compile Include="Controllers\DesktopController.cs" />
@@ -138,6 +139,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DAO\UsuarioDao.cs" />
     <Compile Include="Models\Experiencia.cs">
       <DependentUpon>RemixRPG.tt</DependentUpon>
     </Compile>
@@ -192,6 +194,9 @@
     <Compile Include="Models\Usuario.cs">
       <DependentUpon>RemixRPG.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Fachada\JogadorFacade.cs" />
+    <Compile Include="Models\Fachada\MestreFacade.cs" />
+    <Compile Include="Models\Fachada\UsuarioFacade.cs" />
     <Compile Include="Models\Vestimenta.cs">
       <DependentUpon>RemixRPG.tt</DependentUpon>
     </Compile>
@@ -277,6 +282,7 @@
     <Content Include="Views\Desktop\Ajustes.cshtml" />
     <Content Include="Views\Desktop\Entrar.cshtml" />
     <Content Include="Views\Desktop\Ver.cshtml" />
+    <Content Include="Views\Entrada\Entrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
