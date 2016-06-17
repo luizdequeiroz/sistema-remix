@@ -138,10 +138,62 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Experiencia.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Ficha.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ItemArma.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Jogador.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Mapa.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Mesa.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Mestre.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Peculiaridade.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PontosAcumulados.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Propriedade.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Região.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RemixRPG.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RemixRPG.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RemixRPG.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\RemixRPG.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RemixRPG.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Riqueza.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Usuario.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vestimenta.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -166,7 +218,18 @@
     <Content Include="Models\RemixRPG.edmx.diagram">
       <DependentUpon>RemixRPG.edmx</DependentUpon>
     </Content>
+    <Content Include="Models\RemixRPG.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RemixRPG.Context.cs</LastGenOutput>
+      <DependentUpon>RemixRPG.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\RemixRPG.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RemixRPG.cs</LastGenOutput>
+      <DependentUpon>RemixRPG.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Models\RemixRPG.edmx.sql" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -223,6 +286,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
