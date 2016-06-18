@@ -1,4 +1,5 @@
 ﻿@model RPG_Remix.Models.Fachada.UsuarioFacade
+           
 <div class="large-ocean">
     <div class="estrutura">
         <div class="conteudo borda">
@@ -10,11 +11,13 @@
                         @Html.ValidationSummary()
                         <div class="form-group">
                             <label class="control-label" for="Email">E-mail</label>
-                            @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "exemplo@email.com" })
+                            @Html.TextBoxFor(model => model.UsuarioEntrarModel.Email, new { @class = "form-control", placeholder = "exemplo@email.com" })
+                            @Html.ValidationMessageFor(model => model.UsuarioEntrarModel.Email)
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="Senha">Senha</label>
-                            @Html.TextBoxFor(model => model.Senha, new { type = "password", @class = "form-control", placeholder = "*********" })
+                            @Html.TextBoxFor(model => model.UsuarioEntrarModel.Senha, new { type = "password", @class = "form-control", placeholder = "*********" })
+                            @Html.ValidationMessageFor(model => model.UsuarioEntrarModel.Senha)
                         </div>
                         <button type="submit" class="btn btn-block btn-flat-no-radius btn-primary">ENTRAR</button>
                     }
@@ -22,22 +25,22 @@
                     <div class="text-right">
                         <a class="btn btn-xs btn-begin btn-block" data-toggle="modal" href="#cadastro">CADASTRAR-SE</a>
                     </div>
+                    <!--
                     <div class="modal fade" id="cadastro">
                         <div class="modal-dialog">
                             <div class="modal-content">
-                                @using (Html.BeginForm("Cadastrar", "Entrada", FormMethod.Post))
+                                @@using (Html.BeginForm("Cadastrar", "Entrada", FormMethod.Post))
                                 {
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        <h3 class="modal-title">CADASTRO &nbsp; @Html.ValidationSummary() </h3>
+                                        <h3 class="modal-title">CADASTRO &nbsp; @@Html.ValidationSummary() </h3>
                                     </div>
                                     <div class="modal-body">
                                         <div class="form-group">
                                             <div class="form-input-left">
                                                 <div class="form-group">
                                                     <label class="control-label" for="Nome">Nome</label>
-                                                    @Html.TextBoxFor(model => model.Nome, new { @class = "form-control", placeholder = "seu nome" })
-                                                    @Html.ValidationMessageFor(model => model.Nome)
+                                                    @@Html.TextBoxFor(model => model.Nome, new { @@class = "form-control", placeholder = "seu nome" })
                                                 </div>
                                             </div>
                                             <div class="form-input-right">
@@ -52,36 +55,36 @@
                                         <div class="form-input-left">
                                             <div class="form-group">
                                                 <label class="control-label" for="Email">E-mail</label>
-                                                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "exemplo@email.com" })
-                                                @Html.ValidationMessageFor(model => model.Email)
+                                                @@Html.TextBoxFor(model => model.Email, new { @@class = "form-control", placeholder = "exemplo@email.com" })
+                                                @@Html.ValidationMessageFor(model => model.Email)
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label" for="Senha">Senha</label>
-                                                @Html.TextBoxFor(model => model.Senha, new { type = "password", @class = "form-control", placeholder = "*********" })
-                                                @Html.ValidationMessageFor(model => model.Senha)
+                                                @@Html.TextBoxFor(model => model.Senha, new { type = "password", @@class = "form-control", placeholder = "*********" })
+                                                @@Html.ValidationMessageFor(model => model.Senha)
                                             </div>
                                         </div>
                                         <div class="form-input-right">
                                             <div class="form-group">
                                                 <label class="control-label" for="DataNascimento">Data de Nascimento</label>
-                                                @Html.TextBoxFor(model => model.DataNascimento, new { @class = "form-control", placeholder = "01/01/2016" })
+                                                @@Html.TextBoxFor(model => model.DataNascimento, new { @@class = "form-control", placeholder = "01/01/2016" })
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-md-12" for="Sexo">Sexo</label>
-                                                @Html.ValidationMessageFor(model => model.Sexo)
+                                                @@Html.ValidationMessageFor(model => model.Sexo)
                                                 <label class="radio-inline">
-                                                    @Html.RadioButtonFor(model => model.Sexo, "M") Masculino
+                                                    @@Html.RadioButtonFor(model => model.Sexo, "M") Masculino
                                                 </label>
                                                 <label class="radio-inline">
-                                                    @Html.RadioButtonFor(model => model.Sexo, "F") Feminino
+                                                    @@Html.RadioButtonFor(model => model.Sexo, "F") Feminino
                                                 </label>
                                                 <label class="radio-inline">
-                                                    @Html.RadioButtonFor(model => model.Sexo, "O") Outro
+                                                    @@Html.RadioButtonFor(model => model.Sexo, "O") Outro
                                                 </label>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            @Html.TextAreaFor(model => model.Descricao, 5, 10, new { @class = "form-control", placeholder = "Descreva-se um pouco..." })
+                                            @@Html.TextAreaFor(model => model.Descricao, 5, 10, new { @@class = "form-control", placeholder = "Descreva-se um pouco..." })
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -92,6 +95,7 @@
                             </div>
                         </div>
                     </div>
+                    -->
                 </fieldset>
             </div>
         </div>

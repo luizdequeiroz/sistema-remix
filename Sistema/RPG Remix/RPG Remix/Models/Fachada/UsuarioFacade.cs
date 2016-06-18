@@ -8,95 +8,48 @@ namespace RPG_Remix.Models.Fachada
 {
     public class UsuarioFacade
     {
-        public Usuario Usuario { get; set; }
-        public Usuario UsuarioEntrada { get; set; }
-        public Usuario UsuarioCadastro { get; set; }
+        public UsuarioEntrar UsuarioEntrarModel { get; set; }
+        public UsuarioCadastrar UsuarioCadastrarModel { get; set; }
 
-        public UsuarioFacade()
+        public class UsuarioEntrar
         {
-            Usuario = new Usuario();
-            UsuarioEntrada = new Usuario();
-            UsuarioCadastro = new Usuario();
-        }
-        
-        [Required(ErrorMessage="O nome é obrigatório!")]
-        public string Nome
-        {
-            get
+            public Usuario Usuario { get; set; }
+
+            public UsuarioEntrar()
             {
-                return Usuario.Nome;
+                this.Usuario = new Usuario();
             }
-            set
+
+            [Required(ErrorMessage = "É necessário informar seu e-mail!")]
+            public string Email
             {
-                Usuario.Nome = value;
+                get
+                {
+                    return Usuario.Email;
+                }
+                set
+                {
+                    Usuario.Email = value;
+                }
+            }
+
+            [Required(ErrorMessage = "É necessário informar sua senha!")]
+            public string Senha
+            {
+                get
+                {
+                    return Usuario.Senha;
+                }
+                set
+                {
+                    Usuario.Senha = value;
+                }
             }
         }
 
-        public string Descricao
+        public class UsuarioCadastrar
         {
-            get
-            {
-                return Usuario.Descricao;
-            }
-            set
-            {
-                Usuario.Descricao = value;
-            }
-        }
-        public string Email
-        {
-            get
-            {
-                return Usuario.Email;
-            }
-            set
-            {
-                Usuario.Email = value;
-            }
-        }
-        public string Senha
-        {
-            get
-            {
-                return Usuario.Senha;
-            }
-            set
-            {
-                Usuario.Senha = value;
-            }
-        }
-        public string DataNascimento
-        {
-            get
-            {
-                return Usuario.DataNascimento;
-            }
-            set
-            {
-                Usuario.DataNascimento = value;
-            }
-        }
-        public byte Sexo
-        {
-            get
-            {
-                return Usuario.Sexo;
-            }
-            set
-            {
-                Usuario.Sexo = value;
-            }
-        }
-        public string DataCadastro
-        {
-            get
-            {
-                return Usuario.DataCadastro;
-            }
-            set
-            {
-                Usuario.DataCadastro = value;
-            }
+
         }
     }
 }

@@ -194,8 +194,6 @@
     <Compile Include="Models\Usuario.cs">
       <DependentUpon>RemixRPG.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Fachada\JogadorFacade.cs" />
-    <Compile Include="Models\Fachada\MestreFacade.cs" />
     <Compile Include="Models\Fachada\UsuarioFacade.cs" />
     <Compile Include="Models\Vestimenta.cs">
       <DependentUpon>RemixRPG.tt</DependentUpon>
