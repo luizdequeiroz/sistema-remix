@@ -143,7 +143,6 @@
     <Compile Include="Models\Experiencia.cs">
       <DependentUpon>RemixRPG.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Fachada\Compare.cs" />
     <Compile Include="Models\Ficha.cs">
       <DependentUpon>RemixRPG.tt</DependentUpon>
     </Compile>
