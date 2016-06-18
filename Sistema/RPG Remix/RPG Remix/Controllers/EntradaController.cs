@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace RPG_Remix.Controllers
 {
-    public class EntradaController : Controller
+    public partial class EntradaController : Controller
     {
         //
         // GET: /Entrada/
@@ -25,9 +25,20 @@ namespace RPG_Remix.Controllers
             return View();
         }
 
+        [HttpPost]
         public ActionResult Cadastrar(UsuarioFacade.UsuarioCadastrar usuario)
         {
-            return View();
+            try
+            {
+                new UsuarioDao().Inserir(usuario.Usuario);
+                ViewBag.MsgCadastro = "Cadastrado com Sucesso!";
+                return View("Entrar");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.MsgCadastro = "Erro ao tentar cadastrar. Mas a culpa não é sua! Erro: " + ex.Message;
+                return View();
+            }
         }
     }
 }

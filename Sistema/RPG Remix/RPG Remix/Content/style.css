@@ -8493,3 +8493,7 @@ o conteúdo HTML.
     width: 48%;
     float: right;
 }
+
+.text-form {
+    font-size: 16px;
+}

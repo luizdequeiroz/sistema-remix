@@ -18,7 +18,7 @@ namespace RPG_Remix.Models.DAO
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("[Usuario.Inserir]", ex);
+                    throw new Exception("[UsuarioDao.Inserir]", ex);
                 }
             }
         }
@@ -33,7 +33,22 @@ namespace RPG_Remix.Models.DAO
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("[Usuario.SelecionarPorEmail]", ex);
+                    throw new Exception("[UsuarioDao.SelecionarPorEmail]", ex);
+                }
+            }
+        }
+
+        public List<Usuario> Listar()
+        {
+            using (var rrc = new RemixRPGContainer())
+            {
+                try
+                {
+                    return rrc.UsuarioSet.ToList();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("[UsuarioDao.Listar]", ex);
                 }
             }
         }
