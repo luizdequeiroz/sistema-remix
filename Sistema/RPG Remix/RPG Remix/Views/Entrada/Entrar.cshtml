@@ -28,7 +28,7 @@
                                 <img src="~/Content/images/ajax-loader.gif" width="30" /> Carregando...
                             </div>
                             @*@Html.ValidationSummary()*@
-                            <span class="text-form @type">@ViewBag.MsgCadastro</span>
+                            <span class="text-center text-form @type">@ViewBag.MsgCadastro</span>
                             <div class="form-group">
                                 <label class="control-label" for="Email"><span class="text-form">E-mail</span> <span class="text-danger">*</span> @Html.ValidationMessageFor(model => model.Email)</label>
                                 @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "exemplo@email.com" })

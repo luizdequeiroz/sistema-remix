@@ -48,10 +48,11 @@ namespace RPG_Remix.Controllers
                     if (request != null)
                         if (mime.Equals("image/jpg")
                             || mime.Equals("image/jpeg")
-                            || mime.Equals("image/png"))
+                            || mime.Equals("image/png")
+                            || mime.Equals("image/gif"))
                             if (request.ContentLength > 0)
                             {
-                                var extension = mime.Equals("image/jpg") ? ".jpg" : (mime.Equals("image/jpeg") ? ".jpeg" : ".png");
+                                var extension = mime.Equals("image/jpg") ? ".jpg" : (mime.Equals("image/jpeg") ? ".jpeg" : (mime.Equals("image/png") ? ".png" : ".gif"));
                                 var uPath = Server.MapPath("~/Content/Fotos");
                                 string caminho = Path.Combine(@uPath, Path.GetFileName(u.Email + extension));
 
