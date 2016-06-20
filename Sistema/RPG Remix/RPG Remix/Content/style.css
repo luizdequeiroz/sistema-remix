@@ -5383,7 +5383,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-default {
-    background: url(../Content/images/back-ocean.png) center;
+    background: url(../Content/images/Map01.jpg) center;
     border-color: #9d9d9d;
 }
 
@@ -8450,6 +8450,15 @@ Utilizamos width em 100% para aproveitar a largura total do navegador.
     float: left;
 }
 
+.estrutura-cadastro {
+    width: 100%;
+    margin: 0;
+    margin-top: 25px;
+    padding: 0;
+    /*background-color: #CCC;*/
+    float: left;
+}
+
 /*
 A classe 'conteudo' é responsável por centralizar
 o conteúdo HTML.
@@ -8500,7 +8509,7 @@ o conteúdo HTML.
 .large-ocean {
     width: 100%;
     height: 100%;
-    background: url(../Content/images/large-ocean.png) repeat;
+    background: url(../Content/images/large-ocean.jpg) round;
 }
 
 .text-form {

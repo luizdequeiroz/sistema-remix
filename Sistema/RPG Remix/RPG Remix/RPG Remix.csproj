@@ -136,7 +136,6 @@
     <Compile Include="Controllers\Menu\JogadoresController.cs" />
     <Compile Include="Controllers\Menu\MesasController.cs" />
     <Compile Include="Controllers\Telas\Mesa\MesaController.cs" />
-    <Compile Include="Controllers\Uteis\SessaoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -207,10 +206,11 @@
     <Content Include="Content\Bootstrap\bootstrap-css\rpg-awesome.min.css" />
     <Content Include="Content\Bootstrap\fonts\rpgawesome-webfont.svg" />
     <Content Include="Content\images\ajax-loader.gif" />
-    <Content Include="Content\images\back-ocean.png" />
-    <Content Include="Content\images\large-ocean.png" />
+    <Content Include="Content\images\large-ocean.jpg" />
+    <Content Include="Content\images\_large-ocean.png" />
     <Content Include="Content\images\loader.gif" />
     <Content Include="Content\images\loading.gif" />
+    <Content Include="Content\images\Map01.jpg" />
     <Content Include="Content\script.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -346,6 +346,7 @@
     <Folder Include="Controllers\Telas\Contato\" />
     <Folder Include="Controllers\Telas\Ficha\" />
     <Folder Include="Controllers\Telas\Jogador\" />
+    <Folder Include="Controllers\Uteis\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

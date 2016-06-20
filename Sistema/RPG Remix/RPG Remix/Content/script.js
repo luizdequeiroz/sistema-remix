@@ -20,9 +20,3 @@ function menuClick(id_clicked) {
     $('#pagina').val(id_clicked);
     $('#menu-form').submit();
 }
-
-function entradaClick(id_clicked) {
-
-    $('#pagina').val(id_clicked);
-    $('#entrada-form').submit();
-}

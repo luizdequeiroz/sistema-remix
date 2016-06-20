@@ -1,16 +1,16 @@
 ﻿@model RPG_Remix.Models.Fachada.UsuarioEntrar
 
 @{
-    string msgCad = "";
+    string msgEnt = "";
     if (ViewBag.MsgCadastro != null)
     {
         if (ViewBag.MsgCadastro.Contains("Erro"))
         {
-            msgCad = "<ul><li><span class='text-form text-danger'>" + ViewBag.MsgCadastro + "</span></li></ul>";
+            msgEnt = "<ul><li><span class='text-form text-danger'>" + ViewBag.MsgCadastro + "</span></li></ul>";
         }
         else
         {
-            msgCad = "<ul><li><span class='text-form text-primary'>" + ViewBag.MsgCadastro + "</span></li></ul>";
+            msgEnt = "<ul><li><span class='text-form text-primary'>" + ViewBag.MsgCadastro + "</span></li></ul>";
         }
     }
 }
@@ -22,10 +22,10 @@
                 <div class="conteudo">
                     <fieldset>
                         <legend>Entrada</legend>
-                        @using (Html.BeginForm("Sessao", "Desktop", FormMethod.Post))
+                        @using (Html.BeginForm("Entrar", "Entrada", FormMethod.Post))
                         {
                             @*@Html.ValidationSummary()*@
-                            @msgCad
+                            @msgEnt
                             <div class="form-group">
                                 <label class="control-label" for="Email"><span class="text-form">E-mail</span> <span class="text-danger">*</span> @Html.ValidationMessageFor(model => model.Email)</label>
                                 @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "exemplo@email.com" })
@@ -37,22 +37,9 @@
                             <button type="submit" class="btn btn-block btn-flat-no-radius btn-primary">ENTRAR</button>
                             <hr />
                         }
-
-                        @using (Ajax.BeginForm("RedCadastrar", "Entrada", new AjaxOptions
-                        {
-                            HttpMethod = "POST",
-                            InsertionMode = InsertionMode.Replace,
-                            UpdateTargetId = "frame",
-                            LoadingElementId = "load",
-                            OnBegin = "loaderOn",
-                            OnSuccess = "loaderOff"
-                        }, new { id = "entrada-form" }))
-                        {
-                            <input type="hidden" id="pagina" name="pagina" />
-                            <div class="text-right">
-                                <a class="btn btn-xs btn-begin btn-block" id="Cadastrar" onclick="entradaClick(this.id)">CADASTRAR-SE</a>
-                            </div>
-                        }
+                        <div class="text-right">
+                            @Ajax.ActionLink("CADASTRE-SE", "Cadastrar", null, new AjaxOptions { UpdateTargetId = "frame" }, new { @class = "btn btn-xs btn-block btn-success" })
+                        </div>
                     </fieldset>
                 </div>
             </div>

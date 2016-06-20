@@ -17,7 +17,7 @@
 
 <div id="frame">
     <div class="large-ocean">
-        <div class="estrutura">
+        <div class="estrutura-cadastro">
             <div class="conteudo-cadastro borda-cadastro">
                 <div class="conteudo-cadastro">
                     <fieldset>
@@ -26,7 +26,7 @@
                         {
                             @*@Html.ValidationSummary()*@
                             @msgCad
-                            <div class="col-md-6 col-lg-6">
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                 <div class="form-group">
                                     <label class="control-label" for="Nome"><span class="text-form">Nome</span> <span class="text-danger">*</span>  @Html.ValidationMessageFor(model => model.Nome)</label>
                                     @Html.TextBoxFor(model => model.Nome, new { @class = "form-control", placeholder = "seu nome" })
@@ -44,8 +44,7 @@
                                     @Html.TextBoxFor(model => model.RepSenha, new { type = "password", @class = "form-control", placeholder = "*********" })
                                 </div>
                             </div>
-
-                            <div class="col-md-6 col-lg-6">
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                 <div class="form-group">
                                     <label class="control-label" for="Foto"><span class="text-form">Insira uma Foto</span></label>
                                     <label class="btn btn-default btn-block btn-file">
@@ -57,7 +56,7 @@
                                     @Html.TextBoxFor(model => model.DataNascimento, new { @class = "form-control", placeholder = "01/01/2016" })
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-lg-12 col-md-12" for="Sexo"><span class="text-form">Sexo</span> <span class="text-danger">*</span> @Html.ValidationMessageFor(model => model.Sexo)</label>
+                                    <label class="control-label col-xs-12 col-sm-12 col-lg-12 col-md-12" for="Sexo"><span class="text-form">Sexo</span> <span class="text-danger">*</span> @Html.ValidationMessageFor(model => model.Sexo)</label>
                                     <label class="radio-inline">
                                         @Html.RadioButtonFor(model => model.Sexo, 'M') Masculino
                                     </label>
@@ -77,23 +76,11 @@
                             <div class="text-right">
                                 <button type="submit" class="btn btn-flat-no-radius btn-block btn-primary">CADASTRAR</button>
                             </div>
-                        }
-                        @using (Ajax.BeginForm("RedEntrar", "Entrada", new AjaxOptions
-                        {
-                            HttpMethod = "POST",
-                            InsertionMode = InsertionMode.Replace,
-                            UpdateTargetId = "frame",
-                            LoadingElementId = "load",
-                            OnBegin = "loaderOn",
-                            OnSuccess = "loaderOff"
-                        }, new { id = "entrada-form" }))
-                        {
                             <hr />
-                            <input type="hidden" id="pagina" name="pagina" />
-                            <div class="text-left">
-                                <a class="btn btn-sm btn-danger" id="Entrar" onclick="entradaClick(this.id)">Cancelar</a>
-                            </div>
                         }
+                        <div class="text-left">
+                            @Ajax.ActionLink("Cancelar", "Entrar", null, new AjaxOptions { UpdateTargetId = "frame" }, new { @class = "btn btn-sm btn-danger" })
+                        </div>
                     </fieldset>
                 </div>
             </div>

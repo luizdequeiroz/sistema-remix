@@ -19,9 +19,10 @@ namespace RPG_Remix.Controllers
             return View();
         }
 
-        public ActionResult RedEntrar(string pagina)
+        [HttpPost]
+        public ActionResult Entrar(UsuarioEntrar u)
         {
-            return PartialView(pagina);
+            return RedirectToAction("Desktop", "Desktop");
         }
 
         public ActionResult Cadastrar()
@@ -30,11 +31,11 @@ namespace RPG_Remix.Controllers
         }
 
         [HttpPost]
-        public ActionResult Cadastrar(UsuarioCadastrar usuario)
+        public ActionResult Cadastrar(UsuarioCadastrar u)
         {
             try
             {
-                new UsuarioDao().Inserir(usuario.Usuario);
+                new UsuarioDao().Inserir(u.Usuario);
                 ViewBag.MsgCadastro = "Cadastrado com Sucesso!";
                 return View("Entrar");
             }
@@ -43,11 +44,6 @@ namespace RPG_Remix.Controllers
                 ViewBag.MsgCadastro = "Erro ao tentar cadastrar. Mas a culpa não é sua! Erro: " + ex.Message;
                 return View();
             }
-        }
-        
-        public ActionResult RedCadastrar(string pagina)
-        {
-            return PartialView(pagina);
         }
     }
 }

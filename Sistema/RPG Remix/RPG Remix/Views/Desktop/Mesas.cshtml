@@ -14,7 +14,7 @@
                 }, new { name = "entrar-" + @i }))
                 {
                     <input type="hidden" name="id" value="@i" />
-                    <div class="panel panel-default border-none">
+                    <div class="pborder-none">
                         <a class="btn btn-block btn-lg btn-default panel-heading" onclick="$('[name=entrar-@i]').submit()">
                             <div class="btn-flat btn-flat-no-radius">
                                 <h4>@@{ Mesa @i }</h4>
@@ -58,7 +58,9 @@
                     <h5 class="modal-title">Chamar jogadores da mesa <a class="name"></a>?!</h5>
                 </div>
                 <div class="modal-body">
-                    @@{ Formulário }
+                    <h5>
+                        @@{ Formulário }
+                    </h5>
                 </div>
                 <div class="modal-footer">
                     <button name="id" type="submit" class="btn btn-primary id" value="">CHAMAR</button>
