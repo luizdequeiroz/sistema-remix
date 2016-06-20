@@ -21,5 +21,10 @@ namespace RPG_Remix.Controllers
         {
             return PartialView(pagina);
         }
+
+        public ActionResult Sair()
+        {
+            return RedirectToAction("Entrar", "Entrada");
+        }
     }
 }

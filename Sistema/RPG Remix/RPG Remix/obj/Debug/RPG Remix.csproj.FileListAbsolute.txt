@@ -30,3 +30,35 @@ C:\Repos\Remix\Sistema\RPG Remix\RPG Remix\bin\System.Web.WebPages.Razor.xml
 C:\Repos\Remix\Sistema\RPG Remix\RPG Remix\obj\Debug\RPG Remix.csprojResolveAssemblyReference.cache
 C:\Repos\Remix\Sistema\RPG Remix\RPG Remix\obj\Debug\RPG Remix.dll
 C:\Repos\Remix\Sistema\RPG Remix\RPG Remix\obj\Debug\RPG Remix.pdb
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\RPG Remix.dll.config
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\RPG Remix.dll
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\RPG Remix.pdb
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\Antlr3.Runtime.dll
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\EntityFramework.dll
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\Microsoft.Web.Infrastructure.dll
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\Newtonsoft.Json.dll
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\System.Net.Http.Formatting.dll
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\System.Web.Http.dll
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\System.Web.Http.WebHost.dll
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\System.Web.Mvc.dll
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\System.Web.Optimization.dll
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\System.Web.Providers.dll
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\System.Web.Razor.dll
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\System.Web.WebPages.Deployment.dll
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\System.Web.WebPages.dll
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\System.Web.WebPages.Razor.dll
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\WebGrease.dll
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\EntityFramework.xml
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\Newtonsoft.Json.xml
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\System.Net.Http.Formatting.xml
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\System.Web.Http.xml
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\System.Web.Http.WebHost.xml
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\System.Web.Mvc.xml
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\System.Web.Razor.xml
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\System.Web.WebPages.xml
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\System.Web.WebPages.Deployment.xml
+C:\Repos\Sistema\RPG Remix\RPG Remix\bin\System.Web.WebPages.Razor.xml
+C:\Repos\Sistema\RPG Remix\RPG Remix\obj\Debug\RPG Remix.csprojResolveAssemblyReference.cache
+C:\Repos\Sistema\RPG Remix\RPG Remix\obj\Debug\RPG Remix.dll
+C:\Repos\Sistema\RPG Remix\RPG Remix\obj\Debug\RPG Remix.pdb

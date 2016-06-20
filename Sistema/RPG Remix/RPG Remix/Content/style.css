@@ -5383,7 +5383,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-default {
-    background: url(../Content/images/back-ocean.png) center;
+    background: url(../Content/images/Map01.jpg) center;
     border-color: #9d9d9d;
 }
 
@@ -8271,9 +8271,12 @@ a.parallax {
     border-radius: 0 0 5px 0;
 }
 
-.div-padding-whitesmoke {
+.div-padding-darkgrey {
     background: rgb(68, 68, 68);
-    padding: 3px 3px 3px 3px;
+    padding: 3px;
+    color: whitesmoke;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 5px 0;
 }
 
 .text-whitesmoke {
@@ -8424,4 +8427,91 @@ fieldset {
 
 .panel-image {
     background: url(../Content/images/back-ocean.png) repeat;
+}
+
+#back-map {
+    background: url(../Content/images/back-ocean.png) repeat;
+}
+
+.mothal {
+    color: initial;
+}
+
+/*
+A classe 'estrutura' serve somente como estrutura para o conteúdo que será centralizado.
+Utilizamos width em 100% para aproveitar a largura total do navegador.
+*/
+.estrutura {
+    width: 100%;
+    margin: 0;
+    margin-top: 100px;
+    padding: 0;
+    /*background-color: #CCC;*/
+    float: left;
+}
+
+.estrutura-cadastro {
+    width: 100%;
+    margin: 0;
+    margin-top: 25px;
+    padding: 0;
+    /*background-color: #CCC;*/
+    float: left;
+}
+
+/*
+A classe 'conteudo' é responsável por centralizar
+o conteúdo HTML.
+*/
+.conteudo {
+    /* largura do o layout */
+    width: 350px;
+    /* posição relativa */
+    position: relative;
+    /* posicionada a 50% de distância da margem esquerda */
+    /* para alinhar a div exatamente no centro. */
+    left: 50%;
+    /* 'margin: 0 0 0 -500px;' alinha -500px para a esquerda, orientando a div pelo centro absoluto. O valor deverá ser negativo e igual a metade do valor informado anteriormente em 'width'. */
+    margin: 0 0 0 -175px;
+    padding: 5px;
+    /* para garantir o funcionamento no IE */
+    display: inline;
+    background-color: #FFF;
+    float: left;
+}
+
+
+.conteudo-cadastro {
+    width: 700px;
+    position: relative;
+    left: 50%;
+    margin: 0 0 0 -350px;
+    padding: 5px;
+    display: inline;
+    background-color: #FFF;
+    float: left;
+}
+
+.borda {
+    width: 360px;
+    background: rgb(68, 68, 68);
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.borda-cadastro {
+    width: 710px;
+    background: rgb(68, 68, 68);
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.large-ocean {
+    width: 100%;
+    height: 100%;
+    background: url(../Content/images/large-ocean.jpg) round;
+}
+
+.text-form {
+    font-size: 16px;
 }

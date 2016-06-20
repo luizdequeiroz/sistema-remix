@@ -2,17 +2,20 @@
 <html>
 <head>
     <title>RPG - Remix</title>
+    <link rel="icon" href="~/Content/images/brasao-d&a.png" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="~/Content/Bootstrap/bootstrap-scripts/jquery.min.js"></script>
     <script type="text/javascript" src="~/Content/Bootstrap/bootstrap-scripts/bootstrap.min.js"></script>
     <script type="text/javascript" language="javascript" src="~/Content/script.js"></script>
+    <script type="text/javascript" language="javascript" src="~/Content/Scripts/jquery.maskedinput.min.js"></script>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css">
     <link href="~/Content/Bootstrap/bootstrap-css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="~/Content/Bootstrap/bootstrap-css/rpg-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="~/Content/style.css" rel="stylesheet" type="text/css">
     @Styles.Render("~/Content/css")
 </head>
-<body class="parallax" id="ovelha" data-spy="scroll">
+<body class="parallax large-ocean" id="ovelha" data-spy="scroll" onload="$('#entrada-form').reset()">
     @RenderBody()
 
     @RenderSection("scripts", required: false)
