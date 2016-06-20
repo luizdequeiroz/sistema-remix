@@ -205,6 +205,7 @@
     <Content Include="Content\Bootstrap\bootstrap-css\rpg-awesome.css" />
     <Content Include="Content\Bootstrap\bootstrap-css\rpg-awesome.min.css" />
     <Content Include="Content\Bootstrap\fonts\rpgawesome-webfont.svg" />
+    <Content Include="Content\Fotos\luizdequeiroz%40outlook.com.br.jpg" />
     <Content Include="Content\images\ajax-loader.gif" />
     <Content Include="Content\images\large-ocean.jpg" />
     <Content Include="Content\images\_large-ocean.png" />

@@ -31,6 +31,7 @@ namespace RPG_Remix.Models.Fachada
 
         [Required(ErrorMessage = "Informe seu e-mail para o acesso.")]
         [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessage = "O E-mail informado năo é válido!")]
+        [Remote("EmailUnico", "Entrada", ErrorMessage = "Alguém já está usando este e-mail!")]
         public string Email
         {
             get

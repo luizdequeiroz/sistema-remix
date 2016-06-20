@@ -1,7 +1,7 @@
 ﻿@model RPG_Remix.Models.Fachada.UsuarioEntrar
 
 @{
-    string msgEnt = "";
+    HtmlString msgEnt = "";
     if (ViewBag.MsgCadastro != null)
     {
         if (ViewBag.MsgCadastro.Contains("Erro"))
@@ -24,6 +24,9 @@
                         <legend>Entrada</legend>
                         @using (Html.BeginForm("Entrar", "Entrada", FormMethod.Post))
                         {
+                            <div class="text-center" id="loading">
+                                <img src="~/Content/images/ajax-loader.gif" width="30" /> Carregando...
+                            </div>
                             @*@Html.ValidationSummary()*@
                             @msgEnt
                             <div class="form-group">
@@ -38,7 +41,15 @@
                             <hr />
                         }
                         <div class="text-right">
-                            @Ajax.ActionLink("CADASTRE-SE", "Cadastrar", null, new AjaxOptions { UpdateTargetId = "frame" }, new { @class = "btn btn-xs btn-block btn-success" })
+                            @Ajax.ActionLink("CADASTRE-SE", "Cadastrar", null, new AjaxOptions
+                            {
+                                HttpMethod = "POST",
+                                InsertionMode = InsertionMode.Replace,
+                                UpdateTargetId = "frame",
+                                LoadingElementId = "loading",
+                                OnBegin = "loaderOn",
+                                OnSuccess = "loaderOff"
+                            }, new { @class = "btn btn-xs btn-block btn-success" })
                         </div>
                     </fieldset>
                 </div>

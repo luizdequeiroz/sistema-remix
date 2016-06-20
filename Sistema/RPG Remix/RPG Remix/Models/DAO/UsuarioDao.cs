@@ -13,6 +13,7 @@ namespace RPG_Remix.Models.DAO
             {
                 try
                 {
+                    usuario.DataCadastro = DateTime.Now.ToString();
                     rrc.UsuarioSet.Add(usuario);
                     rrc.SaveChanges();
                 }
