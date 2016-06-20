@@ -136,6 +136,7 @@
     <Compile Include="Controllers\Menu\JogadoresController.cs" />
     <Compile Include="Controllers\Menu\MesasController.cs" />
     <Compile Include="Controllers\Telas\Mesa\MesaController.cs" />
+    <Compile Include="Controllers\Uteis\SessaoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -143,6 +144,7 @@
     <Compile Include="Models\Experiencia.cs">
       <DependentUpon>RemixRPG.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Fachada\UsuarioEntrar.cs" />
     <Compile Include="Models\Ficha.cs">
       <DependentUpon>RemixRPG.tt</DependentUpon>
     </Compile>
@@ -194,7 +196,7 @@
     <Compile Include="Models\Usuario.cs">
       <DependentUpon>RemixRPG.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Fachada\UsuarioFacade.cs" />
+    <Compile Include="Models\Fachada\UsuarioCadastrar.cs" />
     <Compile Include="Models\Vestimenta.cs">
       <DependentUpon>RemixRPG.tt</DependentUpon>
     </Compile>
@@ -337,13 +339,13 @@
     <Content Include="Views\Desktop\Entrar.cshtml" />
     <Content Include="Views\Desktop\Ver.cshtml" />
     <Content Include="Views\Entrada\Entrar.cshtml" />
+    <Content Include="Views\Entrada\Cadastrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\Telas\Contato\" />
     <Folder Include="Controllers\Telas\Ficha\" />
     <Folder Include="Controllers\Telas\Jogador\" />
-    <Folder Include="Controllers\Uteis\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -19,14 +19,18 @@ namespace RPG_Remix.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Entrar(UsuarioFacade.UsuarioEntrar usuario)
+        public ActionResult RedEntrar(string pagina)
+        {
+            return PartialView(pagina);
+        }
+
+        public ActionResult Cadastrar()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Cadastrar(UsuarioFacade.UsuarioCadastrar usuario)
+        public ActionResult Cadastrar(UsuarioCadastrar usuario)
         {
             try
             {
@@ -39,6 +43,11 @@ namespace RPG_Remix.Controllers
                 ViewBag.MsgCadastro = "Erro ao tentar cadastrar. Mas a culpa não é sua! Erro: " + ex.Message;
                 return View();
             }
+        }
+        
+        public ActionResult RedCadastrar(string pagina)
+        {
+            return PartialView(pagina);
         }
     }
 }
