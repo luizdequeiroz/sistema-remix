@@ -13,7 +13,7 @@ namespace RPG_Remix.Controllers
 
         public ActionResult Ajustes()
         {
-            return View();
+            return PartialView();
         }
 
     }

@@ -22,7 +22,7 @@ namespace RPG_Remix.Controllers
         [HttpPost]
         public ActionResult Desktop(string pagina)
         {
-            return PartialView(pagina);
+            return RedirectToAction(pagina);
         }
 
         public ActionResult Sair()

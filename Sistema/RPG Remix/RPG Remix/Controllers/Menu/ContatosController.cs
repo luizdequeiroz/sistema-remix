@@ -13,7 +13,7 @@ namespace RPG_Remix.Controllers
 
         public ActionResult Contatos()
         {
-            return View();
+            return PartialView();
         }
 
     }

@@ -17,6 +17,8 @@ namespace RPG_Remix.Controllers
 
         public ActionResult Entrar()
         {
+            if (Session["usuario"] != null)
+                return RedirectToAction("Desktop", "Desktop");
             return View();
         }
 

@@ -1,5 +1,7 @@
-﻿<fieldset>
-    @for (int i = 1; i <= 5; i++)
+﻿@model List<RPG_Remix.Models.Mesa>
+
+<fieldset>
+    @foreach (var m in Model)
     {
         <div class="col-lg-3 col-md-3 listagem-block">
             <div class="panel panel-image">
@@ -11,17 +13,17 @@
                     LoadingElementId = "load",
                     OnBegin = "loaderOn",
                     OnSuccess = "loaderOff"
-                }, new { name = "entrar-" + @i }))
+                }, new { name = "entrar-" + @m.Id }))
                 {
-                    <input type="hidden" name="id" value="@i" />
+                    <input type="hidden" name="id" value="@m.Id" />
                     <div class="pborder-none">
-                        <a class="btn btn-block btn-lg btn-default panel-heading" onclick="$('[name=entrar-@i]').submit()">
+                        <a class="btn btn-block btn-lg btn-default panel-heading" onclick="$('[name=entrar-@m.Id]').submit()">
                             <div class="btn-flat btn-flat-no-radius">
-                                <h4>@@{ Mesa @i }</h4>
+                                <h4>@m.Nome</h4>
                             </div>
                         </a>
                     </div>
-                    <a class="btn btn-begin btn-xs btn-flat-no-radius col-lg-3 col-md-3" onclick="$('[name=entrar-@i]').submit()"><h6>Entrar</h6></a>
+                    <a class="btn btn-begin btn-xs btn-flat-no-radius col-lg-3 col-md-3" onclick="$('[name=entrar-@m.Id]').submit()"><h6>Entrar</h6></a>
                 }
                 @using (Ajax.BeginForm("Ver", "Desktop", new AjaxOptions
                 {
@@ -31,16 +33,57 @@
                     LoadingElementId = "load",
                     OnBegin = "loaderOn",
                     OnSuccess = "loaderOff"
-                }, new { name = "ver-" + @i }))
+                }, new { name = "ver-" + @m.Id }))
                 {
-                    <input type="hidden" name="id" value="@i" />
-                    <a class="btn btn-success btn-xs btn-flat-no-radius col-lg-3 col-md-3" onclick="$('[name=ver-@i]').submit()"><h6>Ver</h6></a>
+                    <input type="hidden" name="id" value="@m.Id" />
+                    <a class="btn btn-success btn-xs btn-flat-no-radius col-lg-3 col-md-3" onclick="$('[name=ver-@m.Id]').submit()"><h6>Ver</h6></a>
                 }
-                <a class="btn btn-default btn-xs btn-flat-no-radius col-lg-3 col-md-3 mdl" href="#chamar" data-toggle="modal" data-id="@i" data-name="@i"><h6>Chamar</h6></a>
-                <a class="btn btn-danger btn-xs btn-flat-no-radius col-lg-3 col-md-3 mdl" href="#excluir" data-toggle="modal" data-id="@i" data-name="@i"><h6>Excluir</h6></a>
+                <a class="btn btn-default btn-xs btn-flat-no-radius col-lg-3 col-md-3 mdl" href="#chamar" data-toggle="modal" data-id="@m.Id" data-name="@m.Nome"><h6>Chamar</h6></a>
+                <a class="btn btn-danger btn-xs btn-flat-no-radius col-lg-3 col-md-3 mdl" href="#excluir" data-toggle="modal" data-id="@m.Id" data-name="@m.Nome"><h6>Excluir</h6></a>
             </div>
         </div>
     }
+    <!-- EXEMPLO DE MESA (PARA TESTES) -->
+    <div class="col-lg-3 col-md-3 listagem-block">
+        <div class="panel panel-image">
+            @using (Ajax.BeginForm("Entrar", "Desktop", new AjaxOptions
+            {
+                HttpMethod = "POST",
+                InsertionMode = InsertionMode.Replace,
+                UpdateTargetId = "frame",
+                LoadingElementId = "load",
+                OnBegin = "loaderOn",
+                OnSuccess = "loaderOff"
+            }, new { name = "entrar-1" }))
+            {
+                <input type="hidden" name="id" value="1" />
+                <div class="pborder-none">
+                    <a class="btn btn-block btn-lg btn-default panel-heading" onclick="$('[name=entrar-1]').submit()">
+                        <div class="btn-flat btn-flat-no-radius">
+                            <h4>EXEMPLO</h4>
+                        </div>
+                    </a>
+                </div>
+                <a class="btn btn-begin btn-xs btn-flat-no-radius col-lg-3 col-md-3" onclick="$('[name=entrar-1]').submit()"><h6>Entrar</h6></a>
+            }
+            @using (Ajax.BeginForm("Ver", "Desktop", new AjaxOptions
+            {
+                HttpMethod = "POST",
+                InsertionMode = InsertionMode.Replace,
+                UpdateTargetId = "frame",
+                LoadingElementId = "load",
+                OnBegin = "loaderOn",
+                OnSuccess = "loaderOff"
+            }, new { name = "ver-1" }))
+            {
+                <input type="hidden" name="id" value="1" />
+                <a class="btn btn-success btn-xs btn-flat-no-radius col-lg-3 col-md-3" onclick="$('[name=ver-1]').submit()"><h6>Ver</h6></a>
+            }
+            <a class="btn btn-default btn-xs btn-flat-no-radius col-lg-3 col-md-3 mdl" href="#chamar" data-toggle="modal" data-id="1" data-name="EXEMPLO"><h6>Chamar</h6></a>
+            <a class="btn btn-danger btn-xs btn-flat-no-radius col-lg-3 col-md-3 mdl" href="#excluir" data-toggle="modal" data-id="1" data-name="EXEMPLO"><h6>Excluir</h6></a>
+        </div>
+    </div>
+    <!-- EXEMPLO DE MESA (PARA TESTES) -->
     <div class="col-lg-3 col-md-3 listagem-block">
         <div class="panel panel-default border-none">
             <a class="btn btn-block btn-lg btn-default panel-heading" href="#nova" data-toggle="modal">
@@ -50,17 +93,18 @@
             </a>
         </div>
     </div>
+    <!-- INÍCIO DO MODAL CHAMAR -->
     <div id="chamar" class="modal fade mothal">
         <div class="modal-dialog">
-            <div id="frame" class="modal-content">
+            <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h5 class="modal-title">Chamar jogadores da mesa <a class="name"></a>?!</h5>
                 </div>
                 <div class="modal-body">
-                    <h5>
+                    <div class="text-form">
                         @@{ Formulário }
-                    </h5>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button name="id" type="submit" class="btn btn-primary id" value="">CHAMAR</button>
@@ -69,9 +113,11 @@
             </div>
         </div>
     </div>
+    <!-- FIM DO MODAL CHAMAR -->
+    <!-- INÍCIO DO MODAL EXCLUIR -->
     <div id="excluir" class="modal fade mothal">
         <div class="modal-dialog">
-            <div id="frame" class="modal-content">
+            <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h5 class="modal-title">Confirmar exclusão da mesa <a class="name"></a>?</h5>
@@ -83,15 +129,19 @@
             </div>
         </div>
     </div>
-    <div id="nova" class="modal fade">
+    <!-- FIM DO MODAL EXCLUIR -->
+    <!-- INÍCIO DO MODAL NOVA MESA-->
+    <div id="nova" class="modal fade mothal">
         <div class="modal-dialog">
-            <div id="frame" class="modal-content">
+            <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h5 class="modal-title">CRIAR NOVA MESA</h5>
                 </div>
                 <div class="modal-body">
-                    @@{ Formulário para criação de nova mesa }
+                    <div class="text-form">                        
+                        @@{ Formulário para criação de nova mesa }
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">CRIAR</button>
@@ -100,6 +150,7 @@
             </div>
         </div>
     </div>
+    <!-- FIM DO MODAL NOVA MESA -->
 </fieldset>
 <script>
     $('.mothal').on('show.bs.modal', function (e) {
