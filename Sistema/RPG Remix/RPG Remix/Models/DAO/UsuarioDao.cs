@@ -30,7 +30,7 @@ namespace RPG_Remix.Models.DAO
             {
                 try
                 {
-                    return rrc.UsuarioSet.ToList().Where(u => u.Email == email).Single();
+                    return rrc.UsuarioSet.ToList().Where(u => u.Email == email).SingleOrDefault();
                 }
                 catch (Exception ex)
                 {

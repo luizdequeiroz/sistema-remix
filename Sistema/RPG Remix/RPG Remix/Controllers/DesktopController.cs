@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPG_Remix.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,7 +14,9 @@ namespace RPG_Remix.Controllers
 
         public ActionResult Desktop()
         {
-            return View();
+            if (Session["usuario"] == null)
+                return RedirectToAction("Entrar", "Entrada");
+            else return View((Usuario)Session["usuario"]);
         }
 
         [HttpPost]
@@ -24,6 +27,7 @@ namespace RPG_Remix.Controllers
 
         public ActionResult Sair()
         {
+            Session.RemoveAll();
             return RedirectToAction("Entrar", "Entrada");
         }
     }

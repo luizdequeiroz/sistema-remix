@@ -23,7 +23,7 @@ namespace RPG_Remix.Controllers
         [HttpPost]
         public ActionResult Entrar(UsuarioEntrar u)
         {
-            /*var usuario = new UsuarioDao().SelecionarPorEmail(u.Email);
+            var usuario = new UsuarioDao().SelecionarPorEmail(u.Email);
             if (usuario != null)
                 if (usuario.Senha != u.Senha)
                 {
@@ -35,7 +35,7 @@ namespace RPG_Remix.Controllers
                     Session["usuario"] = usuario;
                     return RedirectToAction("Desktop", "Desktop");
                 }
-            ViewBag.MsgEntrada = "Não há cadastro com este e-mail!";*/
+            ViewBag.MsgEntrada = "Não há cadastro com este e-mail!";
             return View();
         }
 
@@ -53,6 +53,13 @@ namespace RPG_Remix.Controllers
                 {
                     if (string.IsNullOrEmpty(u.Descricao))
                         u.Descricao = "Não me descrevi ainda!";
+
+                    var usuario = new UsuarioDao().SelecionarPorEmail(u.Email);
+                    if (usuario != null)
+                    {
+                        ModelState.AddModelError("Email", "Alguém já está usando este e-mail!");
+                        return View();
+                    }
 
                     var request = Request.Files[0];
 
