@@ -8509,7 +8509,7 @@ o conteúdo HTML.
 .large-ocean {
     width: 100%;
     height: 100%;
-    background: url(../Content/images/large-ocean.jpg) round;
+    background: url(../Content/images/large-ocean.jpg) top;
 }
 
 .text-form {
