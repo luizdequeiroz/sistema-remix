@@ -1,0 +1,63 @@
+﻿@model RPG_Remix.Models.Fachada.MesaCriar
+
+<div class="large-lake">
+    <fieldset class="text-center">
+        <h3>NOVA MESA</h3>
+        <div class="text-left">
+            @using (Ajax.BeginForm("CadastrarMesa", "Desktop", new AjaxOptions
+            {
+                HttpMethod = "POST",
+                InsertionMode = InsertionMode.Replace,
+                UpdateTargetId = "frame",
+                LoadingElementId = "loading",
+                OnBegin = "loaderOn",
+                OnSuccess = "loaderOff"
+            }))
+            {
+                <div class="text-center loading" id="loading">
+                    <img src="~/Content/images/ajax-loader.gif" width="30" /> Carregando...
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <div class="control-label"><span class="text-form">Nome da Mesa</span> <span class="text-danger">*</span> @Html.ValidationMessageFor(model => model.Nome)</div>
+                        @Html.TextBoxFor(model => model.Nome, new { @class = "form-control", placeholder = "nome da mesa" })
+                    </div>
+                    <div class="form-group">
+                        @Html.TextAreaFor(model => model.Descricao, 5, 10, new { @class = "form-control", placeholder = "Descreva-se um pouco esta mesa..." })
+                        @Html.ValidationMessageFor(model => model.Descricao)
+                    </div>
+                    <div class="text-left">
+                        @Ajax.ActionLink("Cancelar", "Mesas", null, new AjaxOptions
+                        {
+                            InsertionMode = InsertionMode.Replace,
+                            UpdateTargetId = "frame",
+                            LoadingElementId = "loading",
+                            OnBegin = "loaderOn",
+                            OnSuccess = "loaderOff"
+                        }, new { @class = "btn btn-sm btn-danger" })
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <div class="control-label"><span class="text-form">Nome para o Mestre (você)</span> <span class="text-danger">*</span> @Html.ValidationMessageFor(model => model.NomeMestre)</div>
+                        @Html.TextBoxFor(model => model.NomeMestre, new { @class = "form-control", placeholder = "nome para o mestre da mesa" })
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label"><span class="text-form">Senha (opcional)</span></div>
+                        @Html.TextBoxFor(model => model.Senha, new { @class = "form-control", placeholder = "*********" })
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label"><span class="text-form">Número de Vagas (0 para ilimitadas)</span></div>
+                        @Html.TextBoxFor(model => model.NumeroJogadores, new { @class = "form-control", type = "number" })
+                    </div>
+                    <div class="text-right">
+                        <input type="submit" class="btn btn-primary btn-flat-no-radius" value="CRIAR MESA" />
+                    </div>
+                </div>
+            }
+        </div>
+    </fieldset>
+</div>
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}

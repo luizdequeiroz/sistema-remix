@@ -144,6 +144,7 @@
     <Compile Include="Models\Experiencia.cs">
       <DependentUpon>RemixRPG.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Fachada\MesaCriar.cs" />
     <Compile Include="Models\Fachada\UsuarioEntrar.cs" />
     <Compile Include="Models\Ficha.cs">
       <DependentUpon>RemixRPG.tt</DependentUpon>
@@ -208,6 +209,7 @@
     <Content Include="Content\Bootstrap\fonts\rpgawesome-webfont.svg" />
     <Content Include="Content\Fotos\luizdequeiroz%40outlook.com.br.jpg" />
     <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\images\large-lake.jpg" />
     <Content Include="Content\images\large-ocean.jpg" />
     <Content Include="Content\images\_large-ocean.png" />
     <Content Include="Content\images\loader.gif" />
@@ -342,6 +344,7 @@
     <Content Include="Views\Desktop\Ver.cshtml" />
     <Content Include="Views\Entrada\Entrar.cshtml" />
     <Content Include="Views\Entrada\Cadastrar.cshtml" />
+    <Content Include="Views\Desktop\CadastrarMesa.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

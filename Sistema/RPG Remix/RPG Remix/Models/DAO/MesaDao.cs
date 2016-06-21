@@ -15,6 +15,7 @@ namespace RPG_Remix.Models.DAO
             {
                 try
                 {
+                    mesa.DataCriacao = DateTime.Now.ToString();
                     rrc.MesaSet.Add(mesa);
                     rrc.SaveChanges();
                 }
@@ -31,16 +32,30 @@ namespace RPG_Remix.Models.DAO
             {
                 try
                 {
-                    var jogadores = rrc.JogadorSet.Where(j => j.Usuario == u);
-                    var mestres = rrc.MestreSet.Where(m => m.Usuario == u);
-                    if (jogadores == null)
-                        foreach (var j in jogadores.ToList())
-                            mesas.Add(j.Mesa);
-                    if (mestres == null)
-                        foreach (var m in mestres.ToList())
-                            mesas.Add(m.Mesa);
+                    /* Erro aqui, rever. */
+                    var mesasMt = rrc.MesaSet.Where(ms => ms.Mestre.Usuario.Id == u.Id);
+                    var mesasJo = rrc.MesaSet.Where(ms => ms.Jogadores == rrc.JogadorSet.Where(jo => jo.Usuario.Id == u.Id));
+                    if (mesasMt.Count() > 0)
+                        mesas.AddRange(mesasMt.ToList());
+                    if (mesasJo.Count() > 0)
+                        mesas.AddRange(mesasJo.ToList());
 
                     return mesas;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("[MesaDao.Listar]", ex);
+                }
+            }
+        }
+
+        public List<Mesa> Listar()
+        {
+            using (var rrc = new RemixRPGContainer())
+            {
+                try
+                {
+                    return rrc.MesaSet.ToList();
                 }
                 catch (Exception ex)
                 {

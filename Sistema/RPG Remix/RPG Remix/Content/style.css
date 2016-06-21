@@ -8515,6 +8515,15 @@ o conteúdo HTML.
     background-size: cover;
 }
 
+.large-lake {
+    background: url(../Content/images/large-lake.jpg) round;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .text-form {
     font-size: 16px;
 }
