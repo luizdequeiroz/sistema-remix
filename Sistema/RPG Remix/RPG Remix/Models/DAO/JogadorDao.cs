@@ -5,51 +5,50 @@ using System.Web;
 
 namespace RPG_Remix.Models.DAO
 {
-    public class UsuarioDao
+    public class JogadorDao
     {
-        public void Inserir(Usuario usuario)
+        public void Inserir(Jogador jogador)
         {
             using (var rrc = new RemixRPGContainer())
             {
                 try
                 {
-                    usuario.DataCadastro = DateTime.Now.ToString();
-                    rrc.UsuarioSet.Add(usuario);
+                    rrc.JogadorSet.Add(jogador);
                     rrc.SaveChanges();
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("[UsuarioDao.Inserir] -> " + ex.Message);
+                    throw new Exception("[JogadorDao.Inserir] -> " + ex.Message);
                 }
             }
         }
 
-        public Usuario SelecionarPorEmail(string email)
+        public List<Jogador> Listar()
         {
             using (var rrc = new RemixRPGContainer())
             {
                 try
                 {
-                    return rrc.UsuarioSet.ToList().Where(u => u.Email == email).SingleOrDefault();
+                    return rrc.JogadorSet.ToList();
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("[UsuarioDao.SelecionarPorEmail] -> " + ex.Message);
+                    throw new Exception("[JogadorDao.Listar] -> " + ex.Message);
                 }
             }
         }
 
-        public List<Usuario> Listar()
+        public List<Jogador> ListarDoUsuario(Usuario u)
         {
             using (var rrc = new RemixRPGContainer())
             {
                 try
                 {
-                    return rrc.UsuarioSet.ToList();
+                    return rrc.JogadorSet.Where(j => j.UsuarioId == u.Id).ToList();
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("[UsuarioDao.Listar] -> " + ex);
+                    throw new Exception("[JogadorDao.Listar] -> " + ex.Message);
                 }
             }
         }

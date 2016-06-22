@@ -39,15 +39,16 @@ namespace RPG_Remix.Models
         public int Vital { get; set; }
         public int Sort { get; set; }
         public int Suportes { get; set; }
+        public Nullable<int> MestreId { get; set; }
     
+        public virtual PontosAcumulados PontosAcumulados { get; set; }
+        public virtual Experiencia Experiencia { get; set; }
+        public virtual Mestre Mestre { get; set; }
+        public virtual Jogador Jogador { get; set; }
         public virtual ICollection<Propriedade> Propriedades { get; set; }
         public virtual ICollection<Peculiaridade> Peculiaridades { get; set; }
         public virtual ICollection<Riqueza> Riquezas { get; set; }
-        public virtual ICollection<ItemArma> ItensArmas { get; set; }
-        public virtual PontosAcumulados PontosAcumulados { get; set; }
-        public virtual Experiencia Experiencia { get; set; }
         public virtual Vestimenta Vestimenta { get; set; }
-        public virtual Jogador Jogador { get; set; }
-        public virtual Mestre Mestre { get; set; }
+        public virtual ICollection<ItemArma> ItensArmas { get; set; }
     }
 }

@@ -18,6 +18,7 @@ namespace RPG_Remix.Models
         public string Descricao { get; set; }
         public int Teste { get; set; }
         public string Tipo { get; set; }
+        public int FichaId { get; set; }
     
         public virtual Ficha Ficha { get; set; }
     }

@@ -16,8 +16,8 @@ namespace RPG_Remix.Models
     {
         public Mapa()
         {
-            this.Regiões = new HashSet<Região>();
             this.Mesas = new HashSet<Mesa>();
+            this.Regiões = new HashSet<Região>();
         }
     
         public int Id { get; set; }
@@ -25,7 +25,7 @@ namespace RPG_Remix.Models
         public string Caminho { get; set; }
         public bool Geral { get; set; }
     
-        public virtual ICollection<Região> Regiões { get; set; }
         public virtual ICollection<Mesa> Mesas { get; set; }
+        public virtual ICollection<Região> Regiões { get; set; }
     }
 }

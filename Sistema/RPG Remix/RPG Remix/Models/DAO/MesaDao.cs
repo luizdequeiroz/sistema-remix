@@ -21,7 +21,7 @@ namespace RPG_Remix.Models.DAO
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("[MesaDao.Inserir]", ex);
+                    throw new Exception("[MesaDao.Inserir] -> " + ex.Message);
                 }
             }
         }
@@ -32,19 +32,21 @@ namespace RPG_Remix.Models.DAO
             {
                 try
                 {
-                    /* Erro aqui, rever. */
-                    var mesasMt = rrc.MesaSet.Where(ms => ms.Mestre.Usuario.Id == u.Id);
-                    var mesasJo = rrc.MesaSet.Where(ms => ms.Jogadores == rrc.JogadorSet.Where(jo => jo.Usuario.Id == u.Id));
-                    if (mesasMt.Count() > 0)
-                        mesas.AddRange(mesasMt.ToList());
-                    if (mesasJo.Count() > 0)
-                        mesas.AddRange(mesasJo.ToList());
+                    var mestres = rrc.MestreSet.Where(m => m.UsuarioId == u.Id).ToList();
+                    var jogadores = new JogadorDao().ListarDoUsuario(u);
+
+                    if (mestres.Count > 0)
+                        foreach (var m in mestres)
+                            mesas.Add(m.Mesa);
+                    if (jogadores.Count > 0)
+                        foreach (var j in jogadores)
+                            mesas.Add(j.Mesa);
 
                     return mesas;
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("[MesaDao.Listar]", ex);
+                    throw new Exception("[MesaDao.Listar] -> " + ex.Message);
                 }
             }
         }
@@ -59,7 +61,7 @@ namespace RPG_Remix.Models.DAO
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("[MesaDao.Listar]", ex);
+                    throw new Exception("[MesaDao.Listar] -> " + ex.Message);
                 }
             }
         }

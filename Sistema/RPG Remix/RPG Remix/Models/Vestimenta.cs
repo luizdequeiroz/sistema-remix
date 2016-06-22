@@ -40,7 +40,7 @@ namespace RPG_Remix.Models
         public string PeD { get; set; }
         public string PeE { get; set; }
     
-        public virtual Ficha Ficha { get; set; }
         public virtual ItemArma ItemArma { get; set; }
+        public virtual Ficha Ficha { get; set; }
     }
 }

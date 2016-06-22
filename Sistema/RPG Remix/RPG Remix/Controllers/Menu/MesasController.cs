@@ -33,7 +33,7 @@ namespace RPG_Remix.Controllers
             {
                 try
                 {
-                    m.Mesa.Mestre.Usuario = new UsuarioDao().SelecionarPorEmail(((Usuario)Session["usuario"]).Email);
+                    m.Mesa.Mestre.UsuarioId = ((Usuario)Session["usuario"]).Id;
                     new MesaDao().Inserir(m.Mesa);
                     return RedirectToAction("Mesas");
                 }
