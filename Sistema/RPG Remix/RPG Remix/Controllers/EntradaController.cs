@@ -17,13 +17,28 @@ namespace RPG_Remix.Controllers
 
         public ActionResult Entrar()
         {
+            if (Session["usuario"] != null)
+                return RedirectToAction("Desktop", "Desktop");
             return View();
         }
 
         [HttpPost]
         public ActionResult Entrar(UsuarioEntrar u)
         {
-            return RedirectToAction("Desktop", "Desktop");
+            var usuario = new UsuarioDao().SelecionarPorEmail(u.Email);
+            if (usuario != null)
+                if (usuario.Senha != u.Senha)
+                {
+                    ViewBag.MsgEntrada = "Senha incorreta!";
+                    return View();
+                }
+                else
+                {
+                    Session["usuario"] = usuario;
+                    return RedirectToAction("Desktop", "Desktop");
+                }
+            ViewBag.MsgEntrada = "Não há cadastro com este e-mail!";
+            return View();
         }
 
         public ActionResult Cadastrar()
@@ -40,6 +55,13 @@ namespace RPG_Remix.Controllers
                 {
                     if (string.IsNullOrEmpty(u.Descricao))
                         u.Descricao = "Não me descrevi ainda!";
+
+                    var usuario = new UsuarioDao().SelecionarPorEmail(u.Email);
+                    if (usuario != null)
+                    {
+                        ModelState.AddModelError("Email", "Alguém já está usando este e-mail!");
+                        return View();
+                    }
 
                     var request = Request.Files[0];
 
@@ -60,7 +82,7 @@ namespace RPG_Remix.Controllers
                             }
 
                     new UsuarioDao().Inserir(u.Usuario);
-                    ViewBag.MsgCadastro = "Cadastrado com Sucesso!";
+                    ViewBag.MsgEntrada = "Cadastrado com Sucesso!";
                     return View("Entrar");
                 }
                 catch (Exception ex)

@@ -28,7 +28,7 @@
                             <div class="text-center loading" id="loading">
                                 <img src="~/Content/images/ajax-loader.gif" width="30" /> Carregando...
                             </div>
-                            <span class="text-form @type">@ViewBag.MsgCadastro</span>
+                            <div class="text-center"><span class="text-form @type">@ViewBag.MsgCadastro</span></div>
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                 <div class="form-group">
                                     <label class="control-label" for="Nome"><span class="text-form">Nome</span> <span class="text-danger">*</span>  @Html.ValidationMessageFor(model => model.Nome)</label>

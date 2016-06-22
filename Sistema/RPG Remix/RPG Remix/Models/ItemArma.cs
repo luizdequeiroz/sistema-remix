@@ -21,8 +21,9 @@ namespace RPG_Remix.Models
         public double Peso { get; set; }
         public string Descricao { get; set; }
         public int Dano { get; set; }
+        public int FichaId { get; set; }
     
-        public virtual Ficha Ficha { get; set; }
         public virtual Vestimenta Vestimenta { get; set; }
+        public virtual Ficha Ficha { get; set; }
     }
 }

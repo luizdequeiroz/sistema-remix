@@ -15,6 +15,8 @@ namespace RPG_Remix.Models
     public partial class Jogador
     {
         public int Id { get; set; }
+        public int MesaId { get; set; }
+        public int UsuarioId { get; set; }
     
         public virtual Mesa Mesa { get; set; }
         public virtual Usuario Usuario { get; set; }

@@ -21,6 +21,8 @@ namespace RPG_Remix.Models
         public Nullable<int> CoordY { get; set; }
         public Nullable<int> CoordGX { get; set; }
         public Nullable<int> CoordGY { get; set; }
+        public int FichaId { get; set; }
+        public int RegiãoId { get; set; }
     
         public virtual Ficha Ficha { get; set; }
         public virtual Região Região { get; set; }

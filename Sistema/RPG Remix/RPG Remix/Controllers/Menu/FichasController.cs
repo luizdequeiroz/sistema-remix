@@ -13,7 +13,7 @@ namespace RPG_Remix.Controllers
 
         public ActionResult Fichas()
         {
-            return View();
+            return PartialView();
         }
 
     }
