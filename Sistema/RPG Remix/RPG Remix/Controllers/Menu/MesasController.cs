@@ -23,39 +23,8 @@ namespace RPG_Remix.Controllers
 
         public ActionResult NovaMesa()
         {
+            ViewBag.ListaMapas = new MapaDao().Listar();
             return PartialView("CadastrarMesa");
-        }
-
-        [HttpPost]
-        public ActionResult CadastrarMesa(MesaCriar m)
-        {
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    m.Mesa.Mestre.UsuarioId = ((Usuario)Session["usuario"]).Id;
-                    new MesaDao().Inserir(m.Mesa);
-                    return RedirectToAction("Mesas");
-                }
-                catch (Exception ex)
-                {
-                    ViewBag.MsgCadastro = "Erro ao tentar cadastrar. Mas a culpa não é sua! Erro: " + ex.Message;
-                    return View();
-                }
-            }
-
-            //ViewBag.MsgCadastro = "Preencha os campos corretamente e não deixe os obrigatórios em branco.";
-            return View();
-        }
-
-        public ActionResult MesaUnica(string nome)
-        {
-            var nomes = new List<string>();
-            var todas = new MesaDao().Listar();
-            foreach (var m in todas)
-                nomes.Add(m.Nome);
-
-            return Json(nomes.All(n => n.ToLower() != nome.ToLower()), JsonRequestBehavior.AllowGet);
         }
     }
 }

@@ -65,5 +65,20 @@ namespace RPG_Remix.Models.DAO
                 }
             }
         }
+
+        public Mesa Selecionar(long id)
+        {
+            using (var rrc = new RemixRPGContainer())
+            {
+                try
+                {
+                    return rrc.MesaSet.Where(m => m.Id == id).SingleOrDefault();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("[MesaDao.Selecionar] -> " + ex.Message);
+                }
+            }
+        }
     }
 }

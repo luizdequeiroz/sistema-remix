@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPG_Remix.Models.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -80,7 +81,7 @@ namespace RPG_Remix.Models.Fachada
             }
         }
 
-        [Required(ErrorMessage = "O nome do mestre é obrigatório para a mesa!")]
+        [Required(ErrorMessage = "O nome do mestre é obrigatório!")]
         public string NomeMestre
         {
             get

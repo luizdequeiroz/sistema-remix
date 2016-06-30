@@ -8508,7 +8508,6 @@ o conteúdo HTML.
 
 .large-ocean {
     background: url(../Content/images/large-ocean.jpg) round;
-
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -8517,13 +8516,28 @@ o conteúdo HTML.
 
 .large-lake {
     background: url(../Content/images/large-lake.jpg) round;
-
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 
+.tabuleiro {
+    background: url(../Content/images/tabuleiro.jpg) repeat;
+    /*-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/
+}
+
 .text-form {
     font-size: 16px;
+}
+
+.val-tooltip {
+    font: bold;
+    background-color: whitesmoke;
+    border: 1px solid red;
+    padding: 2px;
+    border-radius: 5px;
 }

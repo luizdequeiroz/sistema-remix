@@ -135,11 +135,13 @@
     <Compile Include="Controllers\Menu\FichasController.cs" />
     <Compile Include="Controllers\Menu\JogadoresController.cs" />
     <Compile Include="Controllers\Menu\MesasController.cs" />
+    <Compile Include="Controllers\RemixHelpers.cs" />
     <Compile Include="Controllers\Telas\Mesa\MesaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DAO\JogadorDao.cs" />
+    <Compile Include="Models\DAO\MapaDao.cs" />
     <Compile Include="Models\DAO\MesaDao.cs" />
     <Compile Include="Models\DAO\UsuarioDao.cs" />
     <Compile Include="Models\Experiencia.cs">
@@ -212,6 +214,7 @@
     <Content Include="Content\images\ajax-loader.gif" />
     <Content Include="Content\images\large-lake.jpg" />
     <Content Include="Content\images\large-ocean.jpg" />
+    <Content Include="Content\images\tabuleiro.jpg" />
     <Content Include="Content\images\_large-ocean.png" />
     <Content Include="Content\images\loader.gif" />
     <Content Include="Content\images\loading.gif" />
