@@ -14,15 +14,10 @@ namespace RPG_Remix.Controllers
 
         public ActionResult Desktop()
         {
-            if (Session["usuario"] == null)
+            /*if (Session["usuario"] == null)
                 return RedirectToAction("Entrar", "Entrada");
-            else return View((Usuario)Session["usuario"]);
-        }
-
-        [HttpPost]
-        public ActionResult Desktop(string pagina)
-        {
-            return RedirectToAction(pagina);
+            else return View((Usuario)Session["usuario"]);*/
+            return View();
         }
 
         public ActionResult Sair()

@@ -8,15 +8,21 @@ function loaderOff() {
     $('.loading').css('display', 'none');
 }
 
-/* Função para o Click */
-var id_old;
-function menuClick(id_clicked) {
+var menuActived = true;
 
-    $('#' + id_old).css('border', '');
-    $('#' + id_clicked).css('border', 'solid 3px darkred');
+$(document).ready(function () {
 
-    id_old = id_clicked;
+    $('#active-menu').click(function () {
 
-    $('#pagina').val(id_clicked);
-    $('#menu-form').submit();
-}
+        if (menuActived) {
+            $('.desktop-menu').css('display', 'none');
+            $('.desktop-content').css('left', '0');
+            menuActived = false;
+        } else {
+            $('.desktop-menu').css('display', 'block');
+            $('.desktop-content').css('left', '150px');
+            menuActived = true;
+        }
+
+    });
+});

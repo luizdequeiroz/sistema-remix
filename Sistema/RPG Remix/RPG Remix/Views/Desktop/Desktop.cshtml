@@ -1,137 +1,18 @@
 ﻿@model RPG_Remix.Models.Usuario
 
-<div id="background">
-    <!-- INÍCIO DO CABEÇALHO MÓVEL -->
-    @using (Ajax.BeginForm("Desktop", "Desktop", new AjaxOptions
-                {
-                    HttpMethod = "POST",
-                    InsertionMode = InsertionMode.Replace,
-                    UpdateTargetId = "frame",
-                    LoadingElementId = "load",
-                    OnBegin = "loaderOn",
-                    OnSuccess = "loaderOff"
-                }, new { id = "menu-form" }))
-    {
-        <input type="hidden" name="pagina" id="pagina" />
-        <div class="navbar-fixed-top">
-            <div class="nav div-padding-silver navbar-inverse" id="cabecalho">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 div-padding-darkgrey">
-                    <div class="container col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="row">
-                            <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11" style="margin-left: -15px; margin-right: -20px">
-                                <div class="img-logo-top-left navbar navbar-default navbar-static-top">
-                                    <div class="col-md-1">
-                                        <div class="">
-                                            <a href="Desktop" class="">
-                                                <img src="~/Content/images/brasao-d&a.png" class="img-responsive" width="50">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="hidden-xs col-md-4 col-lg-4 img-logo-top-left"><h4 style="color: whitesmoke">@Model.Nome</h4></div>
-                                    <div class="hidden-xs hidden-sm col-md-6 col-lg-6">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <div class="input-group col-md-12">
-                                                    <input type="search" class="form-control" id="busca" name="busca" placeholder="Faça sua busca!">
-                                                    <span class="input-group-btn">
-                                                        <input class="btn btn-default" type="submit" value="Buscar">
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-1 hidden-sm hidden-xs img-logo-top-left">
-                                <div class="input-group text-right col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                    @Html.ActionLink("Sair", "Sair", null, new { @class = "btn btn-danger btn-sm" })
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- INÍCIO DO MENU VERTICAL -->
-            <div class="col-lg-2 col-md-2 col-sm-4 hidden-xs section div-padding-silver menu-vertical">
-                <div class="panel-group">
-                    <!---->
-                    <div class="panel panel-default border-none">
-                        <div class="btn btn-block btn-default panel-heading" id="Mesas" onclick="menuClick(this.id)">
-                            <div class="btn-flat">
-                                <i class="ra ra-dice-three ra-lg pull-left text-muted"></i>
-                                <h4 class="panel-title">MESAS</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <!---->
-                    <div class="panel panel-default border-none">
-                        <div class="btn btn-block btn-default panel-heading" id="Jogadores" onclick="menuClick(this.id)">
-                            <div class="btn-flat">
-                                <i class="ra ra-lg ra ra-double-team pull-left text-muted"></i>
-                                <h4 class="panel-title">JOGADORES</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <!---->
-                    <div class="panel panel-default border-none">
-                        <div class="btn btn-block btn-default panel-heading" id="Fichas" onclick="menuClick(this.id)">
-                            <div class="btn-flat">
-                                <i class="ra ra-lg ra-book pull-left text-muted"></i>
-                                <h4 class="panel-title">FICHAS</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <!---->
-                    <div class="panel panel-default border-none">
-                        <div class="btn btn-block btn-default panel-heading" id="Contatos" onclick="menuClick(this.id)">
-                            <div class="btn-flat">
-                                <i class="fa fa-lg fa-users pull-left text-muted"></i>
-                                <h4 class="panel-title">CONTATOS</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <!---->
-                    <div class="panel panel-default border-none">
-                        <div class="btn btn-block btn-default panel-heading" id="Ajustes" onclick="menuClick(this.id)">
-                            <div class="btn-flat">
-                                <i class="fa fa-lg fa-gears pull-left text-muted"></i>
-                                <h4 class="panel-title">AJUSTES</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <!---->
-                </div>
-            </div>
-            <!-- FIM DO MENU VERTICAL -->
-        </div>
-    }
-    <!-- FIM DO CABEÇALHO MÓVEL -->
-    <!-- INÍCIO DO CABEÇALLHO IMÓVEL -->
-    <div class="nav div-padding-silver" id="cabecalho-imovel">
-        <div class="col-md-12 div-padding-whitesmoke">
-            <div class="col-md-2 center-block">
-                <a href="#" class="img-logo-top-left">
-                    <img src="" class="img-responsive" width="28">
-                </a>
-            </div>
-            <div class="container col-md-10">
-                <div class="row">
-                    <div class="col-md-11 hidden-sm hidden-xs"></div>
-                    <div class="col-md-1 hidden-sm hidden-xs img-logo-top-left"></div>
-                </div>
-            </div>
-        </div>
+@{
+    ViewBag.Title = "Desktop";
+}
+
+<div class="desktop-body">
+    <div class="desktop-menu">
+        <div class="btn btn-lg btn-block btn-default btn-menu">MAPA</div>
+        <div class="btn btn-lg btn-block btn-default btn-menu">FICHAS</div>
+        <div class="btn btn-lg btn-block btn-default btn-menu">TEXTOS</div>
+        <div class="btn btn-lg btn-block btn-default btn-menu" id="jogar">JOGAR</div>
     </div>
-    <!-- FIM DO CABEÇALHO IMÓVEL -->
-    <div class="container-fluid" style="margin-top: 40px">
-        <!-- INÍCIO DO FRAME PRINCIPAL -->
-        <div class="col-lg-10 col-md-10 col-sm-8 div-padding-darkgrey col-lg-offset-2 col-md-offset-2 col-sm-offset-4 text-center loading">
-            <img src="~/Content/images/ajax-loader.gif" width="50" /> Carregando...
-        </div>
-        <div class="col-lg-10 col-md-10 col-sm-8 div-padding-darkgrey col-lg-offset-2 col-md-offset-2 col-sm-offset-4" id="frame"></div>
-        <!-- FIM DO FRAME PRINCIPAL -->
+    <div class="desktop-content">
+        <div class="btn btn-xs btn-default" id="active-menu" title="Menu"></div>
+        <div class="flat-area"></div>
     </div>
 </div>
-@section Scripts{
-    @Scripts.Render("~/bundles/jqueryval")
-}

@@ -129,14 +129,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\EntradaController.cs" />
-    <Compile Include="Controllers\Menu\AjustesController.cs" />
-    <Compile Include="Controllers\Menu\ContatosController.cs" />
     <Compile Include="Controllers\DesktopController.cs" />
-    <Compile Include="Controllers\Menu\FichasController.cs" />
-    <Compile Include="Controllers\Menu\JogadoresController.cs" />
-    <Compile Include="Controllers\Menu\MesasController.cs" />
-    <Compile Include="Controllers\RemixHelpers.cs" />
-    <Compile Include="Controllers\Telas\Mesa\MesaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -210,7 +203,7 @@
     <Content Include="Content\Bootstrap\bootstrap-css\rpg-awesome.css" />
     <Content Include="Content\Bootstrap\bootstrap-css\rpg-awesome.min.css" />
     <Content Include="Content\Bootstrap\fonts\rpgawesome-webfont.svg" />
-    <Content Include="Content\Fotos\luizdequeiroz%40outlook.com.br.jpg" />
+    <Content Include="Content\Fotos\luizdequeiroz%40outlook.com.br.png" />
     <Content Include="Content\images\ajax-loader.gif" />
     <Content Include="Content\images\large-lake.jpg" />
     <Content Include="Content\images\large-ocean.jpg" />
@@ -338,24 +331,13 @@
     <Content Include="Content\Bootstrap\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\Bootstrap\fonts\FontAwesome.otf" />
     <Content Include="Content\style.less" />
-    <Content Include="Views\Desktop\Desktop.cshtml" />
-    <Content Include="Views\Desktop\Mesas.cshtml" />
-    <Content Include="Views\Desktop\Jogadores.cshtml" />
-    <Content Include="Views\Desktop\Fichas.cshtml" />
-    <Content Include="Views\Desktop\Contatos.cshtml" />
-    <Content Include="Views\Desktop\Ajustes.cshtml" />
-    <Content Include="Views\Desktop\Entrar.cshtml" />
-    <Content Include="Views\Desktop\Ver.cshtml" />
     <Content Include="Views\Entrada\Entrar.cshtml" />
     <Content Include="Views\Entrada\Cadastrar.cshtml" />
-    <Content Include="Views\Desktop\CadastrarMesa.cshtml" />
+    <Content Include="Views\Desktop\Desktop.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\Telas\Contato\" />
-    <Folder Include="Controllers\Telas\Ficha\" />
-    <Folder Include="Controllers\Telas\Jogador\" />
-    <Folder Include="Controllers\Uteis\" />
+    <Folder Include="Controllers\Menu\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

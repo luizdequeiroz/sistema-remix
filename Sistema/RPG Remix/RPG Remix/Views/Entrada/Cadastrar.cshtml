@@ -16,73 +16,72 @@
 }
 
 <div id="frame">
-    <div class="large-ocean">
-        <div class="estrutura-cadastro">
-            <div class="conteudo-cadastro borda-cadastro">
-                <div class="conteudo-cadastro">
-                    <fieldset>
-                        <legend>CADASTRO</legend>
-                        @using (Html.BeginForm("Cadastrar", "Entrada", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                        {
-                            @*@Html.ValidationSummary()*@
-                            <div class="text-center loading" id="loading">
-                                <img src="~/Content/images/ajax-loader.gif" width="30" /> Carregando...
+    <div class="estrutura-cadastro">
+        <div class="conteudo-cadastro borda-cadastro">
+            <div class="conteudo-cadastro">
+                <fieldset>
+                    <legend>CADASTRO</legend>
+                    @using (Html.BeginForm("Cadastrar", "Entrada", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @*@Html.ValidationSummary()*@
+                        <div class="text-center loading" id="loading">
+                            <img src="~/Content/images/ajax-loader.gif" width="30" /> Carregando...
+                        </div>
+                        <div class="text-center"><span class="text-form @type">@ViewBag.MsgCadastro</span></div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="control-label" for="Nome"><span class="text-form">Nome</span> <span class="text-danger">*</span>  @Html.ValidationMessageFor(model => model.Nome)</label>
+                                @Html.TextBoxFor(model => model.Nome, new { @class = "form-control", placeholder = "seu nome" })
                             </div>
-                            <div class="text-center"><span class="text-form @type">@ViewBag.MsgCadastro</span></div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <div class="form-group">
-                                    <label class="control-label" for="Nome"><span class="text-form">Nome</span> <span class="text-danger">*</span>  @Html.ValidationMessageFor(model => model.Nome)</label>
-                                    @Html.TextBoxFor(model => model.Nome, new { @class = "form-control", placeholder = "seu nome" })
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label" for="Email"><span class="text-form">E-mail</span> <span class="text-danger">*</span> @Html.ValidationMessageFor(model => model.Email)</label>
-                                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "exemplo@email.com" })
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label" for="Senha"><span class="text-form">Senha</span> <span class="text-danger">*</span> @Html.ValidationMessageFor(model => model.Senha)</label>
-                                    @Html.TextBoxFor(model => model.Senha, new { type = "password", @class = "form-control", placeholder = "*********" })
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label" for="RepSenha"><span class="text-form">Repita a Senha</span> <span class="text-danger">*</span> @Html.ValidationMessageFor(model => model.RepSenha)</label>
-                                    @Html.TextBoxFor(model => model.RepSenha, new { type = "password", @class = "form-control", placeholder = "*********" })
-                                </div>
+                            <div class="form-group">
+                                <label class="control-label" for="Email"><span class="text-form">E-mail</span> <span class="text-danger">*</span> @Html.ValidationMessageFor(model => model.Email)</label>
+                                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "exemplo@email.com" })
                             </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <div class="form-group">
-                                    <label class="control-label" for="Foto"><span class="text-form">Insira uma Foto</span></label>
-                                    <label class="btn btn-default btn-block btn-file">
-                                        Clique <input type="file" readonly="" id="Foto" name="Foto" style="display: none" />
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label" for="DataNascimento"><span class="text-form">Data de Nascimento</span></label>
-                                    @Html.TextBoxFor(model => model.DataNascimento, new { @class = "form-control", placeholder = "01/01/2016" })
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-xs-12 col-sm-12 col-lg-12 col-md-12" for="Sexo"><span class="text-form">Sexo</span> <span class="text-danger">*</span> @Html.ValidationMessageFor(model => model.Sexo)</label>
-                                    <label class="radio-inline">
-                                        @Html.RadioButtonFor(model => model.Sexo, 'M') Masculino
-                                    </label>
-                                    <label class="radio-inline">
-                                        @Html.RadioButtonFor(model => model.Sexo, 'F') Feminino
-                                    </label>
-                                    <label class="radio-inline">
-                                        @Html.RadioButtonFor(model => model.Sexo, 'O') Outro
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    @Html.TextAreaFor(model => model.Descricao, 5, 10, new { @class = "form-control", placeholder = "Descreva-se um pouco..." })
-                                    @Html.ValidationMessageFor(model => model.Descricao)
-                                </div>
+                            <div class="form-group">
+                                <label class="control-label" for="Senha"><span class="text-form">Senha</span> <span class="text-danger">*</span> @Html.ValidationMessageFor(model => model.Senha)</label>
+                                @Html.TextBoxFor(model => model.Senha, new { type = "password", @class = "form-control", placeholder = "*********" })
                             </div>
-                            <hr />
-                            <div class="text-right">
-                                <button type="submit" class="btn btn-flat-no-radius btn-block btn-primary">CADASTRAR</button>
+                            <div class="form-group">
+                                <label class="control-label" for="RepSenha"><span class="text-form">Repita a Senha</span> <span class="text-danger">*</span> @Html.ValidationMessageFor(model => model.RepSenha)</label>
+                                @Html.TextBoxFor(model => model.RepSenha, new { type = "password", @class = "form-control", placeholder = "*********" })
                             </div>
-                            <hr />
-                        }
-                        <div class="text-left">
-                            @Ajax.ActionLink("Cancelar", "Entrar", null, new AjaxOptions
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="control-label" for="Foto"><span class="text-form">Insira uma Foto</span></label>
+                                <label class="btn btn-default btn-block btn-file">
+                                    Clique <input type="file" readonly="" id="Foto" name="Foto" style="display: none" />
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="DataNascimento"><span class="text-form">Data de Nascimento</span></label>
+                                @Html.TextBoxFor(model => model.DataNascimento, new { @class = "form-control", placeholder = "01/01/2016" })
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-xs-12 col-sm-12 col-lg-12 col-md-12" for="Sexo"><span class="text-form">Sexo</span> <span class="text-danger">*</span> @Html.ValidationMessageFor(model => model.Sexo)</label>
+                                <label class="radio-inline">
+                                    @Html.RadioButtonFor(model => model.Sexo, 'M') Masculino
+                                </label>
+                                <label class="radio-inline">
+                                    @Html.RadioButtonFor(model => model.Sexo, 'F') Feminino
+                                </label>
+                                <label class="radio-inline">
+                                    @Html.RadioButtonFor(model => model.Sexo, 'O') Outro
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                @Html.TextAreaFor(model => model.Descricao, 5, 10, new { @class = "form-control", placeholder = "Descreva-se um pouco..." })
+                                @Html.ValidationMessageFor(model => model.Descricao)
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-flat-no-radius btn-block btn-primary">CADASTRAR</button>
+                        </div>
+                        <hr />
+                    }
+                    <div class="text-left">
+                        @Ajax.ActionLink("Cancelar", "Entrar", null, new AjaxOptions
                             {
                                 InsertionMode = InsertionMode.Replace,
                                 UpdateTargetId = "frame",
@@ -90,9 +89,8 @@
                                 OnBegin = "loaderOn",
                                 OnSuccess = "loaderOff"
                             }, new { @class = "btn btn-sm btn-danger" })
-                        </div>
-                    </fieldset>
-                </div>
+                    </div>
+                </fieldset>
             </div>
         </div>
     </div>

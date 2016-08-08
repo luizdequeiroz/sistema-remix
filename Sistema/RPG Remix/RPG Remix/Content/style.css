@@ -8340,8 +8340,6 @@ a.parallax {
 }
 
 .loading {
-    padding-top: 30px;
-    padding-bottom: 30px;
     display: none;
 }
 
@@ -8522,6 +8520,12 @@ o conteúdo HTML.
     background-size: cover;
 }
 
+.text-form {
+    font-size: 16px;
+}
+
+/* Desktop */
+
 .tabuleiro {
     background: url(../Content/images/tabuleiro.jpg) repeat;
     /*-webkit-background-size: cover;
@@ -8530,14 +8534,74 @@ o conteúdo HTML.
     background-size: cover;*/
 }
 
-.text-form {
-    font-size: 16px;
-}
-
 .val-tooltip {
     font: bold;
     background-color: whitesmoke;
     border: 1px solid red;
     padding: 2px;
     border-radius: 5px;
+}
+
+.desktop-body {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.desktop-menu {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    background-color: whitesmoke;
+    position: absolute;
+    visibility: visible;
+    pointer-events: all;
+
+    background: url(../Content/images/tabuleiro.jpg) repeat;
+}
+
+.desktop-content {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 150px;
+    position: absolute;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.btn-menu {
+    border-radius: 0;
+    height: 50px;
+    margin: 0;
+}
+
+#jogar {
+    position: absolute;
+    top: initial;
+    bottom: 0;
+}
+
+#active-menu {
+    top: 0;
+    bottom: 0;
+    width: 1%;
+    height: 100%;
+    padding: 0;
+    border-radius: 0;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+    background-color: whitesmoke;
+    float: left;
+}
+
+.flat-area {
+    float: right;
+    width: 99%;
+    height: 100%;
+    /*background-color: rgba(255, 0, 0, 0.60);*/
 }
