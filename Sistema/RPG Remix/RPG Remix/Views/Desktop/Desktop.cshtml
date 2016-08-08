@@ -2,14 +2,19 @@
 
 @{
     ViewBag.Title = "Desktop";
+    var img = Model.Email + ".png";
 }
 
 <div class="desktop-body">
     <div class="desktop-menu">
+        <div class="panel panel-default panel-photo">
+            <img id="foto" src="~/Content/Fotos/@img" width="100" title="@Model.Descricao"/>
+            <div id="nome" class="text-center" title="@Model.Email"><h5>@Model.Nome</h5></div>
+        </div>
         <div class="btn btn-lg btn-block btn-default btn-menu">MAPA</div>
         <div class="btn btn-lg btn-block btn-default btn-menu">FICHAS</div>
         <div class="btn btn-lg btn-block btn-default btn-menu">TEXTOS</div>
-        <div class="btn btn-lg btn-block btn-default btn-menu" id="jogar">JOGAR</div>
+        <div class="btn btn-lg btn-block btn-default btn-menu disabled" id="jogar">JOGAR</div>
     </div>
     <div class="desktop-content">
         <div class="btn btn-xs btn-default" id="active-menu" title="Menu"></div>

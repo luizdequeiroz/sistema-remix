@@ -8574,6 +8574,21 @@ o conteúdo HTML.
     pointer-events: all;
 }
 
+.panel-photo {
+    border-radius: 0;
+}
+
+#foto {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+#nome {
+    cursor: pointer;
+}
+
 .btn-menu {
     border-radius: 0;
     height: 50px;
