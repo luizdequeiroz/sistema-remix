@@ -7989,6 +7989,7 @@ button.close {
 html,
 body {
     height: 100%;
+    overflow: hidden;
 }
 /* text-inverse is deprecated */
 .text-inverse {
@@ -8575,14 +8576,20 @@ o conteúdo HTML.
 }
 
 .panel-photo {
+    width: 90%;
+    margin-top: 10px;
+    margin-left: 5%;
     border-radius: 0;
+    text-align: center;
 }
 
 #foto {
-    width: 100%;
+    width: 80%;
     margin: 0;
     padding: 0;
     cursor: pointer;
+    border-radius: 5px;
+    margin-top: 5px;
 }
 
 #nome {
@@ -8604,19 +8611,93 @@ o conteúdo HTML.
 #active-menu {
     top: 0;
     bottom: 0;
-    width: 1%;
+    width: 15px;
     height: 100%;
     padding: 0;
+    border: none;
     border-radius: 0;
     border-top-right-radius: 100%;
     border-bottom-right-radius: 100%;
-    background-color: whitesmoke;
+    background-color: #6e5c4a;
+    box-shadow: black 10px 5px 30px;
+    position: absolute;
     float: left;
 }
 
-.flat-area {
+.btn-sair {
+    position: absolute;
     float: right;
-    width: 99%;
+    top: 0;
+    right: 0;
+    margin: 0;
+    border-radius: 0;
+    /*margin-top: 35px;
+    margin-right: 35px;*/
+}
+
+#frame {
+    width: 100%;
     height: 100%;
-    /*background-color: rgba(255, 0, 0, 0.60);*/
+    padding-left: 8px;
+    bottom: 0;
+}
+
+.panel-head {
+    padding: 10px;
+    padding-top: 0;
+    margin: 30px;
+    margin-bottom: 15px;
+    color: whitesmoke;
+    box-shadow: black 10px 10px 30px;
+
+    background: url(../Content/images/terrain-head.jpg) round;
+}
+
+.panel-body {
+    padding: 20px;
+    padding-top: 0;
+    margin: 30px;
+    margin-top: 15px;
+    height: 75%;
+    color: whitesmoke;
+    box-shadow: black 10px 10px 30px;
+
+    background: url(../Content/images/terrain-body.jpg) round;
+}
+
+/* Largura da barra de rolagem */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Fundo da barra de rolagem */
+::-webkit-scrollbar-track-piece {
+    background-color: #805c3c;
+    border-left: 1px solid #CCC
+}
+
+/* Cor do indicador de rolagem */
+::-webkit-scrollbar-thumb:vertical,
+::-webkit-scrollbar-thumb:horizontal {
+    background-color: rgba(0, 0, 0, 0.175);
+}
+
+/* Cor do indicador de rolagem - ao passar o mouse */
+::-webkit-scrollbar-thumb:vertical:hover,
+::-webkit-scrollbar-thumb:horizontal:hover {
+    background-color: rgba(0, 0, 0, 0.175);
+}
+
+.div-table {
+    height: 35%;
+    overflow-y: auto;
+}
+
+.panel-object {
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+    height: auto;
 }

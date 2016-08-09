@@ -11,13 +11,15 @@
             <img id="foto" src="~/Content/Fotos/@img" width="100" title="@Model.Descricao"/>
             <div id="nome" class="text-center" title="@Model.Email"><h5>@Model.Nome</h5></div>
         </div>
-        <div class="btn btn-lg btn-block btn-default btn-menu">MAPA</div>
-        <div class="btn btn-lg btn-block btn-default btn-menu">FICHAS</div>
-        <div class="btn btn-lg btn-block btn-default btn-menu">TEXTOS</div>
+        <div class="btn btn-lg btn-block btn-default btn-menu" id="fichas">FICHAS</div>
+        <div class="btn btn-lg btn-block btn-default btn-menu" id="jogadores">JOGADORES</div>
+        <div class="btn btn-lg btn-block btn-default btn-menu" id="textos">TEXTOS</div>
+        <div class="btn btn-lg btn-block btn-default btn-menu" id="mapas">MAPAS</div>
         <div class="btn btn-lg btn-block btn-default btn-menu disabled" id="jogar">JOGAR</div>
-    </div>
+        </div>
     <div class="desktop-content">
         <div class="btn btn-xs btn-default" id="active-menu" title="Menu"></div>
-        <div class="flat-area"></div>
+        <iframe id="frame" scrolling="no" frameborder="0" marginwidth="0" marginheight="0"></iframe>
+        @Html.ActionLink("X", "Sair", null, new { @class = "btn btn-xs btn-danger btn-sair" })
     </div>
 </div>
