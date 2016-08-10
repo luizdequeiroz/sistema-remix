@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RemixRPGStoreContainer" CdmEntityContainer="RemixRPGContainer">
+    <EntitySetMapping Name="MesaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RemixRPG.Mesa)">
+        <MappingFragment StoreEntitySet="MesaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="NumeroJogadores" ColumnName="NumeroJogadores" />
+          <ScalarProperty Name="DataCriacao" ColumnName="DataCriacao" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RemixRPG.Usuario)">
+        <MappingFragment StoreEntitySet="UsuarioSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="DataCadastro" ColumnName="DataCadastro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FichaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RemixRPG.Ficha)">
+        <MappingFragment StoreEntitySet="FichaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Idade" ColumnName="Idade" />
+          <ScalarProperty Name="Raca" ColumnName="Raca" />
+          <ScalarProperty Name="Classe" ColumnName="Classe" />
+          <ScalarProperty Name="Adre" ColumnName="Adre" />
+          <ScalarProperty Name="Ataq" ColumnName="Ataq" />
+          <ScalarProperty Name="Defe" ColumnName="Defe" />
+          <ScalarProperty Name="Dest" ColumnName="Dest" />
+          <ScalarProperty Name="Forc" ColumnName="Forc" />
+          <ScalarProperty Name="Inte" ColumnName="Inte" />
+          <ScalarProperty Name="Resi" ColumnName="Resi" />
+          <ScalarProperty Name="Sabe" ColumnName="Sabe" />
+          <ScalarProperty Name="Velo" ColumnName="Velo" />
+          <ScalarProperty Name="Vital" ColumnName="Vital" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Suportes" ColumnName="Suportes" />
+          <ScalarProperty Name="MestreId" ColumnName="MestreId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExperienciaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RemixRPG.Experiencia)">
+        <MappingFragment StoreEntitySet="ExperienciaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Pontos" ColumnName="Pontos" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PeculiaridadeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RemixRPG.Peculiaridade)">
+        <MappingFragment StoreEntitySet="PeculiaridadeSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Teste" ColumnName="Teste" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="FichaId" ColumnName="FichaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropriedadeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RemixRPG.Propriedade)">
+        <MappingFragment StoreEntitySet="PropriedadeSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="CoordX" ColumnName="CoordX" />
+          <ScalarProperty Name="CoordY" ColumnName="CoordY" />
+          <ScalarProperty Name="CoordGX" ColumnName="CoordGX" />
+          <ScalarProperty Name="CoordGY" ColumnName="CoordGY" />
+          <ScalarProperty Name="FichaId" ColumnName="FichaId" />
+          <ScalarProperty Name="RegiãoId" ColumnName="RegiãoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RiquezaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RemixRPG.Riqueza)">
+        <MappingFragment StoreEntitySet="RiquezaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="FichaId" ColumnName="FichaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemArmaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RemixRPG.ItemArma)">
+        <MappingFragment StoreEntitySet="ItemArmaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Dano" ColumnName="Dano" />
+          <ScalarProperty Name="FichaId" ColumnName="FichaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VestimentaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RemixRPG.Vestimenta)">
+        <MappingFragment StoreEntitySet="VestimentaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Testa" ColumnName="Testa" />
+          <ScalarProperty Name="Cara" ColumnName="Cara" />
+          <ScalarProperty Name="Pescoco" ColumnName="Pescoco" />
+          <ScalarProperty Name="OmbroD" ColumnName="OmbroD" />
+          <ScalarProperty Name="OmbroE" ColumnName="OmbroE" />
+          <ScalarProperty Name="BracoD" ColumnName="BracoD" />
+          <ScalarProperty Name="BracoE" ColumnName="BracoE" />
+          <ScalarProperty Name="AntebracoD" ColumnName="AntebracoD" />
+          <ScalarProperty Name="AntebracoE" ColumnName="AntebracoE" />
+          <ScalarProperty Name="MaoD" ColumnName="MaoD" />
+          <ScalarProperty Name="MaoE" ColumnName="MaoE" />
+          <ScalarProperty Name="PeitoD" ColumnName="PeitoD" />
+          <ScalarProperty Name="PeitoE" ColumnName="PeitoE" />
+          <ScalarProperty Name="Diafragma" ColumnName="Diafragma" />
+          <ScalarProperty Name="Abdomen" ColumnName="Abdomen" />
+          <ScalarProperty Name="Genital" ColumnName="Genital" />
+          <ScalarProperty Name="CoxaD" ColumnName="CoxaD" />
+          <ScalarProperty Name="CoxaE" ColumnName="CoxaE" />
+          <ScalarProperty Name="JoelhoD" ColumnName="JoelhoD" />
+          <ScalarProperty Name="JoelhoE" ColumnName="JoelhoE" />
+          <ScalarProperty Name="CanelaD" ColumnName="CanelaD" />
+          <ScalarProperty Name="CanelaE" ColumnName="CanelaE" />
+          <ScalarProperty Name="PeD" ColumnName="PeD" />
+          <ScalarProperty Name="PeE" ColumnName="PeE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PontosAcumuladosSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RemixRPG.PontosAcumulados)">
+        <MappingFragment StoreEntitySet="PontosAcumuladosSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Testes" ColumnName="Testes" />
+          <ScalarProperty Name="Pericias" ColumnName="Pericias" />
+          <ScalarProperty Name="Desvantagens" ColumnName="Desvantagens" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JogadorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RemixRPG.Jogador)">
+        <MappingFragment StoreEntitySet="JogadorSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MesaId" ColumnName="MesaId" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MestreSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RemixRPG.Mestre)">
+        <MappingFragment StoreEntitySet="MestreSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MapaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RemixRPG.Mapa)">
+        <MappingFragment StoreEntitySet="MapaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Caminho" ColumnName="Caminho" />
+          <ScalarProperty Name="Geral" ColumnName="Geral" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegiãoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RemixRPG.Região)">
+        <MappingFragment StoreEntitySet="RegiãoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="MapaId" ColumnName="MapaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FichaPontosAcumulados" TypeName="RemixRPG.FichaPontosAcumulados" StoreEntitySet="FichaSet">
+      <EndProperty Name="PontosAcumulados">
+        <ScalarProperty Name="Id" ColumnName="PontosAcumulados_Id" />
+      </EndProperty>
+      <EndProperty Name="Ficha">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FichaExperiencia" TypeName="RemixRPG.FichaExperiencia" StoreEntitySet="FichaSet">
+      <EndProperty Name="Experiencia">
+        <ScalarProperty Name="Id" ColumnName="Experiencia_Id" />
+      </EndProperty>
+      <EndProperty Name="Ficha">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ItemArmaVestimenta" TypeName="RemixRPG.ItemArmaVestimenta" StoreEntitySet="VestimentaSet">
+      <EndProperty Name="ItemArma">
+        <ScalarProperty Name="Id" ColumnName="ItemArma_Id" />
+      </EndProperty>
+      <EndProperty Name="Vestimenta">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MesaMapa" TypeName="RemixRPG.MesaMapa" StoreEntitySet="MesaMapa">
+      <EndProperty Name="Mesa">
+        <ScalarProperty Name="Id" ColumnName="Mesas_Id" />
+      </EndProperty>
+      <EndProperty Name="Mapa">
+        <ScalarProperty Name="Id" ColumnName="Mapas_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MesaMestre" TypeName="RemixRPG.MesaMestre" StoreEntitySet="MesaSet">
+      <EndProperty Name="Mestre">
+        <ScalarProperty Name="Id" ColumnName="Mestre_Id" />
+      </EndProperty>
+      <EndProperty Name="Mesa">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="JogadorFicha" TypeName="RemixRPG.JogadorFicha" StoreEntitySet="JogadorSet">
+      <EndProperty Name="Ficha">
+        <ScalarProperty Name="Id" ColumnName="Ficha_Id" />
+      </EndProperty>
+      <EndProperty Name="Jogador">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FichaVestimenta" TypeName="RemixRPG.FichaVestimenta" StoreEntitySet="VestimentaSet">
+      <EndProperty Name="Ficha">
+        <ScalarProperty Name="Id" ColumnName="Ficha_Id" />
+      </EndProperty>
+      <EndProperty Name="Vestimenta">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

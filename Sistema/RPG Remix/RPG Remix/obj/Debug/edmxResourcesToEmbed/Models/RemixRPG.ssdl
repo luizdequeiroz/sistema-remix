@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RemixRPG.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="RemixRPGStoreContainer">
+    <EntitySet Name="MesaSet" EntityType="RemixRPG.Store.MesaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UsuarioSet" EntityType="RemixRPG.Store.UsuarioSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FichaSet" EntityType="RemixRPG.Store.FichaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ExperienciaSet" EntityType="RemixRPG.Store.ExperienciaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PeculiaridadeSet" EntityType="RemixRPG.Store.PeculiaridadeSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PropriedadeSet" EntityType="RemixRPG.Store.PropriedadeSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RiquezaSet" EntityType="RemixRPG.Store.RiquezaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ItemArmaSet" EntityType="RemixRPG.Store.ItemArmaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VestimentaSet" EntityType="RemixRPG.Store.VestimentaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PontosAcumuladosSet" EntityType="RemixRPG.Store.PontosAcumuladosSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JogadorSet" EntityType="RemixRPG.Store.JogadorSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MestreSet" EntityType="RemixRPG.Store.MestreSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MapaSet" EntityType="RemixRPG.Store.MapaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RegiãoSet" EntityType="RemixRPG.Store.RegiãoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MesaMapa" EntityType="RemixRPG.Store.MesaMapa" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FichaPontosAcumulados" Association="RemixRPG.Store.FichaPontosAcumulados">
+      <End Role="Ficha" EntitySet="FichaSet" />
+      <End Role="PontosAcumulados" EntitySet="PontosAcumuladosSet" />
+    </AssociationSet>
+    <AssociationSet Name="FichaExperiencia" Association="RemixRPG.Store.FichaExperiencia">
+      <End Role="Ficha" EntitySet="FichaSet" />
+      <End Role="Experiencia" EntitySet="ExperienciaSet" />
+    </AssociationSet>
+    <AssociationSet Name="ItemArmaVestimenta" Association="RemixRPG.Store.ItemArmaVestimenta">
+      <End Role="ItemArma" EntitySet="ItemArmaSet" />
+      <End Role="Vestimenta" EntitySet="VestimentaSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MesaMapa_Mesa" Association="RemixRPG.Store.FK_MesaMapa_Mesa">
+      <End Role="Mesa" EntitySet="MesaSet" />
+      <End Role="MesaMapa" EntitySet="MesaMapa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MesaMapa_Mapa" Association="RemixRPG.Store.FK_MesaMapa_Mapa">
+      <End Role="Mapa" EntitySet="MapaSet" />
+      <End Role="MesaMapa" EntitySet="MesaMapa" />
+    </AssociationSet>
+    <AssociationSet Name="MesaMestre" Association="RemixRPG.Store.MesaMestre">
+      <End Role="Mesa" EntitySet="MesaSet" />
+      <End Role="Mestre" EntitySet="MestreSet" />
+    </AssociationSet>
+    <AssociationSet Name="MesaJogador" Association="RemixRPG.Store.MesaJogador">
+      <End Role="Mesa" EntitySet="MesaSet" />
+      <End Role="Jogador" EntitySet="JogadorSet" />
+    </AssociationSet>
+    <AssociationSet Name="UsuarioJogador" Association="RemixRPG.Store.UsuarioJogador">
+      <End Role="Usuario" EntitySet="UsuarioSet" />
+      <End Role="Jogador" EntitySet="JogadorSet" />
+    </AssociationSet>
+    <AssociationSet Name="MestreFicha" Association="RemixRPG.Store.MestreFicha">
+      <End Role="Mestre" EntitySet="MestreSet" />
+      <End Role="Ficha" EntitySet="FichaSet" />
+    </AssociationSet>
+    <AssociationSet Name="JogadorFicha" Association="RemixRPG.Store.JogadorFicha">
+      <End Role="Jogador" EntitySet="JogadorSet" />
+      <End Role="Ficha" EntitySet="FichaSet" />
+    </AssociationSet>
+    <AssociationSet Name="FichaPropriedade" Association="RemixRPG.Store.FichaPropriedade">
+      <End Role="Ficha" EntitySet="FichaSet" />
+      <End Role="Propriedade" EntitySet="PropriedadeSet" />
+    </AssociationSet>
+    <AssociationSet Name="FichaPeculiaridade" Association="RemixRPG.Store.FichaPeculiaridade">
+      <End Role="Ficha" EntitySet="FichaSet" />
+      <End Role="Peculiaridade" EntitySet="PeculiaridadeSet" />
+    </AssociationSet>
+    <AssociationSet Name="FichaRiqueza" Association="RemixRPG.Store.FichaRiqueza">
+      <End Role="Ficha" EntitySet="FichaSet" />
+      <End Role="Riqueza" EntitySet="RiquezaSet" />
+    </AssociationSet>
+    <AssociationSet Name="FichaVestimenta" Association="RemixRPG.Store.FichaVestimenta">
+      <End Role="Ficha" EntitySet="FichaSet" />
+      <End Role="Vestimenta" EntitySet="VestimentaSet" />
+    </AssociationSet>
+    <AssociationSet Name="FichaItemArma" Association="RemixRPG.Store.FichaItemArma">
+      <End Role="Ficha" EntitySet="FichaSet" />
+      <End Role="ItemArma" EntitySet="ItemArmaSet" />
+    </AssociationSet>
+    <AssociationSet Name="PropriedadeRegião" Association="RemixRPG.Store.PropriedadeRegião">
+      <End Role="Propriedade" EntitySet="PropriedadeSet" />
+      <End Role="Região" EntitySet="RegiãoSet" />
+    </AssociationSet>
+    <AssociationSet Name="MapaRegião" Association="RemixRPG.Store.MapaRegião">
+      <End Role="Mapa" EntitySet="MapaSet" />
+      <End Role="Região" EntitySet="RegiãoSet" />
+    </AssociationSet>
+    <AssociationSet Name="UsuarioMestre" Association="RemixRPG.Store.UsuarioMestre">
+      <End Role="Usuario" EntitySet="UsuarioSet" />
+      <End Role="Mestre" EntitySet="MestreSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="MesaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="NumeroJogadores" Type="int" Nullable="true" />
+    <Property Name="DataCriacao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Senha" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Mestre_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsuarioSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Senha" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DataNascimento" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Sexo" Type="tinyint" Nullable="false" />
+    <Property Name="DataCadastro" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FichaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Idade" Type="int" Nullable="false" />
+    <Property Name="Raca" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Classe" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Adre" Type="int" Nullable="false" />
+    <Property Name="Ataq" Type="int" Nullable="false" />
+    <Property Name="Defe" Type="int" Nullable="false" />
+    <Property Name="Dest" Type="int" Nullable="false" />
+    <Property Name="Forc" Type="int" Nullable="false" />
+    <Property Name="Inte" Type="int" Nullable="false" />
+    <Property Name="Resi" Type="int" Nullable="false" />
+    <Property Name="Sabe" Type="int" Nullable="false" />
+    <Property Name="Velo" Type="int" Nullable="false" />
+    <Property Name="Vital" Type="int" Nullable="false" />
+    <Property Name="Sort" Type="int" Nullable="false" />
+    <Property Name="Suportes" Type="int" Nullable="false" />
+    <Property Name="MestreId" Type="int" Nullable="true" />
+    <Property Name="PontosAcumulados_Id" Type="int" Nullable="false" />
+    <Property Name="Experiencia_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ExperienciaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Pontos" Type="int" Nullable="false" />
+    <Property Name="Data" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PeculiaridadeSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Teste" Type="int" Nullable="false" />
+    <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FichaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropriedadeSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CoordX" Type="int" Nullable="true" />
+    <Property Name="CoordY" Type="int" Nullable="true" />
+    <Property Name="CoordGX" Type="int" Nullable="true" />
+    <Property Name="CoordGY" Type="int" Nullable="true" />
+    <Property Name="FichaId" Type="int" Nullable="false" />
+    <Property Name="RegiãoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RiquezaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Valor" Type="float" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FichaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ItemArmaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Categoria" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Peso" Type="float" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Dano" Type="int" Nullable="false" />
+    <Property Name="FichaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VestimentaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Testa" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cara" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Pescoco" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OmbroD" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OmbroE" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BracoD" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BracoE" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AntebracoD" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AntebracoE" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MaoD" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MaoE" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PeitoD" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PeitoE" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Diafragma" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Abdomen" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Genital" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CoxaD" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CoxaE" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="JoelhoD" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="JoelhoE" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CanelaD" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CanelaE" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PeD" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PeE" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ItemArma_Id" Type="int" Nullable="false" />
+    <Property Name="Ficha_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PontosAcumuladosSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Testes" Type="int" Nullable="false" />
+    <Property Name="Pericias" Type="int" Nullable="false" />
+    <Property Name="Desvantagens" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JogadorSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MesaId" Type="int" Nullable="false" />
+    <Property Name="UsuarioId" Type="int" Nullable="false" />
+    <Property Name="Ficha_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MestreSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UsuarioId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MapaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Caminho" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Geral" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RegiãoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MapaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MesaMapa">
+    <Key>
+      <PropertyRef Name="Mesas_Id" />
+      <PropertyRef Name="Mapas_Id" />
+    </Key>
+    <Property Name="Mesas_Id" Type="int" Nullable="false" />
+    <Property Name="Mapas_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FichaPontosAcumulados">
+    <End Role="Ficha" Type="RemixRPG.Store.FichaSet" Multiplicity="*" />
+    <End Role="PontosAcumulados" Type="RemixRPG.Store.PontosAcumuladosSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="PontosAcumulados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ficha">
+        <PropertyRef Name="PontosAcumulados_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FichaExperiencia">
+    <End Role="Ficha" Type="RemixRPG.Store.FichaSet" Multiplicity="*" />
+    <End Role="Experiencia" Type="RemixRPG.Store.ExperienciaSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Experiencia">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ficha">
+        <PropertyRef Name="Experiencia_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ItemArmaVestimenta">
+    <End Role="ItemArma" Type="RemixRPG.Store.ItemArmaSet" Multiplicity="1" />
+    <End Role="Vestimenta" Type="RemixRPG.Store.VestimentaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemArma">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vestimenta">
+        <PropertyRef Name="ItemArma_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MesaMestre">
+    <End Role="Mesa" Type="RemixRPG.Store.MesaSet" Multiplicity="*" />
+    <End Role="Mestre" Type="RemixRPG.Store.MestreSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Mestre">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Mesa">
+        <PropertyRef Name="Mestre_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MesaJogador">
+    <End Role="Mesa" Type="RemixRPG.Store.MesaSet" Multiplicity="1" />
+    <End Role="Jogador" Type="RemixRPG.Store.JogadorSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mesa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Jogador">
+        <PropertyRef Name="MesaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsuarioJogador">
+    <End Role="Usuario" Type="RemixRPG.Store.UsuarioSet" Multiplicity="1" />
+    <End Role="Jogador" Type="RemixRPG.Store.JogadorSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Jogador">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MestreFicha">
+    <End Role="Mestre" Type="RemixRPG.Store.MestreSet" Multiplicity="0..1" />
+    <End Role="Ficha" Type="RemixRPG.Store.FichaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mestre">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ficha">
+        <PropertyRef Name="MestreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JogadorFicha">
+    <End Role="Jogador" Type="RemixRPG.Store.JogadorSet" Multiplicity="*" />
+    <End Role="Ficha" Type="RemixRPG.Store.FichaSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Ficha">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Jogador">
+        <PropertyRef Name="Ficha_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FichaPropriedade">
+    <End Role="Ficha" Type="RemixRPG.Store.FichaSet" Multiplicity="1" />
+    <End Role="Propriedade" Type="RemixRPG.Store.PropriedadeSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ficha">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Propriedade">
+        <PropertyRef Name="FichaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FichaPeculiaridade">
+    <End Role="Ficha" Type="RemixRPG.Store.FichaSet" Multiplicity="1" />
+    <End Role="Peculiaridade" Type="RemixRPG.Store.PeculiaridadeSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ficha">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Peculiaridade">
+        <PropertyRef Name="FichaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FichaRiqueza">
+    <End Role="Ficha" Type="RemixRPG.Store.FichaSet" Multiplicity="1" />
+    <End Role="Riqueza" Type="RemixRPG.Store.RiquezaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ficha">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Riqueza">
+        <PropertyRef Name="FichaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FichaVestimenta">
+    <End Role="Ficha" Type="RemixRPG.Store.FichaSet" Multiplicity="1" />
+    <End Role="Vestimenta" Type="RemixRPG.Store.VestimentaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ficha">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vestimenta">
+        <PropertyRef Name="Ficha_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FichaItemArma">
+    <End Role="Ficha" Type="RemixRPG.Store.FichaSet" Multiplicity="1" />
+    <End Role="ItemArma" Type="RemixRPG.Store.ItemArmaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ficha">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemArma">
+        <PropertyRef Name="FichaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PropriedadeRegião">
+    <End Role="Propriedade" Type="RemixRPG.Store.PropriedadeSet" Multiplicity="*" />
+    <End Role="Região" Type="RemixRPG.Store.RegiãoSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Região">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Propriedade">
+        <PropertyRef Name="RegiãoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MapaRegião">
+    <End Role="Mapa" Type="RemixRPG.Store.MapaSet" Multiplicity="1" />
+    <End Role="Região" Type="RemixRPG.Store.RegiãoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mapa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Região">
+        <PropertyRef Name="MapaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsuarioMestre">
+    <End Role="Usuario" Type="RemixRPG.Store.UsuarioSet" Multiplicity="1" />
+    <End Role="Mestre" Type="RemixRPG.Store.MestreSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Mestre">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MesaMapa_Mesa">
+    <End Role="Mesa" Type="RemixRPG.Store.MesaSet" Multiplicity="1" />
+    <End Role="MesaMapa" Type="RemixRPG.Store.MesaMapa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mesa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MesaMapa">
+        <PropertyRef Name="Mesas_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MesaMapa_Mapa">
+    <End Role="MesaMapa" Type="RemixRPG.Store.MesaMapa" Multiplicity="*" />
+    <End Role="Mapa" Type="RemixRPG.Store.MapaSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Mapa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MesaMapa">
+        <PropertyRef Name="Mapas_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
