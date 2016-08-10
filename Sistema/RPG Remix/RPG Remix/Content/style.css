@@ -8688,7 +8688,7 @@ o conteúdo HTML.
     background-color: rgba(0, 0, 0, 0.175);
 }
 
-.div-table {
+.div-table, .div-form {
     height: 35%;
     overflow-y: auto;
 }
@@ -8700,4 +8700,10 @@ o conteúdo HTML.
     margin: 10px;
     padding: 5px;
     height: auto;
+}
+
+.panel-form {
+    color: black;
+    margin-top: 20px;
+    height: 95%;
 }
