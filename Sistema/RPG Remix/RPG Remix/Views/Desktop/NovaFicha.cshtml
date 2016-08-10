@@ -7,52 +7,34 @@
 </div>
 <div class="panel panel-body">
     <div class="panel panel-default panel-form div-form col-md-12">
-        @using (Html.BeginForm())
-        {
-            <div class="col-md-12">
-                <div class="col-md-6">
-                    <div class="col-md-4">
-                        <h4>Testes Físicos</h4>
-                    </div>
-                    <div class="col-md-8">
-                        <div>
-                            <h5>Testes Místicos</h5>
-                        </div>
-                        <div>
-                            <h4>Capacidades</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div>
-                        <h5>Dados do Personagem</h5>
-                    </div>
-                    <div>
-                        <h4>Perícias</h4>
-                    </div>
-                </div>
+        <ul class="nav nav-tabs">
+            <li class="active"><a class="tab-label" href="#dadtes" data-toggle="tab">Dados e Testes do Personagem</a></li>
+            <li><a class="tab-label" href="#capperdes" data-toggle="tab">Capacidades, Perícias e Desvantagens</a></li>
+            <li><a class="tab-label" href="#proriqitearm" data-toggle="tab">Propriedades, Riquezas, Itens e Armas</a></li>
+            <li><a class="tab-label" href="#cammap" data-toggle="tab">Campanha e Mapa</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="dadtes">
+                @Html.Action("DadosTestes", "Transacoes")
             </div>
-            <div class="col-md-12">
-                <div class="col-md-6">
-                    <h4>Propriedades / Riquezas</h4>
-                </div>
-                <div class="col-md-6">
-                    <h4>Desvantagens</h4>
-                </div>
+            <div class="tab-pane" id="capperdes">
+                @@Html.Action("CapPerDes", "Transacores")
+                <h1>@@{Formulário para Capacidades, Perícias e Desvantagens}</h1>
+                <br />
+                <h2>@@{Listas dinâmicas para Capacidades, Perícias e Desvantagens}</h2>
             </div>
-            <div class="col-md-12">
-                <div class="col-md-6">
-                    <h4>Itens / Armas</h4>
-                </div>
-                <div class="col-md-6">
-                    <h5>Definição de Armaduras</h5>
-                </div>
+            <div class="tab-pane" id="proriqitearm">
+                @@Html.Action("ProRiqIteArm", "Transacoes")
+                <h1>@@{Formulário para Propriedades, Riquezas, Itens e Armas</h1>
+                <br />
+                <h2>@@{Listas dinâmicas para Propriedades/Riquezas e Itens/Armas}</h2>
             </div>
-            <div class="col-md-12">
-                <div class="col-md-6">
-                    <h4>Experiências</h4>
-                </div>
+            <div class="tab-pane" id="cammap">
+                @@Html.Action("CampanhaMapa", "Transacoes")
+                <h1>@@{Formulário para Campanha e Mapa</h1>
+                <br />
+                <h2>@@{Formulário para Escrever Texto sobre o Personagem, Nome da Campanha, Descrição e Mapa}</h2>
             </div>
-        }
+        </div>
     </div>
 </div>

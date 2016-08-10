@@ -8,18 +8,33 @@
 <div class="desktop-body">
     <div class="desktop-menu">
         <div class="panel panel-default panel-photo">
-            <img id="foto" src="~/Content/Fotos/@img" width="100" title="@Model.Descricao"/>
+            <img id="foto" src="~/Content/Fotos/@img" width="100" title="@Model.Descricao" />
             <div id="nome" class="text-center" title="@Model.Email"><h5>@Model.Nome</h5></div>
         </div>
-        <div class="btn btn-lg btn-block btn-default btn-menu" id="fichas">FICHAS</div>
-        <div class="btn btn-lg btn-block btn-default btn-menu" id="jogadores">JOGADORES</div>
-        <div class="btn btn-lg btn-block btn-default btn-menu" id="textos">TEXTOS</div>
-        <div class="btn btn-lg btn-block btn-default btn-menu" id="mapas">MAPAS</div>
-        <div class="btn btn-lg btn-block btn-default btn-menu disabled" id="jogar">JOGAR</div>
-        </div>
+        @using (Ajax.BeginForm("Desktop", "Desktop", new AjaxOptions
+        {
+            HttpMethod = "POST",
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "frame",
+            LoadingElementId = "load",
+            OnBegin = "loaderOn",
+            OnSuccess = "loaderOff"
+        }, new { id = "menu-form" }))
+        {
+            <input type="hidden" name="pagina" id="pagina" />
+            <div class="btn btn-lg btn-block btn-default btn-menu" id="Fichas" onclick="submitMenu(this.id)">FICHAS</div>
+            <div class="btn btn-lg btn-block btn-default btn-menu" id="Jogadores" onclick="submitMenu(this.id)">JOGADORES</div>
+            <div class="btn btn-lg btn-block btn-default btn-menu" id="Textos" onclick="submitMenu(this.id)">TEXTOS</div>
+            <div class="btn btn-lg btn-block btn-default btn-menu" id="Mapas" onclick="submitMenu(this.id)">MAPAS</div>
+            <div class="btn btn-lg btn-block btn-default btn-menu disabled" id="Jogar" onclick="submitMenu(this.id)">JOGAR</div>
+        }
+    </div>
     <div class="desktop-content">
         <div class="btn btn-xs btn-default" id="active-menu" title="Menu"></div>
-        <iframe id="frame" scrolling="no" frameborder="0" marginwidth="0" marginheight="0"></iframe>
+        <div class="col-lg-10 col-md-10 col-sm-8 div-padding-darkgrey col-lg-offset-2 col-md-offset-2 col-sm-offset-4 text-center loading">
+            <img src="~/Content/images/ajax-loader.gif" width="50" /> Carregando...
+        </div>
+        <div id="frame"></div>
         @Html.ActionLink("X", "Sair", null, new { @class = "btn btn-xs btn-danger btn-sair" })
     </div>
 </div>

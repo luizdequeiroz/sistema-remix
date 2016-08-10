@@ -20,6 +20,12 @@ namespace RPG_Remix.Controllers
             else return View((Usuario)Session["usuario"]);
         }
 
+        [HttpPost]
+        public ActionResult Desktop(string pagina)
+        {
+            return RedirectToAction(pagina);
+        }
+
         public ActionResult Sair()
         {
             Session.RemoveAll();

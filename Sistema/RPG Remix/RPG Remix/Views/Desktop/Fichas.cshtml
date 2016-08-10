@@ -2,47 +2,53 @@
     ViewBag.Title = "Fichas";
 }
 
-<div id="corpo">
-    <div class="panel panel-head">
-        <h2>Fichas</h2>
-    </div>
-    <div class="panel panel-body">
-        <h3>Suas Fichas</h3>
-        <div class="div-table">
-            <div class="panel panel-object col-md-2 col-sm-2">
-                <h5>
-                    <label for="nome" class="hidden-xs">Novo Personagem</label>
-                    <input type="text" class="form-control" id="nome" placeholder="nome do personagem" />
-                </h5>
-                <hr class="hidden-xs" />
-                @Ajax.ActionLink("CRIAR NOVA FICHA", "NovaFicha", null, new AjaxOptions
-                    {
-                        UpdateTargetId = "corpo",
-                    }, new { @class = "btn btn-xs btn-default btn-block" })
+@using (Ajax.BeginForm("Fichas", "Desktop", new AjaxOptions
+{
+    HttpMethod = "POST",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "corpo",
+}, new { id = "novaFicha-form" }))
+{
+    <div id="corpo">
+        <div class="panel panel-head">
+            <h2>Fichas</h2>
+        </div>
+        <div class="panel panel-body">
+            <h3>Suas Fichas</h3>
+            <div class="div-table">
+                <div class="panel panel-object col-md-2 col-sm-2">
+                    <h5>
+                        <label for="prenome" class="hidden-xs">Novo Personagem</label>
+                        <input type="text" class="form-control" name="prenome" placeholder="nome do personagem" />
+                    </h5>
+                    <hr class="hidden-xs" />
+                    <input type="hidden" name="pagina" id="pagFichas" />
+                    <div class="btn btn-xs btn-default btn-block" id="NovaFicha" onclick="submitFichas(this.id)">CRIAR NOVA FICHA</div>
+                </div>
+                <div class="panel panel-object col-md-2 col-sm-2">
+                    <h5>@@{Nome do Personagem}</h5>
+                    <h6>@@{Testes Físicos}</h6>
+                    <hr class="hidden-xs" />
+                    <div class="btn-group btn-group-justified">
+                        <div class="btn btn-xs btn-primary">Ver</div>
+                        <div class="btn btn-xs btn-success">Editar</div>
+                        <div class="btn btn-xs btn-default">Copiar</div>
+                    </div>
+                </div>
             </div>
-            <div class="panel panel-object col-md-2 col-sm-2">
-                <h5>@@{Nome do Personagem}</h5>
-                <h6>@@{Testes Físicos}</h6>
-                <hr class="hidden-xs" />
-                <div class="btn-group btn-group-justified">
-                    <a class="btn btn-xs btn-primary">Ver</a>
-                    <a class="btn btn-xs btn-success">Editar</a>
-                    <a class="btn btn-xs btn-default">Copiar</a>
+            <hr />
+            <h4>Fichas de Conhecidos</h4>
+            <div class="div-table">
+                <div class="panel panel-object col-md-2 col-sm-2">
+                    <h5>@@{Nome do Personagem}</h5>
+                    <label>@@{Nome do Jogador}</label>
+                    <h6>@@{Testes Físicos}</h6>
+                    <div class="btn-group btn-group-justified">
+                        <div class="btn btn-xs btn-primary">Ver</div>
+                        <div class="btn btn-xs btn-default">Copiar</div>
+                    </div>
                 </div>
             </div>
         </div>
-        <hr />
-        <h4>Fichas de Conhecidos</h4>
-        <div class="div-table">
-            <div class="panel panel-object col-md-2 col-sm-2">
-                <h5>@@{Nome do Personagem}</h5>
-                <label>@@{Nome do Jogador}</label>
-                <h6>@@{Testes Físicos}</h6>
-                <div class="btn-group btn-group-justified">
-                    <a class="btn btn-xs btn-primary">Ver</a>
-                    <a class="btn btn-xs btn-default">Copiar</a>
-                </div>
-            </div>
-        </div>
     </div>
-</div>
+}

@@ -13,13 +13,19 @@ namespace RPG_Remix.Controllers
 
         public ActionResult Fichas()
         {
-            return View();
+            return PartialView();
         }
 
-        public ActionResult NovaFicha(string nome = "")
+        [HttpPost]
+        public ActionResult Fichas(string pagina, string prenome = "")
         {
-            ViewBag.Nome = nome;
-            return View();
+            ViewBag.Nome = prenome;
+            return RedirectToAction(pagina);
+        }
+
+        public ActionResult NovaFicha()
+        {
+            return PartialView();
         }
     }
 }

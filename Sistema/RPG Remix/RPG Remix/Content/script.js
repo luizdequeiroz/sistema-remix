@@ -8,6 +8,27 @@ function loaderOff() {
     $('.loading').css('display', 'none');
 }
 
+function resetMenu() {
+    $('#Fichas').css('border', 'none');
+    $('#Jogadores').css('border', 'none');
+    $('#Textos').css('border', 'none');
+    $('#Mapas').css('border', 'none');
+}
+
+function submitMenu(id) {
+    resetMenu();
+
+    $('#' + id).css('border', '3px solid darkred');
+    $('#pagina').val(id);
+    $('#menu-form').submit();
+}
+
+function submitFichas(id) {
+
+    $('#pagFichas').val(id);
+    $('#novaFicha-form').submit();
+}
+
 var menuActived = true;
 
 $(document).ready(function () {
@@ -36,40 +57,5 @@ $(document).ready(function () {
             $('.desktop-content').animate({ left: '150px' }, 500);
             menuActived = true;
         }
-    });
-
-    function resetMenu() {
-        $('#fichas').css('border', 'none');
-        $('#jogadores').css('border', 'none');
-        $('#textos').css('border', 'none');
-        $('#mapas').css('border', 'none');
-    }
-
-    $('#fichas').click(function () {
-        resetMenu();
-        $('#fichas').css('border', '3px solid darkred');
-        $('#frame').attr('src', '/Desktop/Fichas');
-    });
-
-    $('#jogadores').click(function () {
-        resetMenu();
-        $('#jogadores').css('border', '3px solid darkred');
-        $('#frame').attr('src', '/Desktop/Jogadores');
-    });
-
-    $('#textos').click(function () {
-        resetMenu();
-        $('#textos').css('border', '3px solid darkred');
-        $('#frame').attr('src', '/Desktop/Textos');
-    });
-
-    $('#mapas').click(function () {
-        resetMenu();
-        $('#mapas').css('border', '3px solid darkred');
-        $('#frame').attr('src', '../Content/zoldamaps/Default.html');
-    });
-
-    $('#novaficha').click(function () {
-        $('#frame').attr('src', '/Desktop/NovaFicha');
     });
 });

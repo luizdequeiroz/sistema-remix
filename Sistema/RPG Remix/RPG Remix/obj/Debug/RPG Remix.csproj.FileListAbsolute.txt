@@ -27,7 +27,6 @@ C:\Repos\Remix\Sistema\RPG Remix\RPG Remix\bin\System.Web.Razor.xml
 C:\Repos\Remix\Sistema\RPG Remix\RPG Remix\bin\System.Web.WebPages.xml
 C:\Repos\Remix\Sistema\RPG Remix\RPG Remix\bin\System.Web.WebPages.Deployment.xml
 C:\Repos\Remix\Sistema\RPG Remix\RPG Remix\bin\System.Web.WebPages.Razor.xml
-C:\Repos\Remix\Sistema\RPG Remix\RPG Remix\obj\Debug\RPG Remix.csprojResolveAssemblyReference.cache
 C:\Repos\Remix\Sistema\RPG Remix\RPG Remix\obj\Debug\RPG Remix.dll
 C:\Repos\Remix\Sistema\RPG Remix\RPG Remix\obj\Debug\RPG Remix.pdb
 C:\Repos\Sistema\RPG Remix\RPG Remix\bin\RPG Remix.dll.config
