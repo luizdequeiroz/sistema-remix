@@ -1,0 +1,41 @@
+﻿<div class="scrollable">
+    <div class="div-padding-top">
+        <h2 class="panel panel-head">Nova Ficha</h2>
+        <div class="panel panel-body no-padding">
+            <ul class="nav nav-tabs">
+                <li class="active"><a class="tab-label" href="#dadtes" data-toggle="tab">Dados e Testes do Personagem</a></li>
+                <li><a class="tab-label" href="#capperdes" data-toggle="tab">Capacidades, Perícias e Desvantagens</a></li>
+                <li><a class="tab-label" href="#proriqitearm" data-toggle="tab">Propriedades, Riquezas, Itens e Armas</a></li>
+                <li><a class="tab-label" href="#cammap" data-toggle="tab">Campanha e Mapa</a></li>
+                <li title="CRIAR ESSA FICHA"><a class="tab-label" onclick="submitFicha()" data-toggle="tab">CRIAR</a></li>
+                <li title="CANCELAR"><a class="tab-label" onclick="loadPage('Fichas','Fichas')">X</a></li>
+            </ul>
+            <div class="panel panel-form tab-content">
+                <div class="tab-pane active" id="dadtes">
+                    @@Html.Action("DadosTestes", "Transacoes")
+                    <h1>@@{Formulário para Dados e Testes}</h1>
+                    <br />
+                    <h2>@@{Dados do Personagem, Testes Físicos e Testes Místicos}</h2>
+                </div>
+                <div class="tab-pane" id="capperdes">
+                    @@Html.Action("CapPerDes", "Transacores")
+                    <h1>@@{Formulário para Capacidades, Perícias e Desvantagens}</h1>
+                    <br />
+                    <h2>@@{Listas dinâmicas para Capacidades, Perícias e Desvantagens}</h2>
+                </div>
+                <div class="tab-pane" id="proriqitearm">
+                    @@Html.Action("ProRiqIteArm", "Transacoes")
+                    <h1>@@{Formulário para Propriedades, Riquezas, Itens e Armas</h1>
+                    <br />
+                    <h2>@@{Listas dinâmicas para Propriedades/Riquezas e Itens/Armas}</h2>
+                </div>
+                <div class="tab-pane" id="cammap">
+                    @@Html.Action("CampanhaMapa", "Transacoes")
+                    <h1>@@{Formulário para Campanha e Mapa</h1>
+                    <br />
+                    <h2>@@{Formulário para Escrever Texto sobre o Personagem, Nome da Campanha, Descrição e Mapa}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

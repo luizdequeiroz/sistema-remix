@@ -1,0 +1,623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6A187ABE-DF88-4CA3-8E14-15130FDF8EB5}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RPG_Remix</RootNamespace>
+    <AssemblyName>RPG Remix</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\EntradaController.cs" />
+    <Compile Include="Controllers\DesktopController.cs" />
+    <Compile Include="Controllers\FichasController.cs" />
+    <Compile Include="Controllers\MapasController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DAO\JogadorDao.cs" />
+    <Compile Include="Models\DAO\MapaDao.cs" />
+    <Compile Include="Models\DAO\MesaDao.cs" />
+    <Compile Include="Models\DAO\UsuarioDao.cs" />
+    <Compile Include="Models\Experiencia.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Fachada\MesaCriar.cs" />
+    <Compile Include="Models\Fachada\UsuarioEntrar.cs" />
+    <Compile Include="Models\Ficha.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ItemArma.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Jogador.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Mapa.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Mesa.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Mestre.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Peculiaridade.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PontosAcumulados.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Propriedade.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Região.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RemixRPG.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RemixRPG.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RemixRPG.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RemixRPG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RemixRPG.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Riqueza.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Usuario.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Fachada\UsuarioCadastrar.cs" />
+    <Compile Include="Models\Vestimenta.cs">
+      <DependentUpon>RemixRPG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Bootstrap\bootstrap-css\rpg-awesome.css" />
+    <Content Include="Content\Bootstrap\bootstrap-css\rpg-awesome.min.css" />
+    <Content Include="Content\Bootstrap\fonts\rpgawesome-webfont.svg" />
+    <Content Include="Content\Fotos\luizdequeiroz%40outlook.com.br.png" />
+    <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\images\ficha.jpg" />
+    <Content Include="Content\images\large-lake.jpg" />
+    <Content Include="Content\images\large-ocean.jpg" />
+    <Content Include="Content\images\tabuleiro.jpg" />
+    <Content Include="Content\images\terrain-body.jpg" />
+    <Content Include="Content\images\terrain-head.jpg" />
+    <Content Include="Content\images\_large-ocean.png" />
+    <Content Include="Content\images\loader.gif" />
+    <Content Include="Content\images\loading.gif" />
+    <Content Include="Content\images\Map01.jpg" />
+    <Content Include="Content\script.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\zoldamaps\bootstrap-select\.gitignore" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\css\bootstrap-select.css" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\css\bootstrap-select.min.css" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\bootstrap-select.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\bootstrap-select.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-ar_AR.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-ar_AR.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-bg_BG.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-bg_BG.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-cro_CRO.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-cro_CRO.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-cs_CZ.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-cs_CZ.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-da_DK.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-da_DK.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-de_DE.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-de_DE.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-en_US.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-en_US.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-es_CL.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-es_CL.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-eu.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-eu.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-fa_IR.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-fa_IR.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-fi_FI.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-fi_FI.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-fr_FR.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-fr_FR.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-hu_HU.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-hu_HU.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-id_ID.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-id_ID.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-it_IT.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-it_IT.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-ko_KR.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-ko_KR.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-lt_LT.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-lt_LT.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-nb_NO.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-nb_NO.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-nl_NL.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-nl_NL.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-pl_PL.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-pl_PL.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-pt_BR.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-pt_BR.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-pt_PT.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-pt_PT.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-ro_RO.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-ro_RO.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-ru_RU.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-ru_RU.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-sk_SK.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-sk_SK.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-sl_SI.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-sl_SI.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-sv_SE.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-sv_SE.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-tr_TR.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-tr_TR.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-ua_UA.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-ua_UA.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-zh_CN.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-zh_CN.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-zh_TW.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\i18n\defaults-zh_TW.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\custom_theme\base.html" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\custom_theme\css\base.css" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\custom_theme\img\logos\membermeister.png" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\custom_theme\img\logos\snapappointments.png" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\custom_theme\img\logos\thermofisher.png" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\custom_theme\js\base.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\custom_theme\nav.html" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\custom_theme\toc.html" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\css\custom.css" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\css\bootstrap-select.css" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\css\bootstrap-select.min.css" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\bootstrap-select.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\bootstrap-select.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-ar_AR.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-ar_AR.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-bg_BG.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-bg_BG.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-cro_CRO.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-cro_CRO.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-cs_CZ.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-cs_CZ.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-da_DK.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-da_DK.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-de_DE.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-de_DE.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-en_US.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-en_US.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-es_CL.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-es_CL.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-eu.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-eu.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-fa_IR.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-fa_IR.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-fi_FI.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-fi_FI.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-fr_FR.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-fr_FR.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-hu_HU.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-hu_HU.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-id_ID.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-id_ID.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-it_IT.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-it_IT.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-ko_KR.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-ko_KR.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-lt_LT.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-lt_LT.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-nb_NO.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-nb_NO.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-nl_NL.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-nl_NL.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-pl_PL.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-pl_PL.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-pt_BR.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-pt_BR.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-pt_PT.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-pt_PT.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-ro_RO.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-ro_RO.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-ru_RU.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-ru_RU.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-sk_SK.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-sk_SK.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-sl_SI.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-sl_SI.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-sv_SE.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-sv_SE.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-tr_TR.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-tr_TR.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-ua_UA.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-ua_UA.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-zh_CN.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-zh_CN.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-zh_TW.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\i18n\defaults-zh_TW.min.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\Gruntfile.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\bootstrap-select.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-ar_AR.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-bg_BG.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-cro_CRO.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-cs_CZ.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-da_DK.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-de_DE.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-en_US.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-es_CL.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-eu.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-fa_IR.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-fi_FI.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-fr_FR.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-hu_HU.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-id_ID.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-it_IT.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-ko_KR.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-lt_LT.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-nb_NO.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-nl_NL.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-pl_PL.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-pt_BR.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-pt_PT.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-ro_RO.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-ru_RU.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-sk_SK.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-sl_SI.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-sv_SE.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-tr_TR.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-ua_UA.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-zh_CN.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\i18n\defaults-zh_TW.js" />
+    <Content Include="Content\zoldamaps\bootstrap-select\test.html" />
+    <Content Include="Content\zoldamaps\css\bootstrap.css" />
+    <Content Include="Content\zoldamaps\css\font-awesome.min.css" />
+    <Content Include="Content\zoldamaps\css\jquery-ui.css" />
+    <Content Include="Content\zoldamaps\css\rpg-awesome.css" />
+    <Content Include="Content\zoldamaps\css\rpg-awesome.min.css" />
+    <Content Include="Content\zoldamaps\css\style.css" />
+    <Content Include="Content\zoldamaps\Default.html" />
+    <Content Include="Content\zoldamaps\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\zoldamaps\fonts\rpgawesome-webfont.svg" />
+    <Content Include="Content\zoldamaps\img\AsLegendasConhecidas.png" />
+    <Content Include="Content\zoldamaps\img\brasao-d&amp;a.png" />
+    <Content Include="Content\zoldamaps\img\firstIcon.png" />
+    <Content Include="Content\zoldamaps\img\OMundoConhecido.png" />
+    <Content Include="Content\zoldamaps\img\OsTerritoriosConhecidos.png" />
+    <Content Include="Content\zoldamaps\img\point-40x37.png" />
+    <Content Include="Content\zoldamaps\img\point.png" />
+    <Content Include="Content\zoldamaps\img\reino-pin-102x114.png" />
+    <Content Include="Content\zoldamaps\img\reino-pin-45x50.png" />
+    <Content Include="Content\zoldamaps\img\reino-pin-60x67.png" />
+    <Content Include="Content\zoldamaps\img\secondsIcons.png" />
+    <Content Include="Content\zoldamaps\info\daelda.html" />
+    <Content Include="Content\zoldamaps\js\bootstrap.min.js" />
+    <Content Include="Content\zoldamaps\js\database.js" />
+    <Content Include="Content\zoldamaps\js\jquery-ui.js" />
+    <Content Include="Content\zoldamaps\js\jquery.min.js" />
+    <Content Include="Content\zoldamaps\js\map.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Bootstrap\bootstrap-css\rpg-awesome.css.map" />
+    <Content Include="Content\Bootstrap\fonts\rpgawesome-webfont.eot" />
+    <Content Include="Content\Bootstrap\fonts\rpgawesome-webfont.ttf" />
+    <Content Include="Content\Bootstrap\fonts\rpgawesome-webfont.woff" />
+    <EntityDeploy Include="Models\RemixRPG.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RemixRPG.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\RemixRPG.edmx.diagram">
+      <DependentUpon>RemixRPG.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\RemixRPG.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RemixRPG.Context.cs</LastGenOutput>
+      <DependentUpon>RemixRPG.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\RemixRPG.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RemixRPG.cs</LastGenOutput>
+      <DependentUpon>RemixRPG.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\zoldamaps\bootstrap-select\bower.json" />
+    <Content Include="Content\zoldamaps\bootstrap-select\composer.json" />
+    <Content Include="Content\zoldamaps\bootstrap-select\CONTRIBUTING.md" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\css\bootstrap-select.css.map" />
+    <Content Include="Content\zoldamaps\bootstrap-select\dist\js\bootstrap-select.js.map" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\css\bootstrap-select.css.map" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\dist\js\bootstrap-select.js.map" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\examples.md" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\index.md" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\methods.md" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\docs\options.md" />
+    <Content Include="Content\zoldamaps\bootstrap-select\docs\mkdocs.yml" />
+    <Content Include="Content\zoldamaps\bootstrap-select\js\.jshintrc" />
+    <Content Include="Content\zoldamaps\bootstrap-select\less\bootstrap-select.less" />
+    <Content Include="Content\zoldamaps\bootstrap-select\less\variables.less" />
+    <Content Include="Content\zoldamaps\bootstrap-select\LICENSE" />
+    <Content Include="Content\zoldamaps\bootstrap-select\package.json" />
+    <Content Include="Content\zoldamaps\bootstrap-select\README.md" />
+    <Content Include="Content\zoldamaps\bootstrap-select\sass\bootstrap-select.scss" />
+    <Content Include="Content\zoldamaps\bootstrap-select\sass\variables.scss" />
+    <Content Include="Content\zoldamaps\css\bootstrap.less" />
+    <Content Include="Content\zoldamaps\css\rpg-awesome.css.map" />
+    <Content Include="Content\zoldamaps\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\zoldamaps\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\zoldamaps\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\zoldamaps\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\zoldamaps\fonts\FontAwesome.otf" />
+    <Content Include="Content\zoldamaps\fonts\rpgawesome-webfont.eot" />
+    <Content Include="Content\zoldamaps\fonts\rpgawesome-webfont.ttf" />
+    <Content Include="Content\zoldamaps\fonts\rpgawesome-webfont.woff" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Models\RemixRPG.edmx.sql" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Content\Bootstrap\bootstrap-css\font-awesome.min.css" />
+    <Content Include="Content\Bootstrap\bootstrap-scripts\bootstrap.min.js" />
+    <Content Include="Content\Bootstrap\bootstrap-scripts\jquery.min.js" />
+    <Content Include="Content\Bootstrap\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\images\brasao-d&amp;a.png" />
+    <Content Include="Content\Scripts\jquery.maskedinput.min.js" />
+    <Content Include="Content\style.css" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Content\Bootstrap\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Bootstrap\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Bootstrap\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Bootstrap\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Bootstrap\fonts\FontAwesome.otf" />
+    <Content Include="Content\style.less" />
+    <Content Include="Views\Entrada\Entrar.cshtml" />
+    <Content Include="Views\Entrada\Cadastrar.cshtml" />
+    <Content Include="Views\Desktop\Desktop.cshtml" />
+    <Content Include="Views\Fichas\NovaFicha.cshtml" />
+    <Content Include="Views\Fichas\Fichas.cshtml" />
+    <Content Include="Views\Mapas\ZoldaMaps.cshtml" />
+    <Content Include="Views\Mapas\Mapas.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3325</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3325/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

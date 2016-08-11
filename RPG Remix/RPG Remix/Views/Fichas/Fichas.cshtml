@@ -1,0 +1,43 @@
+﻿<div class="scrollable">
+    <div class="div-padding-top">
+        <h3 class="panel panel-head">Suas Fichas</h3>
+        <div class="div-table">
+            <div class="panel panel-object col-md-2 col-sm-2">
+                <h5>
+                    <label for="prenome" class="hidden-xs">Novo Personagem</label>
+                    <input type="text" class="form-control" name="prenome" placeholder="nome do personagem" />
+                </h5><br />
+                <input type="hidden" name="pagina" id="pagFichas" />
+                <div class="btn btn-xs btn-default btn-block" onclick="loadPage('Fichas','NovaFicha')">CRIAR NOVA FICHA</div>
+            </div>
+            @for (int i = 0; i < 15; i++)
+            {
+                <div class="panel panel-object col-md-2 col-sm-2">
+                    <h5>@@{Nome do Personagem}</h5>
+                    <h6>@@{Testes Físicos}</h6>
+                    <hr class="hidden-xs" />
+                    <div class="btn-group btn-group-justified">
+                        <div class="btn btn-xs btn-primary">Ver</div>
+                        <div class="btn btn-xs btn-success">Editar</div>
+                        <div class="btn btn-xs btn-default">Copiar</div>
+                    </div>
+                </div>
+            }
+        </div>
+        <h4 class="panel panel-head">Fichas de Conhecidos</h4>
+        <div class="div-table">
+            @for (int i = 0; i < 15; i++)
+            {
+                <div class="panel panel-object col-md-2 col-sm-2">
+                    <h5>@@{Nome do Personagem}</h5>
+                    <label>@@{Nome do Jogador}</label>
+                    <h6>@@{Testes Físicos}</h6>
+                    <div class="btn-group btn-group-justified">
+                        <div class="btn btn-xs btn-primary">Ver</div>
+                        <div class="btn btn-xs btn-default">Copiar</div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

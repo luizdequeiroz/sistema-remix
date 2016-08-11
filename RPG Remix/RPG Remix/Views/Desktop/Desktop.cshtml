@@ -1,0 +1,27 @@
+﻿@model RPG_Remix.Models.Usuario
+
+@{
+    var img = Model.Email + ".png";
+}
+
+<div class="desktop-body">
+    <div class="desktop-menu">
+        <div class="panel panel-default panel-photo">
+            <img id="foto" src="~/Content/Fotos/@img" width="100" title="@Model.Descricao" />
+            <div id="nome" class="text-center" title="@Model.Email"><h5>@Model.Nome</h5></div>
+        </div>
+        <div class="btn btn-lg btn-block btn-default btn-menu" id="Fichas" onclick="clickMenu('Fichas','Fichas')">FICHAS</div>
+        <div class="btn btn-lg btn-block btn-default btn-menu" id="Jogadores" onclick="clickMenu('Jogadores','Jogadores')">JOGADORES</div>
+        <div class="btn btn-lg btn-block btn-default btn-menu" id="Textos" onclick="clickMenu('Textos','Textos')">TEXTOS</div>
+        <div class="btn btn-lg btn-block btn-default btn-menu" id="Mapas" onclick="clickMenu('Mapas','Mapas')">MAPAS</div>
+        <div class="btn btn-lg btn-block btn-default btn-menu disabled" id="Jogar" onclick="clickMenu('Jogar','Jogar')">JOGAR</div>
+    </div>
+    <div class="desktop-content">
+        <div class="btn btn-xs btn-default" id="active-menu" title="Menu"></div>
+        <div class="col-lg-10 col-md-10 col-sm-8 div-padding-darkgrey col-lg-offset-2 col-md-offset-2 col-sm-offset-4 text-center loading">
+            <img src="~/Content/images/ajax-loader.gif" width="50" /> Carregando...
+        </div>
+        <div id="frame"></div>
+        @Html.ActionLink("X", "Sair", null, new { @class = "btn btn-xs btn-danger btn-sair" })
+    </div>
+</div>
