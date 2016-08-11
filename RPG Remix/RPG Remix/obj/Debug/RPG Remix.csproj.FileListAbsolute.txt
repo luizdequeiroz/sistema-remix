@@ -125,3 +125,35 @@ C:\Users\Luiz de Queiroz\Dropbox\Sistema\RPG Remix\RPG Remix\bin\System.Web.WebP
 C:\Users\Luiz de Queiroz\Dropbox\Sistema\RPG Remix\RPG Remix\obj\Debug\RPG Remix.csprojResolveAssemblyReference.cache
 C:\Users\Luiz de Queiroz\Dropbox\Sistema\RPG Remix\RPG Remix\obj\Debug\RPG Remix.dll
 C:\Users\Luiz de Queiroz\Dropbox\Sistema\RPG Remix\RPG Remix\obj\Debug\RPG Remix.pdb
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\RPG Remix.dll.config
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\RPG Remix.dll
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\RPG Remix.pdb
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\Antlr3.Runtime.dll
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\EntityFramework.dll
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\Newtonsoft.Json.dll
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\System.Net.Http.Formatting.dll
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\System.Web.Http.dll
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\System.Web.Http.WebHost.dll
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\System.Web.Mvc.dll
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\System.Web.Optimization.dll
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\System.Web.Providers.dll
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\System.Web.Razor.dll
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\System.Web.WebPages.dll
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\System.Web.WebPages.Razor.dll
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\WebGrease.dll
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\EntityFramework.xml
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\Newtonsoft.Json.xml
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\System.Net.Http.Formatting.xml
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\System.Web.Http.xml
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\System.Web.Http.WebHost.xml
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\System.Web.Mvc.xml
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\System.Web.Razor.xml
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\System.Web.WebPages.xml
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\System.Web.WebPages.Razor.xml
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\obj\Debug\RPG Remix.csprojResolveAssemblyReference.cache
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\obj\Debug\RPG Remix.dll
+C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\obj\Debug\RPG Remix.pdb

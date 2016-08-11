@@ -8437,73 +8437,11 @@ fieldset {
     color: initial;
 }
 
-/*
-A classe 'estrutura' serve somente como estrutura para o conteúdo que será centralizado.
-Utilizamos width em 100% para aproveitar a largura total do navegador.
-*/
-.estrutura {
-    width: 100%;
-    margin: 0;
-    margin-top: 100px;
-    padding: 0;
-    /*background-color: #CCC;*/
-    float: left;
-}
-
-.estrutura-cadastro {
-    width: 100%;
-    margin: 0;
-    margin-top: 25px;
-    padding: 0;
-    /*background-color: #CCC;*/
-    float: left;
-}
-
-/*
-A classe 'conteudo' é responsável por centralizar
-o conteúdo HTML.
-*/
-.conteudo {
-    /* largura do o layout */
-    width: 350px;
-    /* posição relativa */
-    position: relative;
-    /* posicionada a 50% de distância da margem esquerda */
-    /* para alinhar a div exatamente no centro. */
-    left: 50%;
-    /* 'margin: 0 0 0 -500px;' alinha -500px para a esquerda, orientando a div pelo centro absoluto. O valor deverá ser negativo e igual a metade do valor informado anteriormente em 'width'. */
-    margin: 0 0 0 -175px;
-    padding: 5px;
-    /* para garantir o funcionamento no IE */
-    display: inline;
-    background-color: #FFF;
-    float: left;
-}
-
-
-.conteudo-cadastro {
-    width: 700px;
-    position: relative;
-    left: 50%;
-    margin: 0 0 0 -350px;
-    padding: 5px;
-    display: inline;
-    background-color: #FFF;
-    float: left;
-}
-
-.borda {
-    width: 360px;
-    background: rgb(68, 68, 68);
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-}
-
-.borda-cadastro {
-    width: 710px;
-    background: rgb(68, 68, 68);
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+.field-validation-error {
+    padding: 3px 8px 3px 8px;
+    background-color: whitesmoke;
+    border-radius: 3px;
+    font-size: 10px;
 }
 
 .large-ocean {
@@ -8672,6 +8610,10 @@ o conteúdo HTML.
     overflow-y: auto;
 }
 
+.terrain {
+    background: url(../Content/images/terrain-body.jpg) round;
+}
+
 /* Largura da barra de rolagem */
 ::-webkit-scrollbar {
     width: 10px;
@@ -8767,4 +8709,42 @@ o conteúdo HTML.
 
 .no-padding {
     padding: 0;
+}
+
+.borda {
+    width: 390px;
+    background: #6e5c4a;
+    border-radius: 10%/100%;
+    padding: 5px 20px 5px 20px;
+    position: absolute;
+    left: 50%;
+    margin-left: -195px;
+    margin-top: 100px;
+
+    box-shadow: black 10px 10px 30px;
+}
+
+.borda-cadastro {
+    width: 770px;
+    background: #6e5c4a;
+    border-radius: 10%/100%;
+    padding: 5px 35px 5px 35px;
+    position: absolute;
+    left: 50%;
+    margin-left: -385px;
+    margin-top: 35px;
+
+    box-shadow: black 10px 10px 30px;
+}
+
+.conteudo {
+    width: 350px;
+    margin: 0;
+    background-color: #FFF;
+}
+
+.conteudo-cadastro {
+    width: 700px;
+    margin: 0;
+    background-color: #FFF;
 }
