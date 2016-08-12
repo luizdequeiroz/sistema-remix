@@ -8595,6 +8595,7 @@ fieldset {
 }
 
 .div-padding-top {
+    height: 100%;
     padding-top: 30px;
 }
 
@@ -8638,11 +8639,13 @@ fieldset {
 }
 
 .div-table {
-    height: 245px;
+    height: 40%;
+    min-height: 200px;
     overflow-y: auto;
     overflow-x: hidden;
     margin-left: 5%;
     margin-right: 5%;
+    padding-top: 25px;
     z-index: 500;
 }
 
