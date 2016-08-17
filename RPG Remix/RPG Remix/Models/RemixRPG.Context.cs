@@ -28,16 +28,13 @@ namespace RPG_Remix.Models
         public DbSet<Mesa> MesaSet { get; set; }
         public DbSet<Usuario> UsuarioSet { get; set; }
         public DbSet<Ficha> FichaSet { get; set; }
-        public DbSet<Experiencia> ExperienciaSet { get; set; }
         public DbSet<Peculiaridade> PeculiaridadeSet { get; set; }
         public DbSet<Propriedade> PropriedadeSet { get; set; }
         public DbSet<Riqueza> RiquezaSet { get; set; }
         public DbSet<ItemArma> ItemArmaSet { get; set; }
         public DbSet<Vestimenta> VestimentaSet { get; set; }
-        public DbSet<PontosAcumulados> PontosAcumuladosSet { get; set; }
-        public DbSet<Jogador> JogadorSet { get; set; }
-        public DbSet<Mestre> MestreSet { get; set; }
         public DbSet<Mapa> MapaSet { get; set; }
         public DbSet<Região> RegiãoSet { get; set; }
+        public DbSet<MesaMapa> MesaMapaSet { get; set; }
     }
 }

@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/21/2016 20:39:48
--- Generated from EDMX file: C:\Repos\Sistema\RPG Remix\RPG Remix\Models\RemixRPG.edmx
+-- Date Created: 08/12/2016 12:08:43
+-- Generated from EDMX file: C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\Models\RemixRPG.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -29,41 +29,29 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_FichaItemArma]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ItemArmaSet] DROP CONSTRAINT [FK_FichaItemArma];
 GO
-IF OBJECT_ID(N'[dbo].[FK_FichaPontosAcumulados]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[FichaSet] DROP CONSTRAINT [FK_FichaPontosAcumulados];
+IF OBJECT_ID(N'[dbo].[FK_PropriedadeRegião]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PropriedadeSet] DROP CONSTRAINT [FK_PropriedadeRegião];
 GO
-IF OBJECT_ID(N'[dbo].[FK_FichaExperiencia]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[FichaSet] DROP CONSTRAINT [FK_FichaExperiencia];
+IF OBJECT_ID(N'[dbo].[FK_MapaRegião]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RegiãoSet] DROP CONSTRAINT [FK_MapaRegião];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UsuarioFicha]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[FichaSet] DROP CONSTRAINT [FK_UsuarioFicha];
+GO
+IF OBJECT_ID(N'[dbo].[FK_MesaFicha]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[FichaSet] DROP CONSTRAINT [FK_MesaFicha];
+GO
+IF OBJECT_ID(N'[dbo].[FK_MesaMapaMesa]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[MesaMapaSet] DROP CONSTRAINT [FK_MesaMapaMesa];
+GO
+IF OBJECT_ID(N'[dbo].[FK_MesaMapaMapa]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[MesaMapaSet] DROP CONSTRAINT [FK_MesaMapaMapa];
 GO
 IF OBJECT_ID(N'[dbo].[FK_FichaVestimenta]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[VestimentaSet] DROP CONSTRAINT [FK_FichaVestimenta];
 GO
-IF OBJECT_ID(N'[dbo].[FK_ItemArmaVestimenta]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[VestimentaSet] DROP CONSTRAINT [FK_ItemArmaVestimenta];
-GO
-IF OBJECT_ID(N'[dbo].[FK_MesaJogador]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[JogadorSet] DROP CONSTRAINT [FK_MesaJogador];
-GO
-IF OBJECT_ID(N'[dbo].[FK_UsuarioJogador]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[JogadorSet] DROP CONSTRAINT [FK_UsuarioJogador];
-GO
-IF OBJECT_ID(N'[dbo].[FK_JogadorFicha]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[JogadorSet] DROP CONSTRAINT [FK_JogadorFicha];
-GO
-IF OBJECT_ID(N'[dbo].[FK_UsuarioMestre]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[MestreSet] DROP CONSTRAINT [FK_UsuarioMestre];
-GO
-IF OBJECT_ID(N'[dbo].[FK_MestreMesa]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[MesaSet] DROP CONSTRAINT [FK_MestreMesa];
-GO
-IF OBJECT_ID(N'[dbo].[FK_MestreFicha]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[FichaSet] DROP CONSTRAINT [FK_MestreFicha];
-GO
-IF OBJECT_ID(N'[dbo].[FK_RegiãoPropriedade]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[PropriedadeSet] DROP CONSTRAINT [FK_RegiãoPropriedade];
-GO
-IF OBJECT_ID(N'[dbo].[FK_MapaRegião]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[RegiãoSet] DROP CONSTRAINT [FK_MapaRegião];
+IF OBJECT_ID(N'[dbo].[FK_MesaUsuario]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[MesaSet] DROP CONSTRAINT [FK_MesaUsuario];
 GO
 
 -- --------------------------------------------------
@@ -78,9 +66,6 @@ IF OBJECT_ID(N'[dbo].[UsuarioSet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FichaSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[FichaSet];
-GO
-IF OBJECT_ID(N'[dbo].[ExperienciaSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[ExperienciaSet];
 GO
 IF OBJECT_ID(N'[dbo].[PeculiaridadeSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[PeculiaridadeSet];
@@ -97,20 +82,14 @@ GO
 IF OBJECT_ID(N'[dbo].[VestimentaSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[VestimentaSet];
 GO
-IF OBJECT_ID(N'[dbo].[PontosAcumuladosSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[PontosAcumuladosSet];
-GO
-IF OBJECT_ID(N'[dbo].[JogadorSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[JogadorSet];
-GO
-IF OBJECT_ID(N'[dbo].[MestreSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[MestreSet];
-GO
 IF OBJECT_ID(N'[dbo].[MapaSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[MapaSet];
 GO
 IF OBJECT_ID(N'[dbo].[RegiãoSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[RegiãoSet];
+GO
+IF OBJECT_ID(N'[dbo].[MesaMapaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MesaMapaSet];
 GO
 
 -- --------------------------------------------------
@@ -125,7 +104,7 @@ CREATE TABLE [dbo].[MesaSet] (
     [NumeroJogadores] int  NULL,
     [DataCriacao] nvarchar(max)  NOT NULL,
     [Senha] nvarchar(max)  NULL,
-    [Mestre_Id] int  NOT NULL
+    [UsuarioId] int  NOT NULL
 );
 GO
 
@@ -162,22 +141,20 @@ CREATE TABLE [dbo].[FichaSet] (
     [Sort] int  NOT NULL,
     [Suportes] int  NOT NULL,
     [MestreId] int  NULL,
-    [PontosAcumulados_Id] int  NOT NULL,
-    [Experiencia_Id] int  NOT NULL
-);
-GO
-
--- Creating table 'ExperienciaSet'
-CREATE TABLE [dbo].[ExperienciaSet] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [Pontos] int  NOT NULL,
-    [Data] nvarchar(max)  NOT NULL
+    [UsuarioId] int  NOT NULL,
+    [MesaId] int  NOT NULL,
+    [PtsTestes] int  NOT NULL,
+    [PtsPericias] int  NOT NULL,
+    [PtsDesvantagens] int  NOT NULL,
+    [PtsExperiencia] int  NOT NULL,
+    [DataNivel] nvarchar(max)  NOT NULL
 );
 GO
 
 -- Creating table 'PeculiaridadeSet'
 CREATE TABLE [dbo].[PeculiaridadeSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
+    [Nome] nvarchar(max)  NOT NULL,
     [Descricao] nvarchar(max)  NOT NULL,
     [Teste] int  NOT NULL,
     [Tipo] nvarchar(max)  NOT NULL,
@@ -226,6 +203,8 @@ GO
 -- Creating table 'VestimentaSet'
 CREATE TABLE [dbo].[VestimentaSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
+    [Nome] nvarchar(max)  NOT NULL,
+    [Descricao] nvarchar(max)  NOT NULL,
     [Testa] nvarchar(max)  NOT NULL,
     [Cara] nvarchar(max)  NOT NULL,
     [Pescoco] nvarchar(max)  NOT NULL,
@@ -250,34 +229,8 @@ CREATE TABLE [dbo].[VestimentaSet] (
     [CanelaE] nvarchar(max)  NOT NULL,
     [PeD] nvarchar(max)  NOT NULL,
     [PeE] nvarchar(max)  NOT NULL,
-    [ItemArma_Id] int  NOT NULL,
-    [Ficha_Id] int  NOT NULL
-);
-GO
-
--- Creating table 'PontosAcumuladosSet'
-CREATE TABLE [dbo].[PontosAcumuladosSet] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [Testes] int  NOT NULL,
-    [Pericias] int  NOT NULL,
-    [Desvantagens] int  NOT NULL
-);
-GO
-
--- Creating table 'JogadorSet'
-CREATE TABLE [dbo].[JogadorSet] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [MesaId] int  NOT NULL,
-    [UsuarioId] int  NOT NULL,
-    [Ficha_Id] int  NOT NULL
-);
-GO
-
--- Creating table 'MestreSet'
-CREATE TABLE [dbo].[MestreSet] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [Nome] nvarchar(max)  NOT NULL,
-    [UsuarioId] int  NOT NULL
+    [FichaId] int  NOT NULL,
+    [Ativo] bit  NOT NULL
 );
 GO
 
@@ -285,6 +238,7 @@ GO
 CREATE TABLE [dbo].[MapaSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Nome] nvarchar(max)  NOT NULL,
+    [Descricao] nvarchar(max)  NOT NULL,
     [Caminho] nvarchar(max)  NOT NULL,
     [Geral] bit  NOT NULL
 );
@@ -294,14 +248,16 @@ GO
 CREATE TABLE [dbo].[RegiãoSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Nome] nvarchar(max)  NOT NULL,
+    [Descricao] nvarchar(max)  NOT NULL,
     [MapaId] int  NOT NULL
 );
 GO
 
--- Creating table 'MesaMapa'
-CREATE TABLE [dbo].[MesaMapa] (
-    [Mesas_Id] int  NOT NULL,
-    [Mapas_Id] int  NOT NULL
+-- Creating table 'MesaMapaSet'
+CREATE TABLE [dbo].[MesaMapaSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [MesaId] int  NOT NULL,
+    [MapaId] int  NOT NULL
 );
 GO
 
@@ -324,12 +280,6 @@ GO
 -- Creating primary key on [Id] in table 'FichaSet'
 ALTER TABLE [dbo].[FichaSet]
 ADD CONSTRAINT [PK_FichaSet]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
--- Creating primary key on [Id] in table 'ExperienciaSet'
-ALTER TABLE [dbo].[ExperienciaSet]
-ADD CONSTRAINT [PK_ExperienciaSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -363,24 +313,6 @@ ADD CONSTRAINT [PK_VestimentaSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Id] in table 'PontosAcumuladosSet'
-ALTER TABLE [dbo].[PontosAcumuladosSet]
-ADD CONSTRAINT [PK_PontosAcumuladosSet]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
--- Creating primary key on [Id] in table 'JogadorSet'
-ALTER TABLE [dbo].[JogadorSet]
-ADD CONSTRAINT [PK_JogadorSet]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
--- Creating primary key on [Id] in table 'MestreSet'
-ALTER TABLE [dbo].[MestreSet]
-ADD CONSTRAINT [PK_MestreSet]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
 -- Creating primary key on [Id] in table 'MapaSet'
 ALTER TABLE [dbo].[MapaSet]
 ADD CONSTRAINT [PK_MapaSet]
@@ -393,150 +325,15 @@ ADD CONSTRAINT [PK_RegiãoSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Mesas_Id], [Mapas_Id] in table 'MesaMapa'
-ALTER TABLE [dbo].[MesaMapa]
-ADD CONSTRAINT [PK_MesaMapa]
-    PRIMARY KEY CLUSTERED ([Mesas_Id], [Mapas_Id] ASC);
+-- Creating primary key on [Id] in table 'MesaMapaSet'
+ALTER TABLE [dbo].[MesaMapaSet]
+ADD CONSTRAINT [PK_MesaMapaSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
-
--- Creating foreign key on [PontosAcumulados_Id] in table 'FichaSet'
-ALTER TABLE [dbo].[FichaSet]
-ADD CONSTRAINT [FK_FichaPontosAcumulados]
-    FOREIGN KEY ([PontosAcumulados_Id])
-    REFERENCES [dbo].[PontosAcumuladosSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- Creating non-clustered index for FOREIGN KEY 'FK_FichaPontosAcumulados'
-CREATE INDEX [IX_FK_FichaPontosAcumulados]
-ON [dbo].[FichaSet]
-    ([PontosAcumulados_Id]);
-GO
-
--- Creating foreign key on [Experiencia_Id] in table 'FichaSet'
-ALTER TABLE [dbo].[FichaSet]
-ADD CONSTRAINT [FK_FichaExperiencia]
-    FOREIGN KEY ([Experiencia_Id])
-    REFERENCES [dbo].[ExperienciaSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- Creating non-clustered index for FOREIGN KEY 'FK_FichaExperiencia'
-CREATE INDEX [IX_FK_FichaExperiencia]
-ON [dbo].[FichaSet]
-    ([Experiencia_Id]);
-GO
-
--- Creating foreign key on [ItemArma_Id] in table 'VestimentaSet'
-ALTER TABLE [dbo].[VestimentaSet]
-ADD CONSTRAINT [FK_ItemArmaVestimenta]
-    FOREIGN KEY ([ItemArma_Id])
-    REFERENCES [dbo].[ItemArmaSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- Creating non-clustered index for FOREIGN KEY 'FK_ItemArmaVestimenta'
-CREATE INDEX [IX_FK_ItemArmaVestimenta]
-ON [dbo].[VestimentaSet]
-    ([ItemArma_Id]);
-GO
-
--- Creating foreign key on [Mesas_Id] in table 'MesaMapa'
-ALTER TABLE [dbo].[MesaMapa]
-ADD CONSTRAINT [FK_MesaMapa_Mesa]
-    FOREIGN KEY ([Mesas_Id])
-    REFERENCES [dbo].[MesaSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating foreign key on [Mapas_Id] in table 'MesaMapa'
-ALTER TABLE [dbo].[MesaMapa]
-ADD CONSTRAINT [FK_MesaMapa_Mapa]
-    FOREIGN KEY ([Mapas_Id])
-    REFERENCES [dbo].[MapaSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- Creating non-clustered index for FOREIGN KEY 'FK_MesaMapa_Mapa'
-CREATE INDEX [IX_FK_MesaMapa_Mapa]
-ON [dbo].[MesaMapa]
-    ([Mapas_Id]);
-GO
-
--- Creating foreign key on [Mestre_Id] in table 'MesaSet'
-ALTER TABLE [dbo].[MesaSet]
-ADD CONSTRAINT [FK_MesaMestre]
-    FOREIGN KEY ([Mestre_Id])
-    REFERENCES [dbo].[MestreSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- Creating non-clustered index for FOREIGN KEY 'FK_MesaMestre'
-CREATE INDEX [IX_FK_MesaMestre]
-ON [dbo].[MesaSet]
-    ([Mestre_Id]);
-GO
-
--- Creating foreign key on [MesaId] in table 'JogadorSet'
-ALTER TABLE [dbo].[JogadorSet]
-ADD CONSTRAINT [FK_MesaJogador]
-    FOREIGN KEY ([MesaId])
-    REFERENCES [dbo].[MesaSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- Creating non-clustered index for FOREIGN KEY 'FK_MesaJogador'
-CREATE INDEX [IX_FK_MesaJogador]
-ON [dbo].[JogadorSet]
-    ([MesaId]);
-GO
-
--- Creating foreign key on [UsuarioId] in table 'JogadorSet'
-ALTER TABLE [dbo].[JogadorSet]
-ADD CONSTRAINT [FK_UsuarioJogador]
-    FOREIGN KEY ([UsuarioId])
-    REFERENCES [dbo].[UsuarioSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- Creating non-clustered index for FOREIGN KEY 'FK_UsuarioJogador'
-CREATE INDEX [IX_FK_UsuarioJogador]
-ON [dbo].[JogadorSet]
-    ([UsuarioId]);
-GO
-
--- Creating foreign key on [MestreId] in table 'FichaSet'
-ALTER TABLE [dbo].[FichaSet]
-ADD CONSTRAINT [FK_MestreFicha]
-    FOREIGN KEY ([MestreId])
-    REFERENCES [dbo].[MestreSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- Creating non-clustered index for FOREIGN KEY 'FK_MestreFicha'
-CREATE INDEX [IX_FK_MestreFicha]
-ON [dbo].[FichaSet]
-    ([MestreId]);
-GO
-
--- Creating foreign key on [Ficha_Id] in table 'JogadorSet'
-ALTER TABLE [dbo].[JogadorSet]
-ADD CONSTRAINT [FK_JogadorFicha]
-    FOREIGN KEY ([Ficha_Id])
-    REFERENCES [dbo].[FichaSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- Creating non-clustered index for FOREIGN KEY 'FK_JogadorFicha'
-CREATE INDEX [IX_FK_JogadorFicha]
-ON [dbo].[JogadorSet]
-    ([Ficha_Id]);
-GO
 
 -- Creating foreign key on [FichaId] in table 'PropriedadeSet'
 ALTER TABLE [dbo].[PropriedadeSet]
@@ -578,20 +375,6 @@ ADD CONSTRAINT [FK_FichaRiqueza]
 CREATE INDEX [IX_FK_FichaRiqueza]
 ON [dbo].[RiquezaSet]
     ([FichaId]);
-GO
-
--- Creating foreign key on [Ficha_Id] in table 'VestimentaSet'
-ALTER TABLE [dbo].[VestimentaSet]
-ADD CONSTRAINT [FK_FichaVestimenta]
-    FOREIGN KEY ([Ficha_Id])
-    REFERENCES [dbo].[FichaSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- Creating non-clustered index for FOREIGN KEY 'FK_FichaVestimenta'
-CREATE INDEX [IX_FK_FichaVestimenta]
-ON [dbo].[VestimentaSet]
-    ([Ficha_Id]);
 GO
 
 -- Creating foreign key on [FichaId] in table 'ItemArmaSet'
@@ -636,17 +419,87 @@ ON [dbo].[RegiãoSet]
     ([MapaId]);
 GO
 
--- Creating foreign key on [UsuarioId] in table 'MestreSet'
-ALTER TABLE [dbo].[MestreSet]
-ADD CONSTRAINT [FK_UsuarioMestre]
+-- Creating foreign key on [UsuarioId] in table 'FichaSet'
+ALTER TABLE [dbo].[FichaSet]
+ADD CONSTRAINT [FK_UsuarioFicha]
     FOREIGN KEY ([UsuarioId])
     REFERENCES [dbo].[UsuarioSet]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
--- Creating non-clustered index for FOREIGN KEY 'FK_UsuarioMestre'
-CREATE INDEX [IX_FK_UsuarioMestre]
-ON [dbo].[MestreSet]
+-- Creating non-clustered index for FOREIGN KEY 'FK_UsuarioFicha'
+CREATE INDEX [IX_FK_UsuarioFicha]
+ON [dbo].[FichaSet]
+    ([UsuarioId]);
+GO
+
+-- Creating foreign key on [MesaId] in table 'FichaSet'
+ALTER TABLE [dbo].[FichaSet]
+ADD CONSTRAINT [FK_MesaFicha]
+    FOREIGN KEY ([MesaId])
+    REFERENCES [dbo].[MesaSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_MesaFicha'
+CREATE INDEX [IX_FK_MesaFicha]
+ON [dbo].[FichaSet]
+    ([MesaId]);
+GO
+
+-- Creating foreign key on [MesaId] in table 'MesaMapaSet'
+ALTER TABLE [dbo].[MesaMapaSet]
+ADD CONSTRAINT [FK_MesaMapaMesa]
+    FOREIGN KEY ([MesaId])
+    REFERENCES [dbo].[MesaSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_MesaMapaMesa'
+CREATE INDEX [IX_FK_MesaMapaMesa]
+ON [dbo].[MesaMapaSet]
+    ([MesaId]);
+GO
+
+-- Creating foreign key on [MapaId] in table 'MesaMapaSet'
+ALTER TABLE [dbo].[MesaMapaSet]
+ADD CONSTRAINT [FK_MesaMapaMapa]
+    FOREIGN KEY ([MapaId])
+    REFERENCES [dbo].[MapaSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_MesaMapaMapa'
+CREATE INDEX [IX_FK_MesaMapaMapa]
+ON [dbo].[MesaMapaSet]
+    ([MapaId]);
+GO
+
+-- Creating foreign key on [FichaId] in table 'VestimentaSet'
+ALTER TABLE [dbo].[VestimentaSet]
+ADD CONSTRAINT [FK_FichaVestimenta]
+    FOREIGN KEY ([FichaId])
+    REFERENCES [dbo].[FichaSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_FichaVestimenta'
+CREATE INDEX [IX_FK_FichaVestimenta]
+ON [dbo].[VestimentaSet]
+    ([FichaId]);
+GO
+
+-- Creating foreign key on [UsuarioId] in table 'MesaSet'
+ALTER TABLE [dbo].[MesaSet]
+ADD CONSTRAINT [FK_MesaUsuario]
+    FOREIGN KEY ([UsuarioId])
+    REFERENCES [dbo].[UsuarioSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_MesaUsuario'
+CREATE INDEX [IX_FK_MesaUsuario]
+ON [dbo].[MesaSet]
     ([UsuarioId]);
 GO
 

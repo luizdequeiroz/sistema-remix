@@ -6,16 +6,16 @@
     {
         if (ViewBag.MsgEntrada.Contains("Sucesso"))
         {
-            type = "text-primary";
+            type = "field-validation-error text-primary";
         }
         else
         {
-            type = "text-danger";
+            type = "field-validation-error text-danger";
         }
     }
 }
 
-<div id="incio-frame">
+<div id="inicio-frame">
     <div class="borda">
         <div class="conteudo terrain">
             <fieldset>
@@ -41,7 +41,7 @@
                 <div class="text-right">
                     @Ajax.ActionLink("CADASTRE-SE", "Cadastrar", null, new AjaxOptions
                             {
-                                UpdateTargetId = "incio-frame",
+                                UpdateTargetId = "inicio-frame",
                                 LoadingElementId = "loading",
                                 OnBegin = "loaderOn",
                                 OnSuccess = "loaderOff"

@@ -15,7 +15,6 @@ namespace RPG_Remix.Models.Fachada
         public MesaCriar()
         {
             Mesa = new Mesa();
-            Mestre = new Mestre();
         }
 
         [Required(ErrorMessage = "O nome da mesa é necessário!")]
@@ -66,31 +65,6 @@ namespace RPG_Remix.Models.Fachada
             set
             {
                 Mesa.Senha = value;
-            }
-        }
-
-        public Mestre Mestre
-        {
-            get
-            {
-                return Mesa.Mestre;
-            }
-            set
-            {
-                Mesa.Mestre = value;
-            }
-        }
-
-        [Required(ErrorMessage = "O nome do mestre é obrigatório!")]
-        public string NomeMestre
-        {
-            get
-            {
-                return Mestre.Nome;
-            }
-            set
-            {
-                Mestre.Nome = value;
             }
         }
     }

@@ -15,6 +15,7 @@ namespace RPG_Remix.Models
     public partial class Peculiaridade
     {
         public int Id { get; set; }
+        public string Nome { get; set; }
         public string Descricao { get; set; }
         public int Teste { get; set; }
         public string Tipo { get; set; }

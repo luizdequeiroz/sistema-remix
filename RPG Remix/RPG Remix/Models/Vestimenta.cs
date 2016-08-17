@@ -15,6 +15,8 @@ namespace RPG_Remix.Models
     public partial class Vestimenta
     {
         public int Id { get; set; }
+        public string Nome { get; set; }
+        public string Descricao { get; set; }
         public string Testa { get; set; }
         public string Cara { get; set; }
         public string Pescoco { get; set; }
@@ -39,8 +41,9 @@ namespace RPG_Remix.Models
         public string CanelaE { get; set; }
         public string PeD { get; set; }
         public string PeE { get; set; }
+        public int FichaId { get; set; }
+        public bool Ativo { get; set; }
     
-        public virtual ItemArma ItemArma { get; set; }
         public virtual Ficha Ficha { get; set; }
     }
 }

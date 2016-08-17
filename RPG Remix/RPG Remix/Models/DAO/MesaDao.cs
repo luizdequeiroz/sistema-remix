@@ -32,15 +32,10 @@ namespace RPG_Remix.Models.DAO
             {
                 try
                 {
-                    var mestres = rrc.MestreSet.Where(m => m.UsuarioId == u.Id).ToList();
-                    var jogadores = new JogadorDao().ListarDoUsuario(u);
-
-                    if (mestres.Count > 0)
-                        foreach (var m in mestres)
-                            mesas.Add(m.Mesa);
-                    if (jogadores.Count > 0)
-                        foreach (var j in jogadores)
-                            mesas.Add(j.Mesa);
+                    var fichas = rrc.FichaSet.Where(f => f.UsuarioId == u.Id).ToList();
+                    mesas.AddRange(rrc.MesaSet.Where(m => m.UsuarioId == u.Id).ToList());
+                    foreach (var f in fichas)
+                        mesas.Add(f.Mesa);
 
                     return mesas;
                 }

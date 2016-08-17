@@ -3,12 +3,13 @@
         <h3 class="panel panel-head">Suas Fichas</h3>
         <div class="div-table">
             <div class="panel panel-object col-md-2 col-sm-2">
-                <h5>
-                    <label for="prenome" class="hidden-xs">Novo Personagem</label>
-                    <input type="text" class="form-control" name="prenome" placeholder="nome do personagem" />
-                </h5><br />
-                <input type="hidden" name="pagina" id="pagFichas" />
-                <div class="btn btn-xs btn-default btn-block" onclick="loadPage('Fichas','NovaFicha')">CRIAR NOVA FICHA</div>
+                <form>
+                    <h5>
+                        <label for="prenome" class="hidden-xs">Novo Personagem</label>
+                        <input type="text" class="form-control" id="prenome" name="nome" placeholder="nome do personagem" />
+                    </h5><br />
+                    <a class="btn btn-xs btn-default btn-block" onclick="submit('GET', 'Fichas', 'NovaFicha')">CRIAR NOVA FICHA</a>
+                </form>
             </div>
             @for (int i = 0; i < 1; i++)
             {
@@ -38,6 +39,20 @@
                     </div>
                 </div>
             }
+        </div>
+    </div>
+</div>
+<div id="novaficha" class="modal fade mothal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h5 class="modal-title">Nova Ficha</h5>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+
+            </div>
         </div>
     </div>
 </div>

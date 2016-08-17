@@ -23,7 +23,6 @@ namespace RPG_Remix.Models
         public int Dano { get; set; }
         public int FichaId { get; set; }
     
-        public virtual Vestimenta Vestimenta { get; set; }
         public virtual Ficha Ficha { get; set; }
     }
 }

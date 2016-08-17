@@ -33,11 +33,20 @@ function clickMenu(controller, action) {
     loadPage(controller, action);
 }
 
-var menuActived = true;
+function submit(method, controller, action) {
+    var dados = $('form').serialize();
 
-function submitFicha() {
-    $('#novaFicha-form').submit();
+    $.ajax({
+        type: method,
+        url: '/' + controller + '/' + action,
+        data: dados,
+        success: function (view) {
+            $('#frame').html(view);
+        }
+    });
 }
+
+var menuActived = true;
 
 $(document).ready(function () {
 

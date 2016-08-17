@@ -16,8 +16,8 @@ namespace RPG_Remix.Models
     {
         public Usuario()
         {
-            this.Jogadores = new HashSet<Jogador>();
-            this.Mestres = new HashSet<Mestre>();
+            this.Ficha = new HashSet<Ficha>();
+            this.Mesa = new HashSet<Mesa>();
         }
     
         public int Id { get; set; }
@@ -29,7 +29,7 @@ namespace RPG_Remix.Models
         public byte Sexo { get; set; }
         public string DataCadastro { get; set; }
     
-        public virtual ICollection<Jogador> Jogadores { get; set; }
-        public virtual ICollection<Mestre> Mestres { get; set; }
+        public virtual ICollection<Ficha> Ficha { get; set; }
+        public virtual ICollection<Mesa> Mesa { get; set; }
     }
 }

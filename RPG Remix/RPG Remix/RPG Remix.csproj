@@ -136,13 +136,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DAO\JogadorDao.cs" />
     <Compile Include="Models\DAO\MapaDao.cs" />
     <Compile Include="Models\DAO\MesaDao.cs" />
     <Compile Include="Models\DAO\UsuarioDao.cs" />
-    <Compile Include="Models\Experiencia.cs">
-      <DependentUpon>RemixRPG.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Fachada\FichaCriar.cs" />
     <Compile Include="Models\Fachada\MesaCriar.cs" />
     <Compile Include="Models\Fachada\UsuarioEntrar.cs" />
     <Compile Include="Models\Ficha.cs">
@@ -151,22 +148,16 @@
     <Compile Include="Models\ItemArma.cs">
       <DependentUpon>RemixRPG.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Jogador.cs">
-      <DependentUpon>RemixRPG.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Mapa.cs">
       <DependentUpon>RemixRPG.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Mesa.cs">
       <DependentUpon>RemixRPG.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Mestre.cs">
+    <Compile Include="Models\MesaMapa.cs">
       <DependentUpon>RemixRPG.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Peculiaridade.cs">
-      <DependentUpon>RemixRPG.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PontosAcumulados.cs">
       <DependentUpon>RemixRPG.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Propriedade.cs">
@@ -206,7 +197,6 @@
     <Content Include="Content\Bootstrap\bootstrap-css\rpg-awesome.css" />
     <Content Include="Content\Bootstrap\bootstrap-css\rpg-awesome.min.css" />
     <Content Include="Content\Bootstrap\fonts\rpgawesome-webfont.svg" />
-    <Content Include="Content\Fotos\luizdequeiroz%40outlook.com.br.png" />
     <Content Include="Content\images\ajax-loader.gif" />
     <Content Include="Content\images\ficha.jpg" />
     <Content Include="Content\images\large-lake.jpg" />
@@ -572,13 +562,14 @@
     <Content Include="Views\Entrada\Entrar.cshtml" />
     <Content Include="Views\Entrada\Cadastrar.cshtml" />
     <Content Include="Views\Desktop\Desktop.cshtml" />
-    <Content Include="Views\Fichas\NovaFicha.cshtml" />
     <Content Include="Views\Fichas\Fichas.cshtml" />
     <Content Include="Views\Mapas\ZoldaMaps.cshtml" />
     <Content Include="Views\Mapas\Mapas.cshtml" />
+    <Content Include="Views\Fichas\NovaFicha.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Fotos\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -16,8 +16,8 @@ namespace RPG_Remix.Models
     {
         public Mesa()
         {
-            this.Mapas = new HashSet<Mapa>();
-            this.Jogadores = new HashSet<Jogador>();
+            this.Ficha = new HashSet<Ficha>();
+            this.MesaMapa = new HashSet<MesaMapa>();
         }
     
         public int Id { get; set; }
@@ -26,9 +26,10 @@ namespace RPG_Remix.Models
         public Nullable<int> NumeroJogadores { get; set; }
         public string DataCriacao { get; set; }
         public string Senha { get; set; }
+        public int UsuarioId { get; set; }
     
-        public virtual ICollection<Mapa> Mapas { get; set; }
-        public virtual Mestre Mestre { get; set; }
-        public virtual ICollection<Jogador> Jogadores { get; set; }
+        public virtual ICollection<Ficha> Ficha { get; set; }
+        public virtual ICollection<MesaMapa> MesaMapa { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

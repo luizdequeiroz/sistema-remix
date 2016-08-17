@@ -12,14 +12,13 @@ namespace RPG_Remix.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Jogador
+    public partial class MesaMapa
     {
         public int Id { get; set; }
         public int MesaId { get; set; }
-        public int UsuarioId { get; set; }
+        public int MapaId { get; set; }
     
         public virtual Mesa Mesa { get; set; }
-        public virtual Usuario Usuario { get; set; }
-        public virtual Ficha Ficha { get; set; }
+        public virtual Mapa Mapa { get; set; }
     }
 }

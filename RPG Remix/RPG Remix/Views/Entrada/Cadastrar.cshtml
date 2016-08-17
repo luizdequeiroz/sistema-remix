@@ -6,16 +6,16 @@
     {
         if (ViewBag.MsgCadastro.Contains("Sucesso"))
         {
-            type = "text-primary";
+            type = "field-validation-error text-primary";
         }
         else
         {
-            type = "text-danger";
+            type = "field-validation-error text-danger";
         }
     }
 }
 
-<div id="inicio-frame" class="centralizar">
+<div class="centralizar">
     <div class="borda-cadastro">
         <div class="conteudo-cadastro terrain">
             <fieldset>

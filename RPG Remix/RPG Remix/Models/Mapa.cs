@@ -16,16 +16,17 @@ namespace RPG_Remix.Models
     {
         public Mapa()
         {
-            this.Mesas = new HashSet<Mesa>();
             this.Regiões = new HashSet<Região>();
+            this.MesaMapa = new HashSet<MesaMapa>();
         }
     
         public int Id { get; set; }
         public string Nome { get; set; }
+        public string Descricao { get; set; }
         public string Caminho { get; set; }
         public bool Geral { get; set; }
     
-        public virtual ICollection<Mesa> Mesas { get; set; }
         public virtual ICollection<Região> Regiões { get; set; }
+        public virtual ICollection<MesaMapa> MesaMapa { get; set; }
     }
 }
