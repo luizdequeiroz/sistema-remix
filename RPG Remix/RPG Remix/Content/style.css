@@ -8781,15 +8781,13 @@ fieldset {
     visibility: hidden;
 }
 
-.radio label {   
+.radio label {
     position: absolute;
-    
     cursor: pointer;
     background: #6e5c4a no-repeat center center;
     border-radius: 10px;
     font-size: 14px;
     color: white;
-    
     text-align: center;
     top: 0;
     right: 0;
@@ -8813,4 +8811,44 @@ fieldset {
 
 .text-high {
     font-size: 14px;
+}
+
+.group-test {
+    text-align: center;
+    padding: 0 !important;
+    border: 2px solid rgba(0, 0, 0, 0.375);
+    border-right: 10px solid rgba(0, 0, 0, 0.375);
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.375);
+}
+
+.label-test {
+    width: 40px;
+    padding-right: 0;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-bottom: 2px;
+}
+
+.input-test {
+    height: 100% !important;
+    border-radius: 15px/30px !important;
+    margin-left: 0 !important;
+}
+
+.pecu-name {
+    width: 79% !important;
+    margin-right: 0;
+    border-radius: 15px/30px !important;
+}
+
+.pecu-test {
+    width: 20% !important;
+    border-radius: 15px/30px !important;
+}
+
+.pin-none::-webkit-inner-spin-button,
+.pin-none::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }

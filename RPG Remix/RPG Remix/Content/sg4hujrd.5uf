@@ -1,0 +1,82 @@
+﻿/* Funções para carregamento com o GIF */
+function loaderOn() {
+    setTimeout(function () {
+        $('.loading').css('display', 'normal');
+    }, 5000);
+}
+function loaderOff() {
+    $('.loading').css('display', 'none');
+}
+
+function resetMenu() {
+    $('#Fichas').css('border', 'none');
+    $('#Jogadores').css('border', 'none');
+    $('#Textos').css('border', 'none');
+    $('#Mapas').css('border', 'none');
+}
+
+function getPage(controller, action) {
+    var page = "";
+
+    $.ajax({
+        type: 'GET',
+        url: '/' + controller + '/' + action,
+        success: function (view) {
+            page = view;
+        },
+        error: function (error) {
+            alert(error);
+        }
+    });
+
+    return page;
+}
+
+function loadPage(controller, action) {
+
+    $.ajax({
+        type: 'GET',
+        url: '/' + controller + '/' + action,
+        success: function (view) {
+            $('#frame').html(view);
+        }
+    });
+}
+
+function clickMenu(controller, action) {
+    resetMenu();
+
+    $('#' + action).css('border', '3px solid darkred');
+    loadPage(controller, action);
+}
+
+function submit(controller, action) {
+    var dados = $(this).closest('form').serialize();
+
+    $.ajax({
+        type: 'POST',
+        url: '/' + controller + '/' + action,
+        data: dados,
+        success: function (view) {
+            $('#frame').html(view);
+        }
+    });
+}
+
+var menuActived = true;
+
+$(document).ready(function () {
+
+    $('#active-menu').click(function () {
+
+        if (menuActived) {
+            $('.desktop-menu').animate({ left: '-150px' }, 500);
+            $('.desktop-content').animate({ left: '0' }, 500);
+            menuActived = false;
+        } else {
+            $('.desktop-menu').animate({ left: '0' }, 500);
+            $('.desktop-content').animate({ left: '150px' }, 500);
+            menuActived = true;
+        }
+    });
+});

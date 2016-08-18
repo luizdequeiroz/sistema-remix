@@ -19,7 +19,7 @@ namespace RPG_Remix.Models.Fachada
             PtsExperiencia = 0;
         }
 
-        [Required(ErrorMessage = "O nome do personagem é obrigatório!")]
+        [Required(ErrorMessage = "O nome e a idade do personagem são obrigatórios!")]
         public string Nome
         {
             get
@@ -65,7 +65,7 @@ namespace RPG_Remix.Models.Fachada
             }
         }
 
-        [Required(ErrorMessage = "A Adrenalina é obrigatória!")]
+        [Required]
         public int Adre
         {
             get
@@ -77,7 +77,7 @@ namespace RPG_Remix.Models.Fachada
                 Ficha.Adre = value;
             }
         }
-        [Required(ErrorMessage = "O Ataque é obrigatório!")]
+        [Required]
         public int Ataq
         {
             get
@@ -89,7 +89,7 @@ namespace RPG_Remix.Models.Fachada
                 Ficha.Ataq = value;
             }
         }
-        [Required(ErrorMessage = "A Defesa é obrigatória!")]
+        [Required]
         public int Defe
         {
             get
@@ -101,7 +101,7 @@ namespace RPG_Remix.Models.Fachada
                 Ficha.Defe = value;
             }
         }
-        [Required(ErrorMessage = "A Destreza é obrigatória!")]
+        [Required]
         public int Dest
         {
             get
@@ -113,7 +113,7 @@ namespace RPG_Remix.Models.Fachada
                 Ficha.Dest = value;
             }
         }
-        [Required(ErrorMessage = "A Força é obrigatória!")]
+        [Required]
         public int Forc
         {
             get
@@ -125,7 +125,7 @@ namespace RPG_Remix.Models.Fachada
                 Ficha.Forc = value;
             }
         }
-        [Required(ErrorMessage = "A Inteligência é obrigatória!")]
+        [Required]
         public int Inte
         {
             get
@@ -137,7 +137,7 @@ namespace RPG_Remix.Models.Fachada
                 Ficha.Inte = value;
             }
         }
-        [Required(ErrorMessage = "A Resistência é obrigatória!")]
+        [Required]
         public int Resi
         {
             get
@@ -149,7 +149,7 @@ namespace RPG_Remix.Models.Fachada
                 Ficha.Resi = value;
             }
         }
-        [Required(ErrorMessage = "A Sabedoria é obrigatória!")]
+        [Required]
         public int Sabe
         {
             get
@@ -161,7 +161,7 @@ namespace RPG_Remix.Models.Fachada
                 Ficha.Sabe = value;
             }
         }
-        [Required(ErrorMessage = "A Velocidade é obrigatória!")]
+        [Required]
         public int Velo
         {
             get
@@ -173,7 +173,7 @@ namespace RPG_Remix.Models.Fachada
                 Ficha.Velo = value;
             }
         }
-        [Required(ErrorMessage = "A Vitalidade é obrigatória!")]
+        [Required]
         public int Vital
         {
             get
@@ -185,7 +185,7 @@ namespace RPG_Remix.Models.Fachada
                 Ficha.Vital = value;
             }
         }
-        [Required(ErrorMessage = "A Sorte é obrigatória!")]
+        [Required]
         public int Sort
         {
             get

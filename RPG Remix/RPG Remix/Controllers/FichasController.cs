@@ -28,11 +28,7 @@ namespace RPG_Remix.Controllers
         public ActionResult NovaFicha(FichaCriar ficha, 
             ICollection<Peculiaridade> capacidades,
             ICollection<Peculiaridade> pericias,
-            ICollection<Peculiaridade> desvantagens,
-            ICollection<Propriedade> propriedades, 
-            ICollection<Riqueza> riquezas, 
-            ICollection<ItemArma> itensArmas, 
-            ICollection<Vestimenta> vestimentas)
+            ICollection<Peculiaridade> desvantagens)
         {
             return PartialView();
         }
