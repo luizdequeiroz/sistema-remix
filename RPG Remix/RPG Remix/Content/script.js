@@ -9,10 +9,15 @@ function loaderOff() {
 }
 
 function resetMenu() {
-    $('#Fichas').css('border', 'none');
-    $('#Jogadores').css('border', 'none');
-    $('#Textos').css('border', 'none');
-    $('#Mapas').css('border', 'none');
+    $('#Fichas').css('border', '1px solid transparent');
+    $('#Jogadores').css('border', '1px solid transparent');
+    $('#Textos').css('border', '1px solid transparent');
+    $('#Mapas').css('border', '1px solid transparent');
+
+    $('#Fichas').css('border-color', '#cccccc');
+    $('#Jogadores').css('border-color', '#cccccc');
+    $('#Textos').css('border-color', '#cccccc');
+    $('#Mapas').css('border-color', '#cccccc');
 }
 
 function loadPage(controller, action) {
@@ -82,6 +87,10 @@ function calcPts(val) {
 
     $('#ptsTest').val(sumAllTests() + '/' + ptsTest);
     $('#ptsPecs').val(ptsPecs);
+
+    $('#Nivel').val(parseInt(test));
+
+    $('#submiter').attr('disabled', false);
 }
 
 function defineMaxAllTests(max) {
@@ -150,3 +159,95 @@ $(document).ready(function () {
         }
     });
 });
+
+/*
+<div class="form-group-sm form-inline group-test">
+    <input type="text" name="capacidades[0].Nome" id="capacidades[0].Nome" class="form-control pecu-name" placeholder="nome da capacidade" />
+    <input type="number" name="capacidades[0].Teste" id="capacidades[0].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
+</div>
+*/
+
+var numCaps = 0;
+var numPers = 0;
+var numDesv = 0;
+
+function maisCap() {
+    var div = document.createElement('div');
+    div.className = 'form-group-sm form-inline group-test';
+
+    var inputText = document.createElement('input');
+    inputText.type = 'text';
+    inputText.name = 'capacidades[' + numCaps + '].Nome';
+    inputText.id = 'capacidades[' + numCaps + '].Nome';
+    inputText.className = 'form-control pecu-name';
+    inputText.placeholder = 'nome da capacidade';
+
+    var inputNumber = document.createElement('input');
+    inputNumber.type = 'number';
+    inputNumber.name = 'capacidades[' + numCaps + '].Teste';
+    inputNumber.id = 'capacidades[' + numCaps + '].Teste';
+    inputNumber.min = '0';
+    inputNumber.className = 'form-control pecu-test';
+    inputNumber.placeholder = 'teste';
+
+    div.appendChild(inputText);
+    div.appendChild(inputNumber);
+
+    document.getElementById('caps').appendChild(div);
+
+    numCaps++;
+}
+
+function maisPer() {
+    var div = document.createElement('div');
+    div.className = 'form-group-sm form-inline group-test';
+
+    var inputText = document.createElement('input');
+    inputText.type = 'text';
+    inputText.name = 'pericias[' + numPers + '].Nome';
+    inputText.id = 'pericias[' + numPers + '].Nome';
+    inputText.className = 'form-control pecu-name';
+    inputText.placeholder = 'nome da perícia';
+
+    var inputNumber = document.createElement('input');
+    inputNumber.type = 'number';
+    inputNumber.name = 'pericias[' + numPers + '].Teste';
+    inputNumber.id = 'pericias[' + numPers + '].Teste';
+    inputNumber.min = '0';
+    inputNumber.className = 'form-control pecu-test';
+    inputNumber.placeholder = 'teste';
+
+    div.appendChild(inputText);
+    div.appendChild(inputNumber);
+
+    document.getElementById('pers').appendChild(div);
+
+    numPers++;
+}
+
+function maisDes() {
+    var div = document.createElement('div');
+    div.className = 'form-group-sm form-inline group-test';
+
+    var inputText = document.createElement('input');
+    inputText.type = 'text';
+    inputText.name = 'desvantagens[' + numDesv + '].Nome';
+    inputText.id = 'desvantagens[' + numDesv + '].Nome';
+    inputText.className = 'form-control pecu-name';
+    inputText.placeholder = 'nome da desvantagem';
+
+    var inputNumber = document.createElement('input');
+    inputNumber.type = 'number';
+    inputNumber.name = 'desvantagens[' + numDesv + '].Teste';
+    inputNumber.id = 'desvantagens[' + numDesv + '].Teste';
+    inputNumber.min = '0';
+    inputNumber.className = 'form-control pecu-test';
+    inputNumber.placeholder = 'teste';
+
+    div.appendChild(inputText);
+    div.appendChild(inputNumber);
+
+    document.getElementById('desv').appendChild(div);
+
+    numDesv++;
+}

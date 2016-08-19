@@ -41,10 +41,11 @@
             </ul>
         </div>
         <div class="panel-body">
-            <form novalidate="novalidate">
+            <form>
+                <input type="hidden" name="Nivel" id="Nivel" />
                 <div class="form-group-lg text-right form-inline fix-top">
-                    TESTES <input type="text" name="ptsTest" id="ptsTest" disabled class="ptsAcum" />
-                    PECULIARIDADES <input type="text" name="ptsPecs" id="ptsPecs" disabled class="ptsAcum" />
+                    TESTES <input type="text" id="ptsTest" disabled class="ptsAcum" />
+                    PECULIARIDADES <input type="text" id="ptsPecs" disabled class="ptsAcum" />
                 </div>
                 <fieldset class="panel-form col-md-12">
                     <legend class="text-whitesmoke">Dados do Personagem</legend>
@@ -65,7 +66,7 @@
                         @Html.TextBoxFor(model => model.Classe, new { placeholder = "classe do personagem", @class = "form-control" })
                     </div>
                 </fieldset>
-                <fieldset class="panel-form col-md-4">
+                <fieldset class="panel-form col-md-4 col-sm-4 pwidth">
                     <legend class="text-whitesmoke">Testes Físicos e Místicos</legend>
                     <div class="col-md-5">
                         <div class="form-group-sm form-inline group-test">
@@ -116,104 +117,29 @@
                         </div>
                     </div>
                 </fieldset>
-                <fieldset class="panel-form col-md-4">
+                <fieldset class="panel-form col-md-4 col-sm-4 pwidth">
                     <legend class="text-whitesmoke">Capacidades</legend>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="capacidades[0].Nome" id="capacidades[0].Nome" class="form-control pecu-name" placeholder="nome da capacidade" />
-                        <input type="number" name="capacidades[0].Teste" id="capacidades[0].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
+                    <div class="btn-border">
+                        <div title="Adicionar uma capacidade!" class="btn btn-default btn-block btn-pecu" onclick="maisCap()"><i class="fa fa-plus"></i></div>
                     </div>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="capacidades[1].Nome" id="capacidades[1].Nome" class="form-control pecu-name" placeholder="nome da capacidade" />
-                        <input type="number" name="capacidades[1].Teste" id="capacidades[1].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
-                    </div>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="capacidades[2].Nome" id="capacidades[2].Nome" class="form-control pecu-name" placeholder="nome da capacidade" />
-                        <input type="number" name="capacidades[2].Teste" id="capacidades[2].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
-                    </div>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="capacidades[3].Nome" id="capacidades[3].Nome" class="form-control pecu-name" placeholder="nome da capacidade" />
-                        <input type="number" name="capacidades[3].Teste" id="capacidades[3].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
-                    </div>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="capacidades[4].Nome" id="capacidades[4].Nome" class="form-control pecu-name" placeholder="nome da capacidade" />
-                        <input type="number" name="capacidades[4].Teste" id="capacidades[4].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
-                    </div>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="capacidades[5].Nome" id="capacidades[5].Nome" class="form-control pecu-name" placeholder="nome da capacidade" />
-                        <input type="number" name="capacidades[5].Teste" id="capacidades[5].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
-                    </div>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="capacidades[6].Nome" id="capacidades[6].Nome" class="form-control pecu-name" placeholder="nome da capacidade" />
-                        <input type="number" name="capacidades[6].Teste" id="capacidades[6].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
-                    </div>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="capacidades[7].Nome" id="capacidades[7].Nome" class="form-control pecu-name" placeholder="nome da capacidade" />
-                        <input type="number" name="capacidades[7].Teste" id="capacidades[7].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
-                    </div>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="capacidades[8].Nome" id="capacidades[8].Nome" class="form-control pecu-name" placeholder="nome da capacidade" />
-                        <input type="number" name="capacidades[8].Teste" id="capacidades[8].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
-                    </div>
+                    <div id="caps"></div>
                 </fieldset>
-                <fieldset class="panel-form col-md-4">
+                <fieldset class="panel-form col-md-4 col-sm-4 pwidth">
                     <legend class="text-whitesmoke">Perícias</legend>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="pericias[0].Nome" id="pericias[0].Nome" class="form-control pecu-name" placeholder="nome da perícia" />
-                        <input type="number" name="pericias[0].Teste" id="pericias[0].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
+                    <div class="btn-border">
+                        <div title="Adicionar uma perícia!" class="btn btn-default btn-block btn-pecu" onclick="maisPer()"><i class="fa fa-plus"></i></div>
                     </div>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="pericias[1].Nome" id="pericias[1].Nome" class="form-control pecu-name" placeholder="nome da perícia" />
-                        <input type="number" name="pericias[1].Teste" id="pericias[1].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
-                    </div>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="pericias[2].Nome" id="pericias[2].Nome" class="form-control pecu-name" placeholder="nome da perícia" />
-                        <input type="number" name="pericias[2].Teste" id="pericias[2].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
-                    </div>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="pericias[3].Nome" id="pericias[3].Nome" class="form-control pecu-name" placeholder="nome da perícia" />
-                        <input type="number" name="pericias[3].Teste" id="pericias[3].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
-                    </div>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="pericias[4].Nome" id="pericias[4].Nome" class="form-control pecu-name" placeholder="nome da perícia" />
-                        <input type="number" name="pericias[4].Teste" id="pericias[4].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
-                    </div>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="pericias[5].Nome" id="pericias[5].Nome" class="form-control pecu-name" placeholder="nome da perícia" />
-                        <input type="number" name="pericias[5].Teste" id="pericias[5].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
-                    </div>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="pericias[6].Nome" id="pericias[6].Nome" class="form-control pecu-name" placeholder="nome da perícia" />
-                        <input type="number" name="pericias[6].Teste" id="pericias[6].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
-                    </div>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="pericias[7].Nome" id="pericias[7].Nome" class="form-control pecu-name" placeholder="nome da perícia" />
-                        <input type="number" name="pericias[7].Teste" id="pericias[7].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
-                    </div>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="pericias[8].Nome" id="pericias[8].Nome" class="form-control pecu-name" placeholder="nome da perícia" />
-                        <input type="number" name="pericias[8].Teste" id="pericias[8].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
-                    </div>
+                    <div id="pers"></div>
                 </fieldset>
-                <fieldset class="panel-form col-md-4">
+                <fieldset class="panel-form col-md-4 col-sm-4 pwidth">
                     <legend class="text-whitesmoke">Desvantagens</legend>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="desvantagens[0].Nome" id="desvantagens[0].Nome" class="form-control pecu-name" placeholder="nome da desvantagem" />
-                        <input type="number" name="desvantagens[0].Teste" id="desvantagens[0].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
+                    <div class="btn-border">
+                        <div title="Adicionar uma desvantagem!" class="btn btn-default btn-block btn-pecu" onclick="maisDes()"><i class="fa fa-plus"></i></div>
                     </div>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="desvantagens[1].Nome" id="desvantagens[1].Nome" class="form-control pecu-name" placeholder="nome da desvantagem" />
-                        <input type="number" name="desvantagens[1].Teste" id="desvantagens[1].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
-                    </div>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="desvantagens[2].Nome" id="desvantagens[2].Nome" class="form-control pecu-name" placeholder="nome da desvantagem" />
-                        <input type="number" name="desvantagens[2].Teste" id="desvantagens[2].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
-                    </div>
-                    <div class="form-group-sm form-inline group-test">
-                        <input type="text" name="desvantagens[3].Nome" id="desvantagens[3].Nome" class="form-control pecu-name" placeholder="nome da desvantagem" />
-                        <input type="number" name="desvantagens[3].Teste" id="desvantagens[3].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
-                    </div>
+                    <div id="desv"></div>
                 </fieldset>
-                <div class="btn btn-default btn-lg" onclick="submit('POST', 'Fichas', 'NovaFicha')">CRIAR ESSA FICHA</div>
+                <div class="btn btn-danger btn-submit text-left" style="position: absolute; bottom: 12px; left: 3%" onclick="loadPage('Fichas', 'Fichas')">Cancelar</div>
+                <a class="btn btn-success btn-submit text-right" id="submiter" style="position: absolute; bottom: 12px; right: 3%;" onclick="submit('POST', 'Fichas', 'NovaFicha')" disabled>CRIAR ESSA FICHA</a>
             </form>
         </div>
     </div>

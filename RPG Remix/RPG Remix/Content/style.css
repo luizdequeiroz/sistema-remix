@@ -13,6 +13,7 @@
  * }
 */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+
 html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
@@ -8474,6 +8475,16 @@ fieldset {
     background-size: cover;*/
 }
 
+.btn-terrain {
+    color: whitesmoke;
+    border-color: #cccccc;
+    background: url(../Content/images/btn-terrain-dark.jpg) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .val-tooltip {
     font: bold;
     background-color: whitesmoke;
@@ -8539,6 +8550,10 @@ fieldset {
     height: 50px;
     margin: 0;
 }
+
+    .btn-menu:hover {
+        color: white;
+    }
 
 #Jogar {
     position: absolute;
@@ -8826,7 +8841,6 @@ fieldset {
     width: 40px;
     padding-right: 0;
     padding-left: 3px;
-    padding-top: 3px;
     padding-bottom: 2px;
 }
 
@@ -8847,8 +8861,76 @@ fieldset {
     border-radius: 15px/30px !important;
 }
 
+.btn-border {
+    height: 7%;
+    text-align: center;
+    padding: 0 !important;
+    border: 2px solid rgba(0, 0, 0, 0.375);
+    border-right: 10px solid rgba(0, 0, 0, 0.375);
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.375);
+}
+
+.btn-pecu {
+    padding: 0;
+    height: 100%;
+    border-radius: 15px/30px !important;
+}
+
 .pin-none::-webkit-inner-spin-button,
 .pin-none::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+.pwidth {
+    height: 410px;
+}
+
+#caps, #pers, #desv {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 83%;
+    overflow-y: auto;
+}
+
+.btn-submit:hover {
+    color: white;
+}
+
+.btn-success {
+    border: 1px solid #cccccc;
+    background: url(../Content/images/btn-success.jpg) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.btn-default {
+    border: 1px solid #cccccc;
+    background: url(../Content/images/btn-default.jpg) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.btn-primary {
+    border: 1px solid #cccccc;
+    background: url(../Content/images/btn-primary.jpg) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.btn-danger {
+    border: 1px solid #cccccc;
+    background: url(../Content/images/btn-danger.jpg) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }

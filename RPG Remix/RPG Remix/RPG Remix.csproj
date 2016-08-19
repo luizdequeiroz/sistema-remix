@@ -136,6 +136,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DAO\FichaDao.cs" />
     <Compile Include="Models\DAO\MapaDao.cs" />
     <Compile Include="Models\DAO\MesaDao.cs" />
     <Compile Include="Models\DAO\UsuarioDao.cs" />
@@ -198,11 +199,17 @@
     <Content Include="Content\Bootstrap\bootstrap-css\rpg-awesome.min.css" />
     <Content Include="Content\Bootstrap\fonts\rpgawesome-webfont.svg" />
     <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\images\btn-danger.jpg" />
+    <Content Include="Content\images\btn-default.jpg" />
+    <Content Include="Content\images\btn-primary.jpg" />
+    <Content Include="Content\images\btn-success.jpg" />
+    <Content Include="Content\images\btn-terrain-dark.jpg" />
     <Content Include="Content\images\ficha.jpg" />
     <Content Include="Content\images\large-lake.jpg" />
     <Content Include="Content\images\large-ocean.jpg" />
     <Content Include="Content\images\tabuleiro.jpg" />
     <Content Include="Content\images\terrain-body.jpg" />
+    <Content Include="Content\images\terrain-dark.jpg" />
     <Content Include="Content\images\terrain-head.jpg" />
     <Content Include="Content\images\_large-ocean.png" />
     <Content Include="Content\images\loader.gif" />

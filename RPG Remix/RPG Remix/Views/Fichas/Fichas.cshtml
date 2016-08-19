@@ -1,4 +1,6 @@
-﻿<div class="scrollable">
+﻿@model List<RPG_Remix.Models.Ficha>
+
+<div class="scrollable">
     <div class="div-padding-top">
         <h3 class="panel panel-head">Suas Fichas</h3>
         <div class="div-table">
@@ -11,33 +13,37 @@
                     <a class="btn btn-xs btn-default btn-block" onclick="submit('GET', 'Fichas', 'NovaFicha')">CRIAR NOVA FICHA</a>
                 </form>
             </div>
-            @for (int i = 0; i < 1; i++)
+            @foreach (var f in @Model)
             {
-                <div class="panel panel-object col-md-2 col-sm-2">
-                    <h5>@@{Nome do Personagem}</h5>
-                    <h6>@@{Testes Físicos}</h6>
-                    <hr class="hidden-xs" />
-                    <div class="btn-group btn-group-justified">
-                        <div class="btn btn-xs btn-primary">Ver</div>
-                        <div class="btn btn-xs btn-success">Editar</div>
-                        <div class="btn btn-xs btn-default">Copiar</div>
+                if (f.UsuarioId == ((RPG_Remix.Models.Usuario)Session["usuario"]).Id)
+                {
+                    <div class="panel panel-object col-md-2 col-sm-2">
+                        <h5>@f.Nome</h5>
+                        <h6>adre: @f.Adre ataq: @f.Ataq defe: @f.Defe dest: @f.Dest forç: @f.Forc inte: @f.Inte resi: @f.Resi sabe: @f.Sabe velo: @f.Velo</h6>
+                        <hr class="hidden-xs" />
+                        <div class="btn-group btn-group-justified">
+                            <div class="btn btn-xs btn-primary">Ver</div>
+                            <div class="btn btn-xs btn-default">Editar</div>
+                        </div>
                     </div>
-                </div>
+                }
             }
         </div>
         <h4 class="panel panel-head">Fichas de Conhecidos</h4>
         <div class="div-table">
-            @for (int i = 0; i < 1; i++)
+            @foreach (var f in @Model)
             {
-                <div class="panel panel-object col-md-2 col-sm-2">
-                    <h5>@@{Nome do Personagem}</h5>
-                    <label>@@{Nome do Jogador}</label>
-                    <h6>@@{Testes Físicos}</h6>
-                    <div class="btn-group btn-group-justified">
-                        <div class="btn btn-xs btn-primary">Ver</div>
-                        <div class="btn btn-xs btn-default">Copiar</div>
+                if (f.UsuarioId != ((RPG_Remix.Models.Usuario)Session["usuario"]).Id)
+                {
+                    <div class="panel panel-object col-md-2 col-sm-2">
+                        <h5>@f.Nome</h5>
+                        <label>@f.Usuario.Nome</label>
+                        <h6>adre: @f.Adre ataq: @f.Ataq defe: @f.Defe dest: @f.Dest forç: @f.Forc inte: @f.Inte resi: @f.Resi sabe: @f.Sabe velo: @f.Velo</h6>
+                        <div class="btn-group btn-group-justified">
+                            <div class="btn btn-xs btn-primary">Ver</div>
+                        </div>
                     </div>
-                </div>
+                }
             }
         </div>
     </div>
