@@ -1,0 +1,11 @@
+﻿@model List<RPG_Remix.Models.Mesa>
+
+<select name="mesa.Id" id="mesaId" class="form-control" title="Informe a Mesa" onchange="selectMesa()">
+    <option value="0" selected>Nova Mesa</option>
+    <option value="1" data-nome="Mesa de Exemplo 1" data-desc="Descrição de Exemplo 1" data-njog="1" data-mest="1">Mesa de Exemplo 1</option>
+    <option value="2" data-nome="Mesa de Exemplo 2" data-desc="Descrição de Exemplo 2" data-njog="2" data-mest="2">Mesa de Exemplo 2</option>
+    @foreach (var m in Model)
+    {
+        <option value="@m.Id" data-nome="@m.Nome" data-desc="@m.Descricao" data-njog="@m.NumeroJogadores" data-mest="@m.UsuarioId">@m.Nome</option>
+    }
+</select>

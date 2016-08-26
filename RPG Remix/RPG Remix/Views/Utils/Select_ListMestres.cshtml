@@ -1,0 +1,9 @@
+﻿@model List<RPG_Remix.Models.Usuario>
+
+<select name="mesa.UsuarioId" id="mesaUsuarioId" class="form-control" title="Informe o Mestre">
+    <option value="0" disabled selected>Informe o Mestre</option>
+    @foreach (var u in Model)
+    {
+        <option value="@u.Id">@u.Nome</option>
+    }
+</select>

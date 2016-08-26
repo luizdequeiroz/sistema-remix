@@ -133,6 +133,7 @@
     <Compile Include="Controllers\DesktopController.cs" />
     <Compile Include="Controllers\FichasController.cs" />
     <Compile Include="Controllers\MapasController.cs" />
+    <Compile Include="Controllers\UtilsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -141,7 +142,6 @@
     <Compile Include="Models\DAO\MesaDao.cs" />
     <Compile Include="Models\DAO\UsuarioDao.cs" />
     <Compile Include="Models\Fachada\FichaCriar.cs" />
-    <Compile Include="Models\Fachada\MesaCriar.cs" />
     <Compile Include="Models\Fachada\UsuarioEntrar.cs" />
     <Compile Include="Models\Ficha.cs">
       <DependentUpon>RemixRPG.tt</DependentUpon>
@@ -573,6 +573,8 @@
     <Content Include="Views\Mapas\ZoldaMaps.cshtml" />
     <Content Include="Views\Mapas\Mapas.cshtml" />
     <Content Include="Views\Fichas\NovaFicha.cshtml" />
+    <Content Include="Views\Utils\Select_ListMesas.cshtml" />
+    <Content Include="Views\Utils\Select_ListMestres.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

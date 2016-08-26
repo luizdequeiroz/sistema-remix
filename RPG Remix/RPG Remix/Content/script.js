@@ -146,18 +146,7 @@ var menuActived = true;
 
 $(document).ready(function () {
 
-    $('#active-menu').click(function () {
 
-        if (menuActived) {
-            $('.desktop-menu').animate({ left: '-150px' }, 500);
-            $('.desktop-content').animate({ left: '0' }, 500);
-            menuActived = false;
-        } else {
-            $('.desktop-menu').animate({ left: '0' }, 500);
-            $('.desktop-content').animate({ left: '150px' }, 500);
-            menuActived = true;
-        }
-    });
 });
 
 /*
@@ -251,3 +240,33 @@ function maisDes() {
 
     numDesv++;
 }
+
+var mesaSelected = false;
+
+function selectMesa() {
+    var mesaId = $('#mesaId').val();
+    var mesaNome = $('#mesaId').children(':selected').attr('data-nome');
+    var mesaDesc = $('#mesaId').children(':selected').attr('data-desc');
+    var mesaNJog = $('#mesaId').children(':selected').attr('data-njog');
+    var mestreId = $('#mesaId').children(':selected').attr('data-mest');
+
+    if (mesaId > 0) {
+        $('#mesaNome').val(mesaNome).attr('disabled', 'true');
+        $('#mesaDescricao').text(mesaDesc).attr('disabled', 'true');
+        $('#mesaNumeroJogadores').val(mesaNJog).attr('disabled', 'true');
+        $('#mesaUsuarioId').val(mestreId).attr('disabled', 'true');
+    } else {
+        $('#mesaNome').val('').removeAttr('disabled');
+        $('#mesaDescricao').text('').removeAttr('disabled');
+        $('#mesaNumeroJogadores').val(1).removeAttr('disabled');
+        $('#mesaUsuarioId').val(0).removeAttr('disabled');
+    }
+}
+
+var loadFile = function (event) {
+    var reader = new FileReader();
+    reader.onload = function () {
+        $('#imgMapa').attr('src', reader.result);
+    };
+    reader.readAsDataURL(event.target.files[0]);
+};

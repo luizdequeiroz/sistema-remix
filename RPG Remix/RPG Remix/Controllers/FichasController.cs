@@ -31,7 +31,8 @@ namespace RPG_Remix.Controllers
         public ActionResult NovaFicha(int Nivel, FichaCriar ficha, 
             ICollection<Peculiaridade> capacidades,
             ICollection<Peculiaridade> pericias,
-            ICollection<Peculiaridade> desvantagens)
+            ICollection<Peculiaridade> desvantagens,
+            Mesa mesa)
         {
             return PartialView();
         }

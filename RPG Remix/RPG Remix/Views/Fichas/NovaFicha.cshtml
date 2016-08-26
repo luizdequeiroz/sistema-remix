@@ -138,6 +138,29 @@
                     </div>
                     <div id="desv"></div>
                 </fieldset>
+                <fieldset class="panel-form col-md-8 col-sm-8 pwidth">
+                    <legend class="text-whitesmoke">Mesa/Mapa</legend>
+                    <div class="form-group-sm col-md-6">
+                        @Html.Action("Select_ListMesas", "Utils")
+                        <input type="text" name="mesa.Nome" id="mesaNome" class="form-control col-md-8" placeholder="nome da mesa" style="margin-top: 14px; margin-bottom: 14px" />
+                        <div class="form-inline">
+                            <label for="mesa.NumeroJogadores" class="text-high">Número de Jogadores </label>
+                            <input type="number" name="mesa.NumeroJogadores" id="mesaNumeroJogadores" class="form-control" style="width: 60px" min="1" value="1" />
+                        </div>
+                    </div>
+                    <div class="form-group-sm col-md-6">
+                        @Html.Action("Select_ListMestres", "Utils")
+                        <textarea name="mesa.Descricao" id="mesaDescricao" class="form-control" rows="2" placeholder="descrição da mesa" style="margin-top: 14px"></textarea>
+                    </div>
+                    <div class="form-group-sm col-md-6 text-center">
+                        <label class="btn btn-default btn-block btn-lg btn-file " onchange="loadFile(event)" style="margin-top: 80px;">
+                            Adicionar Mapa<input type="file" readonly="" id="Mapa" name="Mapa" style="display: none" />
+                        </label>
+                    </div>
+                    <div class="form-group-sm col-md-6 text-center">
+                        <img id="imgMapa" style="border: 0 none transparent; margin-top: 14px; width: 330px; height: 200px" /> 
+                    </div>
+                </fieldset>
                 <div class="btn btn-danger btn-submit text-left" style="position: absolute; bottom: 12px; left: 3%" onclick="loadPage('Fichas', 'Fichas')">Cancelar</div>
                 <a class="btn btn-success btn-submit text-right" id="submiter" style="position: absolute; bottom: 12px; right: 3%;" onclick="submit('POST', 'Fichas', 'NovaFicha')" disabled>CRIAR ESSA FICHA</a>
             </form>

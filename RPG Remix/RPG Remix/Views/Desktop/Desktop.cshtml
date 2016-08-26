@@ -25,3 +25,17 @@
         @Html.ActionLink("X", "Sair", null, new { @class = "btn btn-xs btn-danger btn-sair" })
     </div>
 </div>
+<script>
+    $('#active-menu').click(function () {
+
+        if (menuActived) {
+            $('.desktop-menu').animate({ left: '-150px' }, 500);
+            $('.desktop-content').animate({ left: '0' }, 500);
+            menuActived = false;
+        } else {
+            $('.desktop-menu').animate({ left: '0' }, 500);
+            $('.desktop-content').animate({ left: '150px' }, 500);
+            menuActived = true;
+        }
+    });
+</script>
