@@ -1,21 +1,11 @@
 ﻿@model RPG_Remix.Models.Fachada.UsuarioEntrar
 
-@{
-    string type = "";
-    if (ViewBag.MsgEntrada != null)
-    {
-        if (ViewBag.MsgEntrada.Contains("Sucesso"))
-        {
-            type = "field-validation-error text-primary";
-        }
-        else
-        {
-            type = "field-validation-error text-danger";
-        }
-    }
-}
+<script>
+    @Html.Raw(Session["alert"])
+    @{ Session.Remove("alert"); }
+</script>
 
-<div id="inicio-frame">
+<div id="frame">
     <div class="borda">
         <div class="conteudo terrain">
             <fieldset>
@@ -25,8 +15,6 @@
                     <div class="text-center loading" id="loading">
                         <img src="~/Content/images/ajax-loader.gif" width="30" /> Carregando...
                     </div>
-                    @*@Html.ValidationSummary()*@
-                    <div class="text-center"><span class="text-form @type">@ViewBag.MsgEntrada</span></div>
                     <div class="form-group">
                         <label class="control-label" for="Email"><span class="text-form">E-mail</span> <span class="text-danger">*</span> @Html.ValidationMessageFor(model => model.Email)</label>
                         @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "exemplo@email.com" })

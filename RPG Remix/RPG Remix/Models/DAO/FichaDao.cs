@@ -61,13 +61,14 @@ namespace RPG_Remix.Models.DAO
             {
                 try
                 {
+                    ficha.DataNivel = DateTime.Now.ToString();
                     ficha = rrc.FichaSet.Add(ficha);
                     rrc.SaveChanges();
                     return ficha.Id;
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("[FichaDao.Inserir] -> " + ex.Message);
+                    throw new Exception("[FichaDao.Inserir] -> " + ex.ToString());
                 }
             }
         }

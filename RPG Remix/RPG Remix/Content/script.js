@@ -153,6 +153,7 @@ $(document).ready(function () {
 <div class="form-group-sm form-inline group-test">
     <input type="text" name="capacidades[0].Nome" id="capacidades[0].Nome" class="form-control pecu-name" placeholder="nome da capacidade" />
     <input type="number" name="capacidades[0].Teste" id="capacidades[0].Teste" min="0" class="form-control pecu-test" placeholder="teste" />
+    <input type="hidden" name="capacidades[0].Tipo" id="capacidades[0].Tipo" />
 </div>
 */
 
@@ -179,8 +180,15 @@ function maisCap() {
     inputNumber.className = 'form-control pecu-test';
     inputNumber.placeholder = 'teste';
 
+    var inputTipo = document.createElement('input');
+    inputTipo.type = 'hidden';
+    inputTipo.value = 'cap';
+    inputTipo.name = 'capacidades[' + numCaps + '].Tipo';
+    inputTipo.id = 'capacidades[' + numCaps + '].Tipo';
+
     div.appendChild(inputText);
     div.appendChild(inputNumber);
+    div.appendChild(inputTipo);
 
     document.getElementById('caps').appendChild(div);
 
@@ -206,8 +214,15 @@ function maisPer() {
     inputNumber.className = 'form-control pecu-test';
     inputNumber.placeholder = 'teste';
 
+    var inputTipo = document.createElement('input');
+    inputTipo.type = 'hidden';
+    inputTipo.value = 'per';
+    inputTipo.name = 'pericias[' + numPers + '].Tipo';
+    inputTipo.id = 'pericias[' + numPers + '].Tipo';
+
     div.appendChild(inputText);
     div.appendChild(inputNumber);
+    div.appendChild(inputTipo);
 
     document.getElementById('pers').appendChild(div);
 
@@ -233,8 +248,15 @@ function maisDes() {
     inputNumber.className = 'form-control pecu-test';
     inputNumber.placeholder = 'teste';
 
+    var inputTipo = document.createElement('input');
+    inputTipo.type = 'hidden';
+    inputTipo.value = 'des';
+    inputTipo.name = 'desvantagens[' + numCaps + '].Tipo';
+    inputTipo.id = 'desvantagens[' + numCaps + '].Tipo';
+
     div.appendChild(inputText);
     div.appendChild(inputNumber);
+    div.appendChild(inputTipo);
 
     document.getElementById('desv').appendChild(div);
 
@@ -270,3 +292,37 @@ var loadFile = function (event) {
     };
     reader.readAsDataURL(event.target.files[0]);
 };
+
+/*
+<div id="alert" class="alert alert-success fade in" style="position: absolute; top: 15px; right: 15px;">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Título do Alert!</strong> <span>Mensagem do Alert.</span>
+</div>
+*/
+
+function showAlert(titulo, mensagem, tipo) {
+
+    var div = document.createElement('div');
+    div.id = 'alert';
+    div.className = 'alert alert-' + tipo + ' fade in';
+    div.style = 'position: absolute; top: 15px; right: 15px';
+
+    var a = document.createElement('a');
+    a.id = 'close';
+    a.className = 'close';
+    a.href = '#';
+    a.dataset.dismiss = 'alert';
+    a.innerText = 'X';
+
+    var h3 = document.createElement('h3');
+    h3.textContent = titulo;
+
+    var h5 = document.createElement('h5');
+    h5.textContent = mensagem;
+
+    div.appendChild(a);
+    div.appendChild(h3);
+    div.appendChild(h5);
+
+    document.getElementById('frame').appendChild(div);
+}

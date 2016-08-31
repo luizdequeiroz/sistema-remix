@@ -17,6 +17,7 @@ namespace RPG_Remix.Models.Fachada
             Raca = "Desconhecida";
             Classe = "Desconhecida";
             PtsExperiencia = 0;
+            Suportes = 0;
         }
 
         [Required(ErrorMessage = "O nome e a idade do personagem são obrigatórios!")]

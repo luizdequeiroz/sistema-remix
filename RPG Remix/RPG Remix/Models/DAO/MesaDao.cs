@@ -9,15 +9,16 @@ namespace RPG_Remix.Models.DAO
     {
         List<Mesa> mesas = new List<Mesa>();
 
-        public void Inserir(Mesa mesa)
+        public int Inserir(Mesa mesa)
         {
             using (var rrc = new RemixRPGContainer())
             {
                 try
                 {
                     mesa.DataCriacao = DateTime.Now.ToString();
-                    rrc.MesaSet.Add(mesa);
+                    mesa = rrc.MesaSet.Add(mesa);
                     rrc.SaveChanges();
+                    return mesa.Id;
                 }
                 catch (Exception ex)
                 {

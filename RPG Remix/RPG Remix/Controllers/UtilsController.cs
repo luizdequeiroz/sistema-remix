@@ -20,5 +20,11 @@ namespace RPG_Remix.Controllers
             var mestres = new UsuarioDao().Listar();
             return PartialView(mestres);
         }
+
+        [NonAction]
+        public static string RenderAlert(string titulo, string mensagem, string tipo)
+        {
+            return "showAlert('" + titulo + "','" + mensagem + "','" + tipo + "');";
+        }
     }
 }

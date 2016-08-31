@@ -1,19 +1,9 @@
 ﻿@model RPG_Remix.Models.Fachada.UsuarioCadastrar
 
-@{
-    string type = "";
-    if (ViewBag.MsgCadastro != null)
-    {
-        if (ViewBag.MsgCadastro.Contains("Sucesso"))
-        {
-            type = "field-validation-error text-primary";
-        }
-        else
-        {
-            type = "field-validation-error text-danger";
-        }
-    }
-}
+<script>
+    @Html.Raw(Session["alert"])
+    @{ Session.Remove("alert"); }
+</script>
 
 <div class="centralizar">
     <div class="borda-cadastro">
@@ -22,11 +12,9 @@
                 <legend class="text-whitesmoke">CADASTRO</legend>
                 @using (Html.BeginForm("Cadastrar", "Entrada", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
-                    @*@Html.ValidationSummary()*@
                     <div class="text-center loading" id="loading">
                         <img src="~/Content/images/ajax-loader.gif" width="30" /> Carregando...
                     </div>
-                    <div class="text-center"><span class="text-form @type">@ViewBag.MsgCadastro</span></div>
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                         <div class="form-group">
                             <label class="control-label" for="Nome"><span class="text-form">Nome</span> <span class="text-danger">*</span>  @Html.ValidationMessageFor(model => model.Nome)</label>

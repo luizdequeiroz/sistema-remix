@@ -140,6 +140,7 @@
     <Compile Include="Models\DAO\FichaDao.cs" />
     <Compile Include="Models\DAO\MapaDao.cs" />
     <Compile Include="Models\DAO\MesaDao.cs" />
+    <Compile Include="Models\DAO\PeculiaridadeDao.cs" />
     <Compile Include="Models\DAO\UsuarioDao.cs" />
     <Compile Include="Models\Fachada\FichaCriar.cs" />
     <Compile Include="Models\Fachada\UsuarioEntrar.cs" />

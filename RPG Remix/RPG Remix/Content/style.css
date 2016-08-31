@@ -8468,11 +8468,11 @@ fieldset {
 /* Desktop */
 
 .tabuleiro {
-    background: url(../Content/images/tabuleiro.jpg) repeat;
-    /*-webkit-background-size: cover;
+    background: url(../Content/images/tabuleiro.jpg) no-repeat;
+    -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;*/
+    background-size: cover;
 }
 
 .btn-terrain {
@@ -8829,6 +8829,7 @@ fieldset {
 }
 
 .group-test {
+    float: inherit;
     text-align: center;
     padding: 0 !important;
     border: 2px solid rgba(0, 0, 0, 0.375);
@@ -8838,6 +8839,7 @@ fieldset {
 }
 
 .label-test {
+    float: left;
     width: 40px;
     padding-right: 0;
     padding-left: 3px;
@@ -8845,6 +8847,7 @@ fieldset {
 }
 
 .input-test {
+    float: right;
     height: 100% !important;
     border-radius: 15px/30px !important;
     margin-left: 0 !important;

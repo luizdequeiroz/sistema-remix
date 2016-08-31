@@ -25,20 +25,28 @@ namespace RPG_Remix.Controllers
         [HttpPost]
         public ActionResult Entrar(UsuarioEntrar u)
         {
-            var usuario = new UsuarioDao().SelecionarPorEmail(u.Email);
-            if (usuario != null)
-                if (usuario.Senha != u.Senha)
-                {
-                    ViewBag.MsgEntrada = "Senha incorreta!";
-                    return View();
-                }
-                else
-                {
-                    Session["usuario"] = usuario;
-                    return RedirectToAction("Desktop", "Desktop");
-                }
-            ViewBag.MsgEntrada = "Não há cadastro com este e-mail!";
-            return View();
+            try
+            {
+                var usuario = new UsuarioDao().SelecionarPorEmail(u.Email);
+                if (usuario != null)
+                    if (usuario.Senha != u.Senha)
+                    {
+                        Session["alert"] = UtilsController.RenderAlert("Ops!", "Senha incorreta!", "warning");
+                        return View();
+                    }
+                    else
+                    {
+                        Session["usuario"] = usuario;
+                        return RedirectToAction("Desktop", "Desktop");
+                    }
+                Session["alert"] = UtilsController.RenderAlert("Vish!", "Não há cadastro com este e-mail!", "warning");
+                return View();
+            }
+            catch (Exception ex)
+            {
+                Session["alert"] = UtilsController.RenderAlert("Erro!", "Erro no servidor, por favor tente novamente (agora ou mais tarde). Relatório: <br>" + ex.Message, "danger");
+                return View();
+            }
         }
 
         public ActionResult Cadastrar()
@@ -81,17 +89,17 @@ namespace RPG_Remix.Controllers
                             }
 
                     new UsuarioDao().Inserir(u.Usuario);
-                    ViewBag.MsgEntrada = "Cadastrado com Sucesso!";
+                    Session["alert"] = UtilsController.RenderAlert("Parabéns!", "Você foi cadastrado com sucesso, pelo e-mail " + u.Email + "!", "success");
                     return View("Entrar");
                 }
                 catch (Exception ex)
                 {
-                    ViewBag.MsgCadastro = "Erro ao tentar cadastrar. Mas a culpa não é sua! Erro: " + ex.Message;
+                    Session["alert"] = UtilsController.RenderAlert("Erro!", "Erro ao tentar cadastrar. Mas a culpa não é sua! Erro: " + ex.Message, "danger");
                     return View();
                 }
             }
 
-            ViewBag.MsgCadastro = "Preencha os campos corretamente e não deixe os obrigatórios em branco.";
+            Session["alert"] = UtilsController.RenderAlert("Ops!", "Preencha os campos corretamente e não deixe os obrigatórios em branco.", "warning");
             return View();
         }
 
