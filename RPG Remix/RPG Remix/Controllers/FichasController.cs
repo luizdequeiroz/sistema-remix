@@ -79,7 +79,7 @@ namespace RPG_Remix.Controllers
                     var fichaId = fichaDao.Inserir(ficha.Ficha);
 
 
-                    if (capacidades.Count > 0)
+                    if (capacidades != null && capacidades.Count > 0)
                     {
                         var txt = "";
                         foreach (var c in capacidades)
@@ -90,7 +90,7 @@ namespace RPG_Remix.Controllers
                         if (txt != "") peculiaridadeDao.InserirVarios(capacidades);
                     }
 
-                    if (pericias.Count > 0)
+                    if (pericias != null && pericias.Count > 0)
                     {
                         var txt = "";
                         foreach (var p in pericias)
@@ -101,7 +101,7 @@ namespace RPG_Remix.Controllers
                         if (txt != "") peculiaridadeDao.InserirVarios(pericias);
                     }
 
-                    if (desvantagens.Count > 0)
+                    if (desvantagens != null && desvantagens.Count > 0)
                     {
                         var txt = "";
                         foreach (var d in desvantagens)

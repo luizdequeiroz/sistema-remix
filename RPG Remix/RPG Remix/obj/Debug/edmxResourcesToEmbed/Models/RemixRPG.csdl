@@ -66,11 +66,11 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nome" Type="String" Nullable="false" />
-    <Property Name="Descricao" Type="String" Nullable="true" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Descricao" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="NumeroJogadores" Type="Int32" Nullable="true" />
-    <Property Name="DataCriacao" Type="String" Nullable="false" />
-    <Property Name="Senha" Type="String" Nullable="true" />
+    <Property Name="DataCriacao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Senha" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Ficha" Relationship="RemixRPG.MesaFicha" FromRole="Mesa" ToRole="Ficha" />
     <NavigationProperty Name="MesaMapa" Relationship="RemixRPG.MesaMapaMesa" FromRole="Mesa" ToRole="MesaMapa" />
     <NavigationProperty Name="Usuario" Relationship="RemixRPG.MesaUsuario" FromRole="Mesa" ToRole="Usuario" />
@@ -81,13 +81,13 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nome" Type="String" Nullable="false" />
-    <Property Name="Descricao" Type="String" Nullable="false" />
-    <Property Name="Email" Type="String" Nullable="false" />
-    <Property Name="Senha" Type="String" Nullable="false" />
-    <Property Name="DataNascimento" Type="String" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Senha" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="DataNascimento" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Sexo" Type="Byte" Nullable="false" />
-    <Property Name="DataCadastro" Type="String" Nullable="false" />
+    <Property Name="DataCadastro" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Ficha" Relationship="RemixRPG.UsuarioFicha" FromRole="Usuario" ToRole="Ficha" />
     <NavigationProperty Name="Mesa" Relationship="RemixRPG.MesaUsuario" FromRole="Usuario" ToRole="Mesa" />
   </EntityType>
@@ -96,10 +96,10 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nome" Type="String" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Idade" Type="Int32" Nullable="false" />
-    <Property Name="Raca" Type="String" Nullable="false" />
-    <Property Name="Classe" Type="String" Nullable="false" />
+    <Property Name="Raca" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Classe" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Adre" Type="Int32" Nullable="false" />
     <Property Name="Ataq" Type="Int32" Nullable="false" />
     <Property Name="Defe" Type="Int32" Nullable="false" />
@@ -124,7 +124,7 @@
     <Property Name="PtsPericias" Type="Int32" Nullable="false" />
     <Property Name="PtsDesvantagens" Type="Int32" Nullable="false" />
     <Property Name="PtsExperiencia" Type="Int32" Nullable="false" />
-    <Property Name="DataNivel" Type="String" Nullable="false" />
+    <Property Name="DataNivel" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Vestimenta" Relationship="RemixRPG.FichaVestimenta" FromRole="Ficha" ToRole="Vestimenta" />
   </EntityType>
   <EntityType Name="Peculiaridade">
@@ -132,10 +132,10 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nome" Type="String" Nullable="false" />
-    <Property Name="Descricao" Type="String" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Teste" Type="Int32" Nullable="false" />
-    <Property Name="Tipo" Type="String" Nullable="false" />
+    <Property Name="Tipo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Ficha" Relationship="RemixRPG.FichaPeculiaridade" FromRole="Peculiaridade" ToRole="Ficha" />
     <Property Name="FichaId" Type="Int32" Nullable="false" />
   </EntityType>
@@ -144,8 +144,8 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nome" Type="String" Nullable="false" />
-    <Property Name="Descricao" Type="String" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="CoordX" Type="Int32" Nullable="true" />
     <Property Name="CoordY" Type="Int32" Nullable="true" />
     <Property Name="CoordGX" Type="Int32" Nullable="true" />
@@ -160,10 +160,10 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nome" Type="String" Nullable="false" />
-    <Property Name="Tipo" Type="String" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Tipo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Valor" Type="Double" Nullable="false" />
-    <Property Name="Descricao" Type="String" Nullable="false" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Ficha" Relationship="RemixRPG.FichaRiqueza" FromRole="Riqueza" ToRole="Ficha" />
     <Property Name="FichaId" Type="Int32" Nullable="false" />
   </EntityType>
@@ -172,11 +172,11 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nome" Type="String" Nullable="false" />
-    <Property Name="Tipo" Type="String" Nullable="false" />
-    <Property Name="Categoria" Type="String" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Tipo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Categoria" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Peso" Type="Double" Nullable="false" />
-    <Property Name="Descricao" Type="String" Nullable="false" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Dano" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Ficha" Relationship="RemixRPG.FichaItemArma" FromRole="ItemArma" ToRole="Ficha" />
     <Property Name="FichaId" Type="Int32" Nullable="false" />
@@ -186,32 +186,32 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nome" Type="String" Nullable="false" />
-    <Property Name="Descricao" Type="String" Nullable="false" />
-    <Property Name="Testa" Type="String" Nullable="false" />
-    <Property Name="Cara" Type="String" Nullable="false" />
-    <Property Name="Pescoco" Type="String" Nullable="false" />
-    <Property Name="OmbroD" Type="String" Nullable="false" />
-    <Property Name="OmbroE" Type="String" Nullable="false" />
-    <Property Name="BracoD" Type="String" Nullable="false" />
-    <Property Name="BracoE" Type="String" Nullable="false" />
-    <Property Name="AntebracoD" Type="String" Nullable="false" />
-    <Property Name="AntebracoE" Type="String" Nullable="false" />
-    <Property Name="MaoD" Type="String" Nullable="false" />
-    <Property Name="MaoE" Type="String" Nullable="false" />
-    <Property Name="PeitoD" Type="String" Nullable="false" />
-    <Property Name="PeitoE" Type="String" Nullable="false" />
-    <Property Name="Diafragma" Type="String" Nullable="false" />
-    <Property Name="Abdomen" Type="String" Nullable="false" />
-    <Property Name="Genital" Type="String" Nullable="false" />
-    <Property Name="CoxaD" Type="String" Nullable="false" />
-    <Property Name="CoxaE" Type="String" Nullable="false" />
-    <Property Name="JoelhoD" Type="String" Nullable="false" />
-    <Property Name="JoelhoE" Type="String" Nullable="false" />
-    <Property Name="CanelaD" Type="String" Nullable="false" />
-    <Property Name="CanelaE" Type="String" Nullable="false" />
-    <Property Name="PeD" Type="String" Nullable="false" />
-    <Property Name="PeE" Type="String" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Testa" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Cara" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Pescoco" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="OmbroD" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="OmbroE" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="BracoD" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="BracoE" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="AntebracoD" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="AntebracoE" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="MaoD" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="MaoE" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PeitoD" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PeitoE" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Diafragma" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Abdomen" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Genital" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CoxaD" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CoxaE" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="JoelhoD" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="JoelhoE" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CanelaD" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CanelaE" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PeD" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PeE" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Ficha" Relationship="RemixRPG.FichaVestimenta" FromRole="Vestimenta" ToRole="Ficha" />
     <Property Name="FichaId" Type="Int32" Nullable="false" />
     <Property Name="Ativo" Type="Boolean" Nullable="false" />
@@ -221,9 +221,9 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nome" Type="String" Nullable="false" />
-    <Property Name="Descricao" Type="String" Nullable="false" />
-    <Property Name="Caminho" Nullable="false" Type="String" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Caminho" Nullable="false" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Geral" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Regiões" Relationship="RemixRPG.MapaRegião" FromRole="Mapa" ToRole="Região" />
     <NavigationProperty Name="MesaMapa" Relationship="RemixRPG.MesaMapaMapa" FromRole="Mapa" ToRole="MesaMapa" />
@@ -233,8 +233,8 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nome" Type="String" Nullable="false" />
-    <Property Name="Descricao" Type="String" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Propriedades" Relationship="RemixRPG.PropriedadeRegião" FromRole="Região" ToRole="Propriedade" />
     <NavigationProperty Name="Mapa" Relationship="RemixRPG.MapaRegião" FromRole="Região" ToRole="Mapa" />
     <Property Name="MapaId" Type="Int32" Nullable="false" />

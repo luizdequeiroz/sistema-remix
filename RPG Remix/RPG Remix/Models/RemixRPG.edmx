@@ -4,378 +4,377 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="RemixRPG.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="RemixRPGStoreContainer">
-    <EntitySet Name="MesaSet" EntityType="RemixRPG.Store.MesaSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="UsuarioSet" EntityType="RemixRPG.Store.UsuarioSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="FichaSet" EntityType="RemixRPG.Store.FichaSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PeculiaridadeSet" EntityType="RemixRPG.Store.PeculiaridadeSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PropriedadeSet" EntityType="RemixRPG.Store.PropriedadeSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="RiquezaSet" EntityType="RemixRPG.Store.RiquezaSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ItemArmaSet" EntityType="RemixRPG.Store.ItemArmaSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="VestimentaSet" EntityType="RemixRPG.Store.VestimentaSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="MapaSet" EntityType="RemixRPG.Store.MapaSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="RegiãoSet" EntityType="RemixRPG.Store.RegiãoSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="MesaMapaSet" EntityType="RemixRPG.Store.MesaMapaSet" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FichaPropriedade" Association="RemixRPG.Store.FichaPropriedade">
-      <End Role="Ficha" EntitySet="FichaSet" />
-      <End Role="Propriedade" EntitySet="PropriedadeSet" />
-    </AssociationSet>
-    <AssociationSet Name="FichaPeculiaridade" Association="RemixRPG.Store.FichaPeculiaridade">
-      <End Role="Ficha" EntitySet="FichaSet" />
-      <End Role="Peculiaridade" EntitySet="PeculiaridadeSet" />
-    </AssociationSet>
-    <AssociationSet Name="FichaRiqueza" Association="RemixRPG.Store.FichaRiqueza">
-      <End Role="Ficha" EntitySet="FichaSet" />
-      <End Role="Riqueza" EntitySet="RiquezaSet" />
-    </AssociationSet>
-    <AssociationSet Name="FichaItemArma" Association="RemixRPG.Store.FichaItemArma">
-      <End Role="Ficha" EntitySet="FichaSet" />
-      <End Role="ItemArma" EntitySet="ItemArmaSet" />
-    </AssociationSet>
-    <AssociationSet Name="PropriedadeRegião" Association="RemixRPG.Store.PropriedadeRegião">
-      <End Role="Propriedade" EntitySet="PropriedadeSet" />
-      <End Role="Região" EntitySet="RegiãoSet" />
-    </AssociationSet>
-    <AssociationSet Name="MapaRegião" Association="RemixRPG.Store.MapaRegião">
-      <End Role="Mapa" EntitySet="MapaSet" />
-      <End Role="Região" EntitySet="RegiãoSet" />
-    </AssociationSet>
-    <AssociationSet Name="UsuarioFicha" Association="RemixRPG.Store.UsuarioFicha">
-      <End Role="Usuario" EntitySet="UsuarioSet" />
-      <End Role="Ficha" EntitySet="FichaSet" />
-    </AssociationSet>
-    <AssociationSet Name="MesaFicha" Association="RemixRPG.Store.MesaFicha">
-      <End Role="Mesa" EntitySet="MesaSet" />
-      <End Role="Ficha" EntitySet="FichaSet" />
-    </AssociationSet>
-    <AssociationSet Name="MesaMapaMesa" Association="RemixRPG.Store.MesaMapaMesa">
-      <End Role="MesaMapa" EntitySet="MesaMapaSet" />
-      <End Role="Mesa" EntitySet="MesaSet" />
-    </AssociationSet>
-    <AssociationSet Name="MesaMapaMapa" Association="RemixRPG.Store.MesaMapaMapa">
-      <End Role="MesaMapa" EntitySet="MesaMapaSet" />
-      <End Role="Mapa" EntitySet="MapaSet" />
-    </AssociationSet>
-    <AssociationSet Name="FichaVestimenta" Association="RemixRPG.Store.FichaVestimenta">
-      <End Role="Ficha" EntitySet="FichaSet" />
-      <End Role="Vestimenta" EntitySet="VestimentaSet" />
-    </AssociationSet>
-    <AssociationSet Name="MesaUsuario" Association="RemixRPG.Store.MesaUsuario">
-      <End Role="Mesa" EntitySet="MesaSet" />
-      <End Role="Usuario" EntitySet="UsuarioSet" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="MesaSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Descricao" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="NumeroJogadores" Type="int" Nullable="true" />
-    <Property Name="DataCriacao" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Senha" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="UsuarioId" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="UsuarioSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Senha" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="DataNascimento" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Sexo" Type="tinyint" Nullable="false" />
-    <Property Name="DataCadastro" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="FichaSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Idade" Type="int" Nullable="false" />
-    <Property Name="Raca" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Classe" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Adre" Type="int" Nullable="false" />
-    <Property Name="Ataq" Type="int" Nullable="false" />
-    <Property Name="Defe" Type="int" Nullable="false" />
-    <Property Name="Dest" Type="int" Nullable="false" />
-    <Property Name="Forc" Type="int" Nullable="false" />
-    <Property Name="Inte" Type="int" Nullable="false" />
-    <Property Name="Resi" Type="int" Nullable="false" />
-    <Property Name="Sabe" Type="int" Nullable="false" />
-    <Property Name="Velo" Type="int" Nullable="false" />
-    <Property Name="Vital" Type="int" Nullable="false" />
-    <Property Name="Sort" Type="int" Nullable="false" />
-    <Property Name="Suportes" Type="int" Nullable="false" />
-    <Property Name="MestreId" Type="int" Nullable="true" />
-    <Property Name="UsuarioId" Type="int" Nullable="false" />
-    <Property Name="MesaId" Type="int" Nullable="false" />
-    <Property Name="PtsTestes" Type="int" Nullable="false" />
-    <Property Name="PtsPericias" Type="int" Nullable="false" />
-    <Property Name="PtsDesvantagens" Type="int" Nullable="false" />
-    <Property Name="PtsExperiencia" Type="int" Nullable="false" />
-    <Property Name="DataNivel" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="PeculiaridadeSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Teste" Type="int" Nullable="false" />
-    <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="FichaId" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="PropriedadeSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="CoordX" Type="int" Nullable="true" />
-    <Property Name="CoordY" Type="int" Nullable="true" />
-    <Property Name="CoordGX" Type="int" Nullable="true" />
-    <Property Name="CoordGY" Type="int" Nullable="true" />
-    <Property Name="FichaId" Type="int" Nullable="false" />
-    <Property Name="RegiãoId" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="RiquezaSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Valor" Type="float" Nullable="false" />
-    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="FichaId" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ItemArmaSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Categoria" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Peso" Type="float" Nullable="false" />
-    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Dano" Type="int" Nullable="false" />
-    <Property Name="FichaId" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="VestimentaSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Testa" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Cara" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Pescoco" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="OmbroD" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="OmbroE" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="BracoD" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="BracoE" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="AntebracoD" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="AntebracoE" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="MaoD" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="MaoE" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="PeitoD" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="PeitoE" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Diafragma" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Abdomen" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Genital" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="CoxaD" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="CoxaE" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="JoelhoD" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="JoelhoE" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="CanelaD" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="CanelaE" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="PeD" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="PeE" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="FichaId" Type="int" Nullable="false" />
-    <Property Name="Ativo" Type="bit" Nullable="false" />
-  </EntityType>
-  <EntityType Name="MapaSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Caminho" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Geral" Type="bit" Nullable="false" />
-  </EntityType>
-  <EntityType Name="RegiãoSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="MapaId" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="MesaMapaSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="MesaId" Type="int" Nullable="false" />
-    <Property Name="MapaId" Type="int" Nullable="false" />
-  </EntityType>
-  <Association Name="FichaPropriedade">
-    <End Role="Ficha" Type="RemixRPG.Store.FichaSet" Multiplicity="1" />
-    <End Role="Propriedade" Type="RemixRPG.Store.PropriedadeSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Ficha">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Propriedade">
-        <PropertyRef Name="FichaId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FichaPeculiaridade">
-    <End Role="Ficha" Type="RemixRPG.Store.FichaSet" Multiplicity="1" />
-    <End Role="Peculiaridade" Type="RemixRPG.Store.PeculiaridadeSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Ficha">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Peculiaridade">
-        <PropertyRef Name="FichaId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FichaRiqueza">
-    <End Role="Ficha" Type="RemixRPG.Store.FichaSet" Multiplicity="1" />
-    <End Role="Riqueza" Type="RemixRPG.Store.RiquezaSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Ficha">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Riqueza">
-        <PropertyRef Name="FichaId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FichaItemArma">
-    <End Role="Ficha" Type="RemixRPG.Store.FichaSet" Multiplicity="1" />
-    <End Role="ItemArma" Type="RemixRPG.Store.ItemArmaSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Ficha">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ItemArma">
-        <PropertyRef Name="FichaId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PropriedadeRegião">
-    <End Role="Propriedade" Type="RemixRPG.Store.PropriedadeSet" Multiplicity="*" />
-    <End Role="Região" Type="RemixRPG.Store.RegiãoSet" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Região">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Propriedade">
-        <PropertyRef Name="RegiãoId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="MapaRegião">
-    <End Role="Mapa" Type="RemixRPG.Store.MapaSet" Multiplicity="1" />
-    <End Role="Região" Type="RemixRPG.Store.RegiãoSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Mapa">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Região">
-        <PropertyRef Name="MapaId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="UsuarioFicha">
-    <End Role="Usuario" Type="RemixRPG.Store.UsuarioSet" Multiplicity="1" />
-    <End Role="Ficha" Type="RemixRPG.Store.FichaSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Usuario">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Ficha">
-        <PropertyRef Name="UsuarioId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="MesaFicha">
-    <End Role="Mesa" Type="RemixRPG.Store.MesaSet" Multiplicity="1" />
-    <End Role="Ficha" Type="RemixRPG.Store.FichaSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Mesa">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Ficha">
-        <PropertyRef Name="MesaId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="MesaMapaMesa">
-    <End Role="MesaMapa" Type="RemixRPG.Store.MesaMapaSet" Multiplicity="*" />
-    <End Role="Mesa" Type="RemixRPG.Store.MesaSet" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Mesa">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="MesaMapa">
-        <PropertyRef Name="MesaId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="MesaMapaMapa">
-    <End Role="MesaMapa" Type="RemixRPG.Store.MesaMapaSet" Multiplicity="*" />
-    <End Role="Mapa" Type="RemixRPG.Store.MapaSet" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Mapa">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="MesaMapa">
-        <PropertyRef Name="MapaId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FichaVestimenta">
-    <End Role="Ficha" Type="RemixRPG.Store.FichaSet" Multiplicity="1" />
-    <End Role="Vestimenta" Type="RemixRPG.Store.VestimentaSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Ficha">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Vestimenta">
-        <PropertyRef Name="FichaId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="MesaUsuario">
-    <End Role="Mesa" Type="RemixRPG.Store.MesaSet" Multiplicity="*" />
-    <End Role="Usuario" Type="RemixRPG.Store.UsuarioSet" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Usuario">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Mesa">
-        <PropertyRef Name="UsuarioId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-</Schema></edmx:StorageModels>
+    <Schema Namespace="RemixRPG.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="FichaSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Idade" Type="int" Nullable="false" />
+          <Property Name="Raca" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Classe" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Adre" Type="int" Nullable="false" />
+          <Property Name="Ataq" Type="int" Nullable="false" />
+          <Property Name="Defe" Type="int" Nullable="false" />
+          <Property Name="Dest" Type="int" Nullable="false" />
+          <Property Name="Forc" Type="int" Nullable="false" />
+          <Property Name="Inte" Type="int" Nullable="false" />
+          <Property Name="Resi" Type="int" Nullable="false" />
+          <Property Name="Sabe" Type="int" Nullable="false" />
+          <Property Name="Velo" Type="int" Nullable="false" />
+          <Property Name="Vital" Type="int" Nullable="false" />
+          <Property Name="Sort" Type="int" Nullable="false" />
+          <Property Name="Suportes" Type="int" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="MesaId" Type="int" Nullable="false" />
+          <Property Name="PtsTestes" Type="int" Nullable="false" />
+          <Property Name="PtsPericias" Type="int" Nullable="false" />
+          <Property Name="PtsDesvantagens" Type="int" Nullable="false" />
+          <Property Name="PtsExperiencia" Type="int" Nullable="false" />
+          <Property Name="DataNivel" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ItemArmaSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Categoria" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Peso" Type="float" Nullable="false" />
+          <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Dano" Type="int" Nullable="false" />
+          <Property Name="FichaId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MapaSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Caminho" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Geral" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MesaMapaSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MesaId" Type="int" Nullable="false" />
+          <Property Name="MapaId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MesaSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Descricao" Type="nvarchar(max)" />
+          <Property Name="NumeroJogadores" Type="int" />
+          <Property Name="DataCriacao" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Senha" Type="nvarchar(max)" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PeculiaridadeSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Teste" Type="int" Nullable="false" />
+          <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FichaId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PropriedadeSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CoordX" Type="int" />
+          <Property Name="CoordY" Type="int" />
+          <Property Name="CoordGX" Type="int" />
+          <Property Name="CoordGY" Type="int" />
+          <Property Name="FichaId" Type="int" Nullable="false" />
+          <Property Name="RegiãoId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RegiãoSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MapaId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RiquezaSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Valor" Type="float" Nullable="false" />
+          <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FichaId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsuarioSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Senha" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DataNascimento" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Sexo" Type="tinyint" Nullable="false" />
+          <Property Name="DataCadastro" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VestimentaSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Testa" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Cara" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Pescoco" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="OmbroD" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="OmbroE" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="BracoD" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="BracoE" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AntebracoD" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AntebracoE" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MaoD" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MaoE" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PeitoD" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PeitoE" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Diafragma" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Abdomen" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Genital" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CoxaD" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CoxaE" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="JoelhoD" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="JoelhoE" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CanelaD" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CanelaE" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PeD" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PeE" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FichaId" Type="int" Nullable="false" />
+          <Property Name="Ativo" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_FichaItemArma">
+          <End Role="FichaSet" Type="Self.FichaSet" Multiplicity="1" />
+          <End Role="ItemArmaSet" Type="Self.ItemArmaSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FichaSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemArmaSet">
+              <PropertyRef Name="FichaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FichaPeculiaridade">
+          <End Role="FichaSet" Type="Self.FichaSet" Multiplicity="1" />
+          <End Role="PeculiaridadeSet" Type="Self.PeculiaridadeSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FichaSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PeculiaridadeSet">
+              <PropertyRef Name="FichaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FichaPropriedade">
+          <End Role="FichaSet" Type="Self.FichaSet" Multiplicity="1" />
+          <End Role="PropriedadeSet" Type="Self.PropriedadeSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FichaSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PropriedadeSet">
+              <PropertyRef Name="FichaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FichaRiqueza">
+          <End Role="FichaSet" Type="Self.FichaSet" Multiplicity="1" />
+          <End Role="RiquezaSet" Type="Self.RiquezaSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FichaSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RiquezaSet">
+              <PropertyRef Name="FichaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FichaVestimenta">
+          <End Role="FichaSet" Type="Self.FichaSet" Multiplicity="1" />
+          <End Role="VestimentaSet" Type="Self.VestimentaSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FichaSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VestimentaSet">
+              <PropertyRef Name="FichaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MapaRegião">
+          <End Role="MapaSet" Type="Self.MapaSet" Multiplicity="1" />
+          <End Role="RegiãoSet" Type="Self.RegiãoSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MapaSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RegiãoSet">
+              <PropertyRef Name="MapaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MesaFicha">
+          <End Role="MesaSet" Type="Self.MesaSet" Multiplicity="1" />
+          <End Role="FichaSet" Type="Self.FichaSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MesaSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FichaSet">
+              <PropertyRef Name="MesaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MesaMapaMapa">
+          <End Role="MapaSet" Type="Self.MapaSet" Multiplicity="1" />
+          <End Role="MesaMapaSet" Type="Self.MesaMapaSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MapaSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MesaMapaSet">
+              <PropertyRef Name="MapaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MesaMapaMesa">
+          <End Role="MesaSet" Type="Self.MesaSet" Multiplicity="1" />
+          <End Role="MesaMapaSet" Type="Self.MesaMapaSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MesaSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MesaMapaSet">
+              <PropertyRef Name="MesaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MesaUsuario">
+          <End Role="UsuarioSet" Type="Self.UsuarioSet" Multiplicity="1" />
+          <End Role="MesaSet" Type="Self.MesaSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsuarioSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MesaSet">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropriedadeRegião">
+          <End Role="RegiãoSet" Type="Self.RegiãoSet" Multiplicity="1" />
+          <End Role="PropriedadeSet" Type="Self.PropriedadeSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RegiãoSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PropriedadeSet">
+              <PropertyRef Name="RegiãoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioFicha">
+          <End Role="UsuarioSet" Type="Self.UsuarioSet" Multiplicity="1" />
+          <End Role="FichaSet" Type="Self.FichaSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsuarioSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FichaSet">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RemixRPGStoreContainer">
+          <EntitySet Name="FichaSet" EntityType="Self.FichaSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ItemArmaSet" EntityType="Self.ItemArmaSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MapaSet" EntityType="Self.MapaSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MesaMapaSet" EntityType="Self.MesaMapaSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MesaSet" EntityType="Self.MesaSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PeculiaridadeSet" EntityType="Self.PeculiaridadeSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropriedadeSet" EntityType="Self.PropriedadeSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RegiãoSet" EntityType="Self.RegiãoSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RiquezaSet" EntityType="Self.RiquezaSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsuarioSet" EntityType="Self.UsuarioSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VestimentaSet" EntityType="Self.VestimentaSet" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_FichaItemArma" Association="Self.FK_FichaItemArma">
+            <End Role="FichaSet" EntitySet="FichaSet" />
+            <End Role="ItemArmaSet" EntitySet="ItemArmaSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FichaPeculiaridade" Association="Self.FK_FichaPeculiaridade">
+            <End Role="FichaSet" EntitySet="FichaSet" />
+            <End Role="PeculiaridadeSet" EntitySet="PeculiaridadeSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FichaPropriedade" Association="Self.FK_FichaPropriedade">
+            <End Role="FichaSet" EntitySet="FichaSet" />
+            <End Role="PropriedadeSet" EntitySet="PropriedadeSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FichaRiqueza" Association="Self.FK_FichaRiqueza">
+            <End Role="FichaSet" EntitySet="FichaSet" />
+            <End Role="RiquezaSet" EntitySet="RiquezaSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FichaVestimenta" Association="Self.FK_FichaVestimenta">
+            <End Role="FichaSet" EntitySet="FichaSet" />
+            <End Role="VestimentaSet" EntitySet="VestimentaSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MapaRegião" Association="Self.FK_MapaRegião">
+            <End Role="MapaSet" EntitySet="MapaSet" />
+            <End Role="RegiãoSet" EntitySet="RegiãoSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MesaFicha" Association="Self.FK_MesaFicha">
+            <End Role="MesaSet" EntitySet="MesaSet" />
+            <End Role="FichaSet" EntitySet="FichaSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MesaMapaMapa" Association="Self.FK_MesaMapaMapa">
+            <End Role="MapaSet" EntitySet="MapaSet" />
+            <End Role="MesaMapaSet" EntitySet="MesaMapaSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MesaMapaMesa" Association="Self.FK_MesaMapaMesa">
+            <End Role="MesaSet" EntitySet="MesaSet" />
+            <End Role="MesaMapaSet" EntitySet="MesaMapaSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MesaUsuario" Association="Self.FK_MesaUsuario">
+            <End Role="UsuarioSet" EntitySet="UsuarioSet" />
+            <End Role="MesaSet" EntitySet="MesaSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropriedadeRegião" Association="Self.FK_PropriedadeRegião">
+            <End Role="RegiãoSet" EntitySet="RegiãoSet" />
+            <End Role="PropriedadeSet" EntitySet="PropriedadeSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioFicha" Association="Self.FK_UsuarioFicha">
+            <End Role="UsuarioSet" EntitySet="UsuarioSet" />
+            <End Role="FichaSet" EntitySet="FichaSet" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="RemixRPG" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
@@ -445,11 +444,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" />
-          <Property Name="Descricao" Type="String" Nullable="true" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Descricao" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="NumeroJogadores" Type="Int32" Nullable="true" />
-          <Property Name="DataCriacao" Type="String" Nullable="false" />
-          <Property Name="Senha" Type="String" Nullable="true" />
+          <Property Name="DataCriacao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Senha" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Ficha" Relationship="RemixRPG.MesaFicha" FromRole="Mesa" ToRole="Ficha" />
           <NavigationProperty Name="MesaMapa" Relationship="RemixRPG.MesaMapaMesa" FromRole="Mesa" ToRole="MesaMapa" />
           <NavigationProperty Name="Usuario" Relationship="RemixRPG.MesaUsuario" FromRole="Mesa" ToRole="Usuario" />
@@ -460,13 +459,13 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" />
-          <Property Name="Descricao" Type="String" Nullable="false" />
-          <Property Name="Email" Type="String" Nullable="false" />
-          <Property Name="Senha" Type="String" Nullable="false" />
-          <Property Name="DataNascimento" Type="String" Nullable="false" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Senha" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DataNascimento" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Sexo" Type="Byte" Nullable="false" />
-          <Property Name="DataCadastro" Type="String" Nullable="false" />
+          <Property Name="DataCadastro" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Ficha" Relationship="RemixRPG.UsuarioFicha" FromRole="Usuario" ToRole="Ficha" />
           <NavigationProperty Name="Mesa" Relationship="RemixRPG.MesaUsuario" FromRole="Usuario" ToRole="Mesa" />
         </EntityType>
@@ -475,10 +474,10 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Idade" Type="Int32" Nullable="false" />
-          <Property Name="Raca" Type="String" Nullable="false" />
-          <Property Name="Classe" Type="String" Nullable="false" />
+          <Property Name="Raca" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Classe" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Adre" Type="Int32" Nullable="false" />
           <Property Name="Ataq" Type="Int32" Nullable="false" />
           <Property Name="Defe" Type="Int32" Nullable="false" />
@@ -503,7 +502,7 @@
           <Property Name="PtsPericias" Type="Int32" Nullable="false" />
           <Property Name="PtsDesvantagens" Type="Int32" Nullable="false" />
           <Property Name="PtsExperiencia" Type="Int32" Nullable="false" />
-          <Property Name="DataNivel" Type="String" Nullable="false" />
+          <Property Name="DataNivel" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Vestimenta" Relationship="RemixRPG.FichaVestimenta" FromRole="Ficha" ToRole="Vestimenta" />
         </EntityType>
         <EntityType Name="Peculiaridade">
@@ -511,10 +510,10 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" />
-          <Property Name="Descricao" Type="String" Nullable="false" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Teste" Type="Int32" Nullable="false" />
-          <Property Name="Tipo" Type="String" Nullable="false" />
+          <Property Name="Tipo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Ficha" Relationship="RemixRPG.FichaPeculiaridade" FromRole="Peculiaridade" ToRole="Ficha" />
           <Property Name="FichaId" Type="Int32" Nullable="false" />
         </EntityType>
@@ -523,8 +522,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" />
-          <Property Name="Descricao" Type="String" Nullable="false" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="CoordX" Type="Int32" Nullable="true" />
           <Property Name="CoordY" Type="Int32" Nullable="true" />
           <Property Name="CoordGX" Type="Int32" Nullable="true" />
@@ -539,10 +538,10 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" />
-          <Property Name="Tipo" Type="String" Nullable="false" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Tipo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Valor" Type="Double" Nullable="false" />
-          <Property Name="Descricao" Type="String" Nullable="false" />
+          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Ficha" Relationship="RemixRPG.FichaRiqueza" FromRole="Riqueza" ToRole="Ficha" />
           <Property Name="FichaId" Type="Int32" Nullable="false" />
         </EntityType>
@@ -551,11 +550,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" />
-          <Property Name="Tipo" Type="String" Nullable="false" />
-          <Property Name="Categoria" Type="String" Nullable="false" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Tipo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Categoria" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Peso" Type="Double" Nullable="false" />
-          <Property Name="Descricao" Type="String" Nullable="false" />
+          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Dano" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Ficha" Relationship="RemixRPG.FichaItemArma" FromRole="ItemArma" ToRole="Ficha" />
           <Property Name="FichaId" Type="Int32" Nullable="false" />
@@ -565,32 +564,32 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" />
-          <Property Name="Descricao" Type="String" Nullable="false" />
-          <Property Name="Testa" Type="String" Nullable="false" />
-          <Property Name="Cara" Type="String" Nullable="false" />
-          <Property Name="Pescoco" Type="String" Nullable="false" />
-          <Property Name="OmbroD" Type="String" Nullable="false" />
-          <Property Name="OmbroE" Type="String" Nullable="false" />
-          <Property Name="BracoD" Type="String" Nullable="false" />
-          <Property Name="BracoE" Type="String" Nullable="false" />
-          <Property Name="AntebracoD" Type="String" Nullable="false" />
-          <Property Name="AntebracoE" Type="String" Nullable="false" />
-          <Property Name="MaoD" Type="String" Nullable="false" />
-          <Property Name="MaoE" Type="String" Nullable="false" />
-          <Property Name="PeitoD" Type="String" Nullable="false" />
-          <Property Name="PeitoE" Type="String" Nullable="false" />
-          <Property Name="Diafragma" Type="String" Nullable="false" />
-          <Property Name="Abdomen" Type="String" Nullable="false" />
-          <Property Name="Genital" Type="String" Nullable="false" />
-          <Property Name="CoxaD" Type="String" Nullable="false" />
-          <Property Name="CoxaE" Type="String" Nullable="false" />
-          <Property Name="JoelhoD" Type="String" Nullable="false" />
-          <Property Name="JoelhoE" Type="String" Nullable="false" />
-          <Property Name="CanelaD" Type="String" Nullable="false" />
-          <Property Name="CanelaE" Type="String" Nullable="false" />
-          <Property Name="PeD" Type="String" Nullable="false" />
-          <Property Name="PeE" Type="String" Nullable="false" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Testa" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Cara" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Pescoco" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="OmbroD" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="OmbroE" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="BracoD" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="BracoE" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="AntebracoD" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="AntebracoE" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="MaoD" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="MaoE" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PeitoD" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PeitoE" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Diafragma" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Abdomen" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Genital" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="CoxaD" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="CoxaE" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="JoelhoD" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="JoelhoE" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="CanelaD" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="CanelaE" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PeD" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PeE" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Ficha" Relationship="RemixRPG.FichaVestimenta" FromRole="Vestimenta" ToRole="Ficha" />
           <Property Name="FichaId" Type="Int32" Nullable="false" />
           <Property Name="Ativo" Type="Boolean" Nullable="false" />
@@ -600,9 +599,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" />
-          <Property Name="Descricao" Type="String" Nullable="false" />
-          <Property Name="Caminho" Nullable="false" Type="String" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Caminho" Nullable="false" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Geral" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Regiões" Relationship="RemixRPG.MapaRegião" FromRole="Mapa" ToRole="Região" />
           <NavigationProperty Name="MesaMapa" Relationship="RemixRPG.MesaMapaMapa" FromRole="Mapa" ToRole="MesaMapa" />
@@ -612,8 +611,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" />
-          <Property Name="Descricao" Type="String" Nullable="false" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Propriedades" Relationship="RemixRPG.PropriedadeRegião" FromRole="Região" ToRole="Propriedade" />
           <NavigationProperty Name="Mapa" Relationship="RemixRPG.MapaRegião" FromRole="Região" ToRole="Mapa" />
           <Property Name="MapaId" Type="Int32" Nullable="false" />
@@ -969,6 +968,7 @@
         <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
         <DesignerProperty Name="UseLegacyProvider" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
       </DesignerInfoPropertySet>
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
