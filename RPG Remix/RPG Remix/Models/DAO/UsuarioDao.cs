@@ -49,7 +49,7 @@ namespace RPG_Remix.Models.DAO
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("[UsuarioDao.Listar] -> " + ex);
+                    throw new Exception("[UsuarioDao.Listar] -> " + ex.Message);
                 }
             }
         }

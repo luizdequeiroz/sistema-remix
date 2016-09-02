@@ -4,6 +4,10 @@
     var img = Model.Email + ".png";
 }
 
+<div class="text-center loading" id="loading">
+    <img src="~/Content/images/ajax-loader.gif" width="50" /> Carregando...
+</div>
+
 <div class="desktop-body">
     <div class="desktop-menu">
         <div class="panel panel-default panel-photo">
@@ -18,9 +22,6 @@
     </div>
     <div class="desktop-content">
         <div class="btn btn-xs" id="active-menu" title="Menu"></div>
-        <div class="col-lg-10 col-md-10 col-sm-8 div-padding-darkgrey col-lg-offset-2 col-md-offset-2 col-sm-offset-4 text-center loading">
-            <img src="~/Content/images/ajax-loader.gif" width="50" /> Carregando...
-        </div>
         <div id="frame"></div>
         @Html.ActionLink("X", "Sair", null, new { @class = "btn btn-xs btn-danger btn-sair" })
     </div>

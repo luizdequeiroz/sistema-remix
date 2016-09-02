@@ -5,6 +5,10 @@
     @{ Session.Remove("alert"); }
 </script>
 
+<div class="text-center loading" id="loading">
+    <img src="~/Content/images/ajax-loader.gif" width="30" /> Carregando...
+</div>
+
 <div class="centralizar">
     <div class="borda-cadastro">
         <div class="conteudo-cadastro terrain">
@@ -12,9 +16,6 @@
                 <legend class="text-whitesmoke">CADASTRO</legend>
                 @using (Html.BeginForm("Cadastrar", "Entrada", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
-                    <div class="text-center loading" id="loading">
-                        <img src="~/Content/images/ajax-loader.gif" width="30" /> Carregando...
-                    </div>
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                         <div class="form-group">
                             <label class="control-label" for="Nome"><span class="text-form">Nome</span> <span class="text-danger">*</span>  @Html.ValidationMessageFor(model => model.Nome)</label>

@@ -188,4 +188,3 @@ C:\Users\luizd\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\bin\System.We
 C:\Users\luizd\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\obj\Debug\RPG Remix.csprojResolveAssemblyReference.cache
 C:\Users\luizd\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\obj\Debug\RPG Remix.dll
 C:\Users\luizd\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\obj\Debug\RPG Remix.pdb
-C:\Users\Luiz de Queiroz\Dropbox\RolePlayingGame\Sistema\RPG Remix\RPG Remix\obj\Debug\RPG Remix.csprojResolveAssemblyReference.cache

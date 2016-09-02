@@ -1,14 +1,4 @@
-﻿/* Funções para carregamento com o GIF */
-function loaderOn() {
-    setTimeout(function () {
-        $('.loading').css('display', 'normal');
-    }, 5000);
-}
-function loaderOff() {
-    $('.loading').css('display', 'none');
-}
-
-function resetMenu() {
+﻿function resetMenu() {
     $('#Fichas').css('border', '1px solid transparent');
     $('#Jogadores').css('border', '1px solid transparent');
     $('#Textos').css('border', '1px solid transparent');
@@ -47,6 +37,10 @@ function submit(method, controller, action) {
         data: dados,
         success: function (view) {
             $('#frame').html(view);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+            alert(jqXHR);
         }
     });
 }
@@ -88,7 +82,7 @@ function calcPts(val) {
     $('#ptsTest').val(sumAllTests() + '/' + ptsTest);
     $('#ptsPecs').val(ptsPecs);
 
-    $('#Nivel').val(parseInt(test));
+    $('#Nivel').val(test);
 
     $('#submiter').attr('disabled', false);
 }
@@ -148,6 +142,13 @@ $(document).ready(function () {
 
 
 });
+
+$(document)
+    .ajaxStart(function () {
+        $('#loading').show();
+    }).ajaxStop(function () {
+        $('#loading').hide();
+    });
 
 /*
 <div class="form-group-sm form-inline group-test">

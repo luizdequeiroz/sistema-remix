@@ -68,7 +68,7 @@ namespace RPG_Remix.Models.DAO
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("[FichaDao.Inserir] -> " + ex.ToString());
+                    throw new Exception("[FichaDao.Inserir] -> " + ex.Message);
                 }
             }
         }

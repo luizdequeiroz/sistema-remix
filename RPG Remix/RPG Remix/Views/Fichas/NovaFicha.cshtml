@@ -46,11 +46,11 @@
             </ul>
         </div>
         <div class="panel-body">
-            <form>
-                <input type="hidden" name="Nivel" id="Nivel" />
+            <form class="">
+                <input type="hidden" name="Nivel" id="Nivel" value="@Session["Nivel"]" />
                 <div class="form-group-lg text-right form-inline fix-top">
-                    TESTES <input type="text" id="ptsTest" disabled class="ptsAcum" />
-                    PECULIARIDADES <input type="text" id="ptsPecs" disabled class="ptsAcum" />
+                    TESTES <input type="text" id="ptsTest" disabled class="ptsAcum" value="@Session["ptsTest"]" />
+                    PECULIARIDADES <input type="text" id="ptsPecs" disabled class="ptsAcum" value="@Session["ptsPecu"]" />
                 </div>
                 <fieldset class="panel-form col-md-12">
                     <legend class="text-whitesmoke">Dados do Personagem</legend>

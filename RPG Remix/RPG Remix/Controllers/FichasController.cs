@@ -33,26 +33,32 @@ namespace RPG_Remix.Controllers
         }
 
         [HttpPost]
-        public ActionResult NovaFicha(int Nivel, FichaCriar ficha,
+        public ActionResult NovaFicha(float Nivel, FichaCriar ficha,
             ICollection<Peculiaridade> capacidades,
             ICollection<Peculiaridade> pericias,
             ICollection<Peculiaridade> desvantagens,
             Mesa mesa)
         {
+            var ptsTests = Convert.ToInt32(Nivel * 9);
+            var ptsPecul = Convert.ToInt32(Nivel * 10);
+
+            var sumT = ficha.Adre + ficha.Ataq + ficha.Defe + ficha.Dest + ficha.Forc + ficha.Inte + ficha.Resi + ficha.Sabe + ficha.Velo;
+
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var ptsTests = Nivel * 9;
-                    var sumT = ficha.Adre + ficha.Ataq + ficha.Defe + ficha.Dest + ficha.Forc + ficha.Inte + ficha.Resi + ficha.Sabe + ficha.Velo;
                     if (sumT != ptsTests)
                     {
                         if (sumT > ptsTests) Session["alert"] = UtilsController.RenderAlert("Ops!", "Você não pode ultrapassar o número de pontos para testes atribuído pelo nível escolhido!", "warning");
                         else Session["alert"] = UtilsController.RenderAlert("Ops!", "Você deve distribuir todos os pontos para testes atribuídos pelo nível escolhido!", "warning");
+
+                        Session["Nivel"] = Nivel;
+                        Session["ptsTest"] = (sumT > ptsTests) ? "0" : sumT + "/" + ptsTests;
+                        Session["ptsPecu"] = ptsPecul;
                         return PartialView();
                     }
 
-                    var ptsPecul = Nivel * 10;
                     var sumP = 0;
 
                     if (capacidades != null)
@@ -62,6 +68,10 @@ namespace RPG_Remix.Controllers
                     if (sumP > ptsPecul)
                     {
                         Session["alert"] = UtilsController.RenderAlert("Ops!", "Você não pode ultrapassar o número de pontos para peculiaridades atribuídos pelo nível escolhido!", "warning");
+
+                        Session["Nivel"] = Nivel;
+                        Session["ptsTest"] = (sumT > ptsTests) ? "0" : sumT + "/" + ptsTests;
+                        Session["ptsPecu"] = ptsPecul;
                         return PartialView();
                     }
 
@@ -117,11 +127,19 @@ namespace RPG_Remix.Controllers
                 }
 
                 Session["alert"] = UtilsController.RenderAlert("Ops!", "Alguns campos estão necessitando serem devidamente preenchidos!", "warning");
+
+                Session["Nivel"] = Nivel;
+                Session["ptsTest"] = (sumT > ptsTests) ? "0" : sumT + "/" + ptsTests;
+                Session["ptsPecu"] = ptsPecul;
                 return PartialView();
             }
             catch (Exception ex)
             {
-                Session["alert"] = UtilsController.RenderAlert("Erro!", "Erro no servidor: " + ex.ToString(), "danger");
+                Session["alert"] = UtilsController.RenderAlert("Erro!", "Erro no servidor: " + ex.Message, "danger");
+
+                Session["Nivel"] = Nivel;
+                Session["ptsTest"] = (sumT > ptsTests) ? "0" : sumT + "/" + ptsTests;
+                Session["ptsPecu"] = ptsPecul;
                 return PartialView();
             }
         }

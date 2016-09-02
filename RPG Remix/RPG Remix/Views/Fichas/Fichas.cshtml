@@ -1,5 +1,10 @@
 ﻿@model List<RPG_Remix.Models.Ficha>
 
+<script>
+    @Html.Raw(Session["alert"])
+    @{ Session.Remove("alert"); }
+</script>
+
 <div class="scrollable">
     <div class="div-padding-top">
         <h3 class="panel panel-head">Suas Fichas</h3>
@@ -9,7 +14,8 @@
                     <h5>
                         <label for="prenome" class="hidden-xs">Novo Personagem</label>
                         <input type="text" class="form-control" id="prenome" name="nome" placeholder="nome do personagem" />
-                    </h5><br />
+                    </h5>
+                    <hr />
                     <a class="btn btn-xs btn-default btn-block" onclick="submit('GET', 'Fichas', 'NovaFicha')">CRIAR NOVA FICHA</a>
                 </form>
             </div>
@@ -18,8 +24,12 @@
                 if (f.UsuarioId == ((RPG_Remix.Models.Usuario)Session["usuario"]).Id)
                 {
                     <div class="panel panel-object col-md-2 col-sm-2">
-                        <h5>@f.Nome</h5>
-                        <h6>adre: @f.Adre ataq: @f.Ataq defe: @f.Defe dest: @f.Dest forç: @f.Forc inte: @f.Inte resi: @f.Resi sabe: @f.Sabe velo: @f.Velo</h6>
+                        <h5 class="no-padding">@f.Nome</h5>
+                        <div class="text-uppercase col-md-12 col-sm-2 no-padding">
+                            <div class="col-md-4 col-sm-4 no-padding"><h6>adre: @f.Adre</h6><h6>ataq: @f.Ataq</h6><h6>defe: @f.Defe</h6></div>
+                            <div class="col-md-4 col-sm-4 no-padding"><h6>dest: @f.Dest</h6><h6>forç: @f.Forc</h6><h6>inte: @f.Inte</h6></div>
+                            <div class="col-md-4 col-sm-4 no-padding"><h6>resi: @f.Resi</h6><h6>sabe: @f.Sabe</h6><h6>velo: @f.Velo</h6></div>
+                        </div>
                         <hr class="hidden-xs" />
                         <div class="btn-group btn-group-justified">
                             <div class="btn btn-xs btn-primary">Ver</div>
